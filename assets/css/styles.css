@@ -257,9 +257,15 @@ p.lg { font-size: 17px; line-height: 1.6; color: var(--ink); }
   overflow: hidden;
   display: block;
   color: var(--warm-sand);
+  background: var(--warm-sand-deep);
 }
 .cat-tile img {
-  width: 100%; height: 100%; object-fit: cover;
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
   transition: transform .8s var(--ease);
 }
 .cat-tile:hover img { transform: scale(1.04); }
@@ -763,3 +769,53 @@ p.lg { font-size: 17px; line-height: 1.6; color: var(--ink); }
 .marquee span { font-family: var(--ff-mono); font-size: 12px; letter-spacing: .28em; text-transform: uppercase; }
 .marquee span.accent { color: var(--terracotta); }
 @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ============================================================
+   TEXT-OVERFLOW DEFENSES
+   Prevent copy getting clipped by image containers or tight cards.
+   ============================================================ */
+h1, h2, h3, h4, .pcard-title, .schedule-item h4, .timeline-item h4 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+.pcard-body {
+  padding: 16px 4px 10px;
+  min-width: 0;
+}
+.pcard-title {
+  line-height: 1.35;
+  min-height: 2.7em;
+}
+.pcard-title a { color: inherit; }
+
+/* Hero: let h1 grow even if viewport is short */
+.hero { min-height: min(86vh, 820px); }
+.hero-content { padding-top: 140px; padding-bottom: 72px; }
+.hero h1 { max-width: 18ch; }
+.hero p.lead { max-width: 52ch; }
+
+/* Page hero: guarantee breathing room above & below text */
+.page-hero { min-height: 46vh; }
+.page-hero .container { max-width: 860px; }
+.page-hero h1 { max-width: 20ch; }
+
+/* Category tile: guarantee the overlay text never overlaps the image edge */
+.cat-tile-inner { max-width: 100%; }
+.cat-tile h3 { max-width: 18ch; }
+
+/* Split copy: don't let text spill behind the paired media */
+.split-copy { min-width: 0; overflow: visible; }
+.split-media { overflow: hidden; }
+
+/* Values + newsletter copy breathe */
+.values-grid .val p { max-width: 44ch; }
+.newsletter h2 { max-width: 20ch; margin-left: auto; margin-right: auto; }
+
+@media (max-width: 760px) {
+  .hero-content { padding-top: 100px; padding-bottom: 56px; }
+  .hero h1 { max-width: none; }
+  .page-hero h1 { max-width: none; }
+  .cat-tile-inner { padding: 22px 20px; }
+  .cat-tile h3 { font-size: 26px; max-width: none; }
+}
