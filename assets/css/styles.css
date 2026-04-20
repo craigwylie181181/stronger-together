@@ -657,6 +657,8 @@ p.lg { font-size: 17px; line-height: 1.6; color: var(--ink); }
    ============================================================ */
 .page-hero {
   background: var(--obsidian);
+  background-size: cover;
+  background-position: center;
   color: var(--warm-sand);
   padding: clamp(80px, 12vw, 160px) 0 clamp(80px, 10vw, 120px);
   text-align: center;
@@ -666,7 +668,9 @@ p.lg { font-size: 17px; line-height: 1.6; color: var(--ink); }
 .page-hero::before {
   content: "";
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(196,97,58,.18) 0%, transparent 60%);
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(196,97,58,.22) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(26,23,20,.55) 0%, rgba(26,23,20,.78) 100%);
 }
 .page-hero .eyebrow { color: var(--terracotta); margin-bottom: 22px; display: block; position: relative; }
 .page-hero h1 { color: var(--warm-sand); margin: 0 auto; max-width: 18ch; position: relative; }

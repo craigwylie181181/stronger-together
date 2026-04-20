@@ -34,8 +34,8 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: IMG("photo-1552693673-1bf958298935"),
-    imgHover: IMG("photo-1518310383802-640c2de311b2"),
+    img: IMG("photo-1538805060514-97d9cc17730c"),
+    imgHover: IMG("photo-1544005313-94ddf0286df2"),
     excerpt: "Our hero high-waist legging. 78% Nylon 6,6 / 22% Elastane. Built for the Friday 6am run and everything after.",
     description: "The Friday Legging is the first product Stronger Together ever made and it had to be exceptional. Squat-proof, sweat-tested in UAE heat across months of community runs, and finished to the standard the women who built this brand demanded. Nothing on the Corniche is held back. Neither is this.",
     fabric: "78% Nylon 6,6 · 22% Elastane · 220gsm · 4-way stretch · OEKO-TEX Standard 100",
@@ -52,7 +52,7 @@ window.ST_PRODUCTS = [
       IMG("photo-1552693673-1bf958298935", 1200),
       IMG("photo-1518310383802-640c2de311b2", 1200),
       IMG("photo-1518314916381-77a37c2a49ae", 1200),
-      IMG("photo-1594737625785-a6cbdabd333c", 1200)
+      IMG("photo-1544005313-94ddf0286df2", 1200)
     ]
   },
   {
@@ -68,7 +68,7 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: IMG("photo-1506629082955-511b1aa562c8"),
+    img: IMG("photo-1594381898411-846e7d193883"),
     imgHover: IMG("photo-1571019613454-1cb2f99b2d8b"),
     excerpt: "Medium-support racerback bra. Wide straps, clean front, lined with removable pads. Matches The Friday Legging.",
     description: "A sports bra that works every day of the week. Medium support carries the run club on Fridays and pilates on Mondays. The silhouette is clean enough to wear on its own — and that's the point. We made it so you don't have to think about it.",
@@ -132,14 +132,14 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: IMG("photo-1594737625785-a6cbdabd333c"),
+    img: IMG("photo-1544005313-94ddf0286df2"),
     imgHover: IMG("photo-1591291621164-2c6367723315"),
     excerpt: "The Friday Bra in warm sand. Almost white, never cold white.",
     description: "Designed against the desert palette, not a European minimal one. This is the colour of Saadiyat beach at sunrise — warmer than white, softer than cream.",
     fabric: "78% Nylon 6,6 · 22% Elastane",
     features: ["Matching Friday Legging fabric", "Clean, co-ord ready", "Medium support"],
     care: "Cold wash, flat dry.",
-    gallery: [IMG("photo-1594737625785-a6cbdabd333c", 1200), IMG("photo-1591291621164-2c6367723315", 1200)]
+    gallery: [IMG("photo-1544005313-94ddf0286df2", 1200), IMG("photo-1591291621164-2c6367723315", 1200)]
   },
   {
     id: "fnd-shorts",
@@ -153,8 +153,8 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sage"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: IMG("photo-1571902943202-507ec2618e8f"),
-    imgHover: IMG("photo-1518611012118-696072aa579a"),
+    img: IMG("photo-1517130038641-a774d04afb3c"),
+    imgHover: IMG("photo-1518310383802-640c2de311b2"),
     excerpt: "Mid-thigh biker short for the gym and the ride. Flat seams, high rise, zero roll-down.",
     description: "Built for the barbell, the spin studio, and everything strength-based. Same fabric science as The Friday Legging, cut shorter for heat and freedom.",
     fabric: "78% Nylon 6,6 · 22% Elastane · 220gsm",
