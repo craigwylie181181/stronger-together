@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop · Stronger Together</title>
+<meta name="description" content="Shop the full Stronger Together range. The Friday Line for run, The Foundation for gym, The Crank for cycle. Shipping across the UAE and GCC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<div id="st-announce"></div>
+<div id="st-header"></div>
+
+<!-- SHOP HEAD -->
+<div class="container" style="padding-top:28px;">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="shop.html">Shop</a>
+    <span class="sep">/</span>
+    <span class="current" id="bc-current">All</span>
+  </nav>
+
+  <header class="shop-head">
+    <div>
+      <span class="eyebrow" id="shop-eyebrow">01 — The first drop</span>
+      <h1 id="shop-title">Shop the drop.</h1>
+      <p id="shop-sub">Every piece, designed and tested inside the Friday run. Premium construction, 4–6 sample rounds, built for UAE heat. Free shipping over AED 200.</p>
+    </div>
+  </header>
+</div>
+
+<!-- SHOP LAYOUT -->
+<section class="section-tight" style="padding-top:32px;">
+  <div class="container">
+    <div class="shop-layout">
+
+      <!-- FILTER SIDEBAR -->
+      <aside class="filters" aria-label="Filters">
+        <h5>Filter</h5>
+
+        <div class="filter-group">
+          <h5 style="border:none;padding:0;margin-bottom:10px;">Line</h5>
+          <div id="f-lines"></div>
+        </div>
+
+        <div class="filter-group">
+          <h5 style="border:none;padding:0;margin-bottom:10px;">Category</h5>
+          <div id="f-cats"></div>
+        </div>
+
+        <div class="filter-group">
+          <h5 style="border:none;padding:0;margin-bottom:10px;">Discipline</h5>
+          <div id="f-disc"></div>
+        </div>
+
+        <div class="filter-group">
+          <h5 style="border:none;padding:0;margin-bottom:10px;">Size</h5>
+          <div id="f-sizes"></div>
+        </div>
+
+        <div class="filter-group">
+          <h5 style="border:none;padding:0;margin-bottom:10px;">Colour</h5>
+          <div class="colour-swatches" id="f-colours"></div>
+        </div>
+
+        <button onclick="resetFilters()" class="link-underline" style="margin-top:10px;">Clear filters</button>
+      </aside>
+
+      <!-- GRID -->
+      <div>
+        <div class="shop-toolbar">
+          <span class="count" id="shop-count">Loading…</span>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <label for="sort" style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-muted);">Sort:</label>
+            <select id="sort" onchange="render()">
+              <option value="featured">Featured</option>
+              <option value="new">Newest</option>
+              <option value="price-asc">Price · low to high</option>
+              <option value="price-desc">Price · high to low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="product-grid" id="shop-grid"></div>
+
+        <div id="no-results" style="display:none;padding:80px 20px;text-align:center;">
+          <h3 style="font-family:var(--ff-display);font-size:32px;margin-bottom:10px;">Nothing matches that combination.</h3>
+          <p style="color:var(--ink-muted);margin-bottom:22px;">Try clearing a filter.</p>
+          <button class="btn btn-ghost" onclick="resetFilters()">Clear all filters</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BRAND BAND -->
+<section class="quote-band" style="padding:80px 0;">
+  <div class="container">
+    <span class="eyebrow">The standard</span>
+    <h2>Every piece passes a <span class="italic">simple test:</span></h2>
+    <p>Can you wear it at the Friday 6am run, for lunch at Galleria, through a spin class at Crank, and back into the evening? If not, we make it again. That's why the first drop has 12 pieces, not 60.</p>
+  </div>
+</section>
+
+<div id="st-cart"></div>
+<div id="st-footer"></div>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/partials.js"></script>
+<script>
+// ----- Shop page state -----
+const STATE_F = {
+  lines: new Set(),
+  cats: new Set(),
+  disciplines: new Set(),
+  sizes: new Set(),
+  colours: new Set()
+};
+
+const LINE_KEYS = [
+  { key: "The Friday Line", label: "The Friday Line", tag: "Run" },
+  { key: "The Foundation Line", label: "The Foundation", tag: "Gym" },
+  { key: "The Crank Line", label: "The Crank", tag: "Cycle" }
+];
+const CAT_KEYS = [
+  { key: "legging", label: "Leggings" },
+  { key: "bra", label: "Sports bras" },
+  { key: "short", label: "Shorts" },
+  { key: "top", label: "Tops" },
+  { key: "outerwear", label: "Outerwear" },
+  { key: "cycle", label: "Cycling kit" },
+  { key: "accessory", label: "Accessories" }
+];
+const DISC_KEYS = [
+  { key: "run", label: "Run" },
+  { key: "gym", label: "Gym" },
+  { key: "cycle", label: "Cycle" }
+];
+const SIZES = ["XS", "S", "M", "L", "XL"];
+
+// ----- URL params -> initial filters -----
+function initFromURL() {
+  const u = new URL(location.href);
+  const line = u.searchParams.get("line");
+  const cat = u.searchParams.get("cat");
+  if (line === "friday") STATE_F.lines.add("The Friday Line");
+  if (line === "foundation") STATE_F.lines.add("The Foundation Line");
+  if (line === "crank") STATE_F.lines.add("The Crank Line");
+  if (cat) STATE_F.cats.add(cat);
+
+  // update head
+  if (STATE_F.lines.size === 1) {
+    const only = [...STATE_F.lines][0];
+    const meta = LINE_KEYS.find(l => l.key === only);
+    if (meta) {
+      document.getElementById("shop-eyebrow").textContent = meta.tag;
+      document.getElementById("shop-title").textContent = only.replace(" Line", "");
+      document.getElementById("bc-current").textContent = meta.label;
+    }
+    if (only === "The Friday Line") {
+      document.getElementById("shop-sub").textContent = "Built for the Friday 6am run. 78% Nylon 6,6. 22% Elastane. 220gsm. Four-way stretch. Tested from the Corniche to Saadiyat.";
+    }
+    if (only === "The Foundation Line") {
+      document.getElementById("shop-sub").textContent = "The strength kit underneath. Heavier-weight construction for the gym, the spin studio, and the pilates reformer.";
+    }
+    if (only === "The Crank Line") {
+      document.getElementById("shop-sub").textContent = "Cycling kit, cut for women. Designed with Crank Abu Dhabi, tested on Yas Island at first light.";
+    }
+  }
+}
+
+// ----- Render filter controls -----
+function renderFilters() {
+  const all = window.ST_PRODUCTS;
+
+  // Lines
+  document.getElementById("f-lines").innerHTML = LINE_KEYS.map(l => {
+    const count = all.filter(p => p.line === l.key).length;
+    const checked = STATE_F.lines.has(l.key) ? "checked" : "";
+    return `<label class="filter-option">
+      <input type="checkbox" value="${l.key}" ${checked} onchange="toggleFilter('lines', this.value, this.checked)">
+      <label>${l.label} <span class="count">(${count})</span></label>
+    </label>`;
+  }).join("");
+
+  // Cats
+  document.getElementById("f-cats").innerHTML = CAT_KEYS.map(c => {
+    const count = all.filter(p => p.category === c.key).length;
+    if (!count) return "";
+    const checked = STATE_F.cats.has(c.key) ? "checked" : "";
+    return `<label class="filter-option">
+      <input type="checkbox" value="${c.key}" ${checked} onchange="toggleFilter('cats', this.value, this.checked)">
+      <label>${c.label} <span class="count">(${count})</span></label>
+    </label>`;
+  }).join("");
+
+  // Disciplines
+  document.getElementById("f-disc").innerHTML = DISC_KEYS.map(d => {
+    const count = all.filter(p => (p.discipline || []).includes(d.key)).length;
+    const checked = STATE_F.disciplines.has(d.key) ? "checked" : "";
+    return `<label class="filter-option">
+      <input type="checkbox" value="${d.key}" ${checked} onchange="toggleFilter('disciplines', this.value, this.checked)">
+      <label>${d.label} <span class="count">(${count})</span></label>
+    </label>`;
+  }).join("");
+
+  // Sizes
+  document.getElementById("f-sizes").innerHTML = SIZES.map(s => {
+    const checked = STATE_F.sizes.has(s) ? "checked" : "";
+    return `<label class="filter-option">
+      <input type="checkbox" value="${s}" ${checked} onchange="toggleFilter('sizes', this.value, this.checked)">
+      <label>${s}</label>
+    </label>`;
+  }).join("");
+
+  // Colours
+  document.getElementById("f-colours").innerHTML = Object.entries(window.ST_COLORS).map(([key, c]) => {
+    const selected = STATE_F.colours.has(key) ? "selected" : "";
+    const border = c.border ? `border:1px solid ${c.border};` : "";
+    return `<button class="colour-chip ${selected}" style="background:${c.hex};${border}"
+              title="${c.name}" aria-label="${c.name}"
+              onclick="toggleColour('${key}')"></button>`;
+  }).join("");
+}
+
+function toggleFilter(group, value, on) {
+  if (on) STATE_F[group].add(value);
+  else STATE_F[group].delete(value);
+  render();
+}
+function toggleColour(key) {
+  if (STATE_F.colours.has(key)) STATE_F.colours.delete(key);
+  else STATE_F.colours.add(key);
+  renderFilters();
+  render();
+}
+function resetFilters() {
+  STATE_F.lines.clear();
+  STATE_F.cats.clear();
+  STATE_F.disciplines.clear();
+  STATE_F.sizes.clear();
+  STATE_F.colours.clear();
+  document.getElementById("shop-eyebrow").textContent = "01 — The first drop";
+  document.getElementById("shop-title").textContent = "Shop the drop.";
+  document.getElementById("shop-sub").textContent = "Every piece, designed and tested inside the Friday run. Premium construction, 4–6 sample rounds, built for UAE heat. Free shipping over AED 200.";
+  document.getElementById("bc-current").textContent = "All";
+  renderFilters();
+  render();
+}
+
+function filterProducts() {
+  return window.ST_PRODUCTS.filter(p => {
+    if (STATE_F.lines.size && !STATE_F.lines.has(p.line)) return false;
+    if (STATE_F.cats.size && !STATE_F.cats.has(p.category)) return false;
+    if (STATE_F.disciplines.size) {
+      const match = (p.discipline || []).some(d => STATE_F.disciplines.has(d));
+      if (!match) return false;
+    }
+    if (STATE_F.sizes.size) {
+      const hasSize = (p.sizes || []).some(s =>
+        STATE_F.sizes.has(s) && !(p.oos || []).includes(s)
+      );
+      if (!hasSize) return false;
+    }
+    if (STATE_F.colours.size) {
+      const match = (p.colors || []).some(c => STATE_F.colours.has(c));
+      if (!match) return false;
+    }
+    return true;
+  });
+}
+
+function sortProducts(list) {
+  const v = document.getElementById("sort").value;
+  const out = [...list];
+  if (v === "price-asc") out.sort((a, b) => a.price - b.price);
+  else if (v === "price-desc") out.sort((a, b) => b.price - a.price);
+  else if (v === "new") out.sort((a, b) => (b.badge === "NEW") - (a.badge === "NEW"));
+  return out;
+}
+
+function render() {
+  const filtered = sortProducts(filterProducts());
+  document.getElementById("shop-count").textContent =
+    `${filtered.length} ${filtered.length === 1 ? "piece" : "pieces"}`;
+  if (!filtered.length) {
+    document.getElementById("shop-grid").innerHTML = "";
+    document.getElementById("no-results").style.display = "block";
+  } else {
+    document.getElementById("no-results").style.display = "none";
+    ST.renderProductGrid("#shop-grid", filtered);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initFromURL();
+  renderFilters();
+  render();
+});
+</script>
+</body>
+</html>
