@@ -21,7 +21,7 @@ const AI = {
   // THE FRIDAY LINE (Run)
   fridayObsidian:  HF("hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png"),
   fridayRose:      HF("hf_20260421_074423_4838b69e-0e0b-4276-bce8-58bfb9550361.png"),
-  fridaySage:      HF("hf_20260421_074848_947b168b-47af-447d-8099-80e547c91722.png"),
+  fridaySage:      HF("hf_20260421_171059_dbafa874-48fd-4290-a879-0baadf1047b3.png"),
   // THE FOUNDATION (Gym)
   foundObsGold:    HF("hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png"),
   foundRose:       HF("hf_20260421_152822_91bec3e1-63c5-488e-be0d-31286f3f07b7.png"),
@@ -46,8 +46,8 @@ const CV = {
   bikerTerracotta:      HF("hf_20260421_151917_ddeb0c53-64d3-4624-ae87-0de355f3f5cb.png"),
   bikerSage:            HF("hf_20260421_152312_17bffc32-08cf-4afc-9db1-71c1e5bdeb45.png"),
   tankObsidian:         HF("hf_20260421_095214_e5053097-1843-4b01-bc46-3e32f2fad48b.png"),
-  leggingObsidian:      HF("hf_20260421_095329_8defdfcf-3413-470e-8b7b-ba45efc5b137.png"),
-  leggingRose:          HF("hf_20260421_095419_3e4a6fd2-74b1-4339-bd31-e8dfcb26a981.png"),
+  leggingObsidian:      HF("hf_20260421_171430_e239ec7b-a611-4022-945a-0a2ddb950c70.png"),
+  leggingRose:          HF("hf_20260421_171632_1fdbc700-9e41-4f64-9db0-867219a46343.png"),
   sunSleeveObsidian:    HF("hf_20260421_095513_cbe85eae-c01e-476c-9c06-ca967e2625dd.png"),
   sunSleeveSand:        HF("hf_20260421_095606_7ae06042-771e-447f-bddd-cdb5e11bcffd.png"),
   // Additional Foundation variants
