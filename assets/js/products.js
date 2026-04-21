@@ -4,273 +4,394 @@
 // Full colour-variant image support — April 2026
 // ============================================================
 
-window.stProducts = [
+window.ST_COLORS = {
+  obsidian:   { name: "Obsidian",     hex: "#1A1714" },
+  terracotta: { name: "Terracotta",   hex: "#C4613A" },
+  sand:       { name: "Warm Sand",    hex: "#F5F0E8", border: "#E4DCCE" },
+  sage:       { name: "Sage",         hex: "#8A9E8C" },
+  rose:       { name: "Dusty Rose",   hex: "#C9967C" },
+  gold:       { name: "Desert Gold",  hex: "#B8963E" }
+};
 
-  /* ──────────── THE FRIDAY LINE ──────────── */
+// Higgsfield Soul 2.0 AI model images — CloudFront CDN
+const HF = (filename) => `https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/${filename}`;
 
+// —— ORIGINAL 8 hero images ——————————————————————————————
+const AI = {
+  // THE FRIDAY LINE (Run)
+  fridayObsidian:  HF("hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png"),
+  fridayRose:      HF("hf_20260421_074423_4838b69e-0e0b-4276-bce8-58bfb9550361.png"),
+  fridaySage:      HF("hf_20260421_074848_947b168b-47af-447d-8099-80e547c91722.png"),
+  // THE FOUNDATION (Gym)
+  foundObsGold:    HF("hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png"),
+  foundRose:       HF("hf_20260421_152822_91bec3e1-63c5-488e-be0d-31286f3f07b7.png"),
+  foundSand:       HF("hf_20260421_152629_195d7300-027e-4291-bda7-11caadbb798d.png"),
+  // THE CRANK (Cycle)
+  crankObsidian:   HF("hf_20260421_153315_181b31af-4843-4fcf-80f9-5afed1af1e97.png"),
+  crankSage:       HF("hf_20260421_080538_54829556-942c-446d-9fe6-644d0ed1204b.png"),
+};
+
+// —— 16 colour-variant images ————————————————————————————
+const CV = {
+  // Friday Line colour variants
+  fridayTerracotta:     HF("hf_20260421_150515_cc2243ce-97cd-4ac6-8068-fa7937572606.png"),
+  fridaySand:           HF("hf_20260421_150801_8744d554-6f6f-4736-a2bf-20c0989a803c.png"),
+  windrunnerObsidian:   HF("hf_20260421_094617_0b8a861e-c52d-4442-ac0c-f648de794ca5.png"),
+  windrunnerTerracotta: HF("hf_20260421_094618_3976922a-4541-4769-940e-bf08078ed605.png"),
+  capObsidian:          HF("hf_20260421_094618_e19ff374-028c-4ed3-b550-828b7597c556.png"),
+  capTerracotta:        HF("hf_20260421_094618_f50c8988-e522-44bb-8182-5fba6496e4dc.png"),
+  capSand:              HF("hf_20260421_094618_5c235280-e9a4-4c67-ad3a-c546813ed464.png"),
+  // Foundation colour variants
+  bikerObsidian:        HF("hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png"),
+  bikerTerracotta:      HF("hf_20260421_151917_ddeb0c53-64d3-4624-ae87-0de355f3f5cb.png"),
+  bikerSage:            HF("hf_20260421_152312_17bffc32-08cf-4afc-9db1-71c1e5bdeb45.png"),
+  tankObsidian:         HF("hf_20260421_095214_e5053097-1843-4b01-bc46-3e32f2fad48b.png"),
+  leggingObsidian:      HF("hf_20260421_095329_8defdfcf-3413-470e-8b7b-ba45efc5b137.png"),
+  leggingRose:          HF("hf_20260421_095419_3e4a6fd2-74b1-4339-bd31-e8dfcb26a981.png"),
+  sunSleeveObsidian:    HF("hf_20260421_095513_cbe85eae-c01e-476c-9c06-ca967e2625dd.png"),
+  sunSleeveSand:        HF("hf_20260421_095606_7ae06042-771e-447f-bddd-cdb5e11bcffd.png"),
+  // Additional Foundation variants
+  tankSage:             HF("hf_20260421_111533_7a2100d5-ed02-4544-9012-2bc5cb549488.png"),
+  // Crank colour variants
+  crankTerracotta:      HF("hf_20260421_153119_3143025c-092a-4194-9145-31f03b599502.png"),
+  crankSand:            HF("hf_20260421_153522_49a43f8f-f3b5-4689-a48c-e5a885d3cebd.png"),
+};
+
+window.ST_PRODUCTS = [
   {
+    id: "fl-legging-obsidian",
     slug: "friday-legging-obsidian",
-    title: "The Friday Legging",
+    name: "The Friday Legging",
     line: "The Friday Line",
-    price: 120,
-    currency: "AED",
+    category: "legging",
+    discipline: ["run", "gym", "cycle"],
+    price: 335,
+    badge: "NEW",
+    colorKey: "obsidian",
     colors: ["obsidian", "terracotta", "sand"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Terracotta", hex: "#c2704e" },
-      { name: "Warm Sand", hex: "#d4b896" }
-    ],
-    sizes: ["XS","S","M","L","XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: AI.fridayObsidian,
+    imgHover: AI.fridaySage,
     colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png",
-      terracotta:  "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150515_cc2243ce-97cd-4ac6-8068-fa7937572606.png",
-      sand:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150801_8744d554-6f6f-4736-a2bf-20c0989a803c.png"
+      obsidian: AI.fridayObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand
     },
-    description: "High-waist performance legging with compressive fit. Designed for track sessions and long runs in the Gulf heat."
+    excerpt: "Our hero high-waist legging. 78% Nylon 6,6 / 22% Elastane. Built for the Friday 6am run and everything after.",
+    description: "The Friday Legging is the first product Stronger Together ever made and it had to be exceptional. Squat-proof, sweat-tested in UAE heat across months of community runs, and finished to the standard the women who built this brand demanded. Nothing on the Corniche is held back. Neither is this.",
+    fabric: "78% Nylon 6,6 \u00b7 22% Elastane \u00b7 220gsm \u00b7 4-way stretch \u00b7 OEKO-TEX Standard 100",
+    features: [
+      "High-waist, 4\u20137cm fold-over waistband",
+      "7/8 length cut for Gulf climate",
+      "Hidden side phone pocket",
+      "Flat seams \u2014 no chafe on long runs",
+      "Squat-proof, opaque, moisture-wick",
+      "Co-ord capable with The Friday Bra"
+    ],
+    care: "Cold wash with like colours. Do not tumble dry. Do not iron. Designed to outlast the club.",
+    gallery: [AI.fridayObsidian, CV.fridayTerracotta, CV.fridaySand, AI.fridaySage]
   },
-
   {
+    id: "fl-bra-obsidian",
     slug: "friday-bra-obsidian",
-    title: "The Friday Bra",
+    name: "The Friday Bra",
     line: "The Friday Line",
-    price: 85,
-    currency: "AED",
+    category: "bra",
+    discipline: ["run", "gym", "cycle"],
+    price: 235,
+    badge: "NEW",
+    colorKey: "obsidian",
     colors: ["obsidian", "terracotta", "sand"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Terracotta", hex: "#c2704e" },
-      { name: "Warm Sand", hex: "#d4b896" }
-    ],
-    sizes: ["XS","S","M","L","XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: AI.fridayObsidian,
+    imgHover: AI.foundSand,
     colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png",
-      terracotta:  "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150515_cc2243ce-97cd-4ac6-8068-fa7937572606.png",
-      sand:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150801_8744d554-6f6f-4736-a2bf-20c0989a803c.png"
+      obsidian: AI.fridayObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand
     },
-    description: "Medium-support sports bra with racerback design. Breathable mesh panels for ventilation."
+    excerpt: "Medium-support racerback bra. Wide straps, clean front, lined with removable pads. Matches The Friday Legging.",
+    description: "A sports bra that works every day of the week. Medium support carries the run club on Fridays and pilates on Mondays. The silhouette is clean enough to wear on its own \u2014 and that\u2019s the point. We made it so you don\u2019t have to think about it.",
+    fabric: "78% Nylon 6,6 \u00b7 22% Elastane \u00b7 Matching Friday Legging fabric",
+    features: [
+      "Racerback construction for shoulder mobility",
+      "Wide 3cm+ straps \u2014 no digging",
+      "Wide underband for rib support",
+      "Removable cup pads",
+      "Clean front \u2014 no seams, no logo across bust",
+      "Heat-comfort design, tested in UAE climate"
+    ],
+    care: "Cold wash. Flat dry. Replace pads as needed.",
+    gallery: [AI.fridayObsidian, CV.fridayTerracotta, CV.fridaySand, AI.foundSand]
   },
-
   {
+    id: "fl-legging-terracotta",
     slug: "friday-legging-terracotta",
-    title: "The Friday Legging",
+    name: "The Friday Legging",
     line: "The Friday Line",
-    price: 120,
-    currency: "AED",
+    category: "legging",
+    discipline: ["run", "gym"],
+    price: 335,
+    badge: "LAUNCH COLOUR",
+    colorKey: "terracotta",
     colors: ["obsidian", "terracotta", "sand"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Terracotta", hex: "#c2704e" },
-      { name: "Warm Sand", hex: "#d4b896" }
-    ],
-    sizes: ["XS","S","M","L","XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150515_cc2243ce-97cd-4ac6-8068-fa7937572606.png",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: ["XS"],
+    img: CV.fridayTerracotta,
+    imgHover: AI.fridayObsidian,
     colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png",
-      terracotta:  "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150515_cc2243ce-97cd-4ac6-8068-fa7937572606.png",
-      sand:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150801_8744d554-6f6f-4736-a2bf-20c0989a803c.png"
+      obsidian: AI.fridayObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand
     },
-    description: "High-waist performance legging with compressive fit. Designed for track sessions and long runs in the Gulf heat."
+    excerpt: "The Friday Legging in our signature terracotta. A nod to the warm Gulf clay and the brand accent you\u2019ll recognise from a distance.",
+    description: "Same legging, different feeling. Terracotta is the colour of the brand \u2014 the warm Gulf clay you see at sunrise on the Corniche. A subtle marker across the Friday runs.",
+    fabric: "78% Nylon 6,6 \u00b7 22% Elastane \u00b7 220gsm \u00b7 4-way stretch",
+    features: [
+      "Signature terracotta dye \u2014 colourfast tested for UAE sun",
+      "High-waist, fold-over waistband",
+      "Hidden phone pocket",
+      "Squat-proof, moisture-wick"
+    ],
+    care: "Cold wash. Colours stay true for 100+ washes.",
+    gallery: [CV.fridayTerracotta, AI.fridayObsidian, CV.fridaySand]
   },
-
   {
+    id: "fl-bra-sand",
     slug: "friday-bra-sand",
-    title: "The Friday Bra",
+    name: "The Friday Bra",
     line: "The Friday Line",
-    price: 85,
-    currency: "AED",
+    category: "bra",
+    discipline: ["run", "gym", "cycle"],
+    price: 235,
+    colorKey: "sand",
     colors: ["obsidian", "terracotta", "sand"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Terracotta", hex: "#c2704e" },
-      { name: "Warm Sand", hex: "#d4b896" }
-    ],
-    sizes: ["XS","S","M","L","XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150801_8744d554-6f6f-4736-a2bf-20c0989a803c.png",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: CV.fridaySand,
+    imgHover: AI.fridaySage,
     colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png",
-      terracotta:  "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150515_cc2243ce-97cd-4ac6-8068-fa7937572606.png",
-      sand:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150801_8744d554-6f6f-4736-a2bf-20c0989a803c.png"
+      obsidian: AI.fridayObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand
     },
-    description: "Medium-support sports bra with racerback design. Breathable mesh panels for ventilation."
+    excerpt: "The Friday Bra in warm sand. Almost white, never cold white.",
+    description: "Designed against the desert palette, not a European minimal one. This is the colour of Saadiyat beach at sunrise \u2014 warmer than white, softer than cream.",
+    fabric: "78% Nylon 6,6 \u00b7 22% Elastane",
+    features: ["Matching Friday Legging fabric", "Clean, co-ord ready", "Medium support"],
+    care: "Cold wash, flat dry.",
+    gallery: [CV.fridaySand, AI.fridayObsidian, CV.fridayTerracotta]
   },
-
-  /* ──────────── THE FOUNDATION ──────────── */
-
   {
+    id: "fnd-shorts",
     slug: "foundation-biker-short",
-    title: "Foundation Biker Short",
-    line: "The Foundation",
-    price: 95,
-    currency: "AED",
+    name: "The Foundation Biker Short",
+    line: "The Foundation Line",
+    category: "short",
+    discipline: ["gym", "cycle"],
+    price: 215,
+    colorKey: "obsidian",
     colors: ["obsidian", "terracotta", "sage"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Terracotta", hex: "#c2704e" },
-      { name: "Sage", hex: "#8a9a7b" }
-    ],
-    sizes: ["XS","S","M","L","XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: CV.bikerObsidian,
+    imgHover: CV.bikerSage,
     colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png",
-      terracotta:  "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151917_ddeb0c53-64d3-4624-ae87-0de355f3f5cb.png",
-      sage:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_152312_17bffc32-08cf-4afc-9db1-71c1e5bdeb45.png"
+      obsidian: CV.bikerObsidian,
+      terracotta: CV.bikerTerracotta,
+      sage: CV.bikerSage
     },
-    description: "5-inch inseam biker short with high waist and hidden pocket. Squat-proof fabric for gym and studio."
+    excerpt: "Mid-thigh biker short for the gym and the ride. Flat seams, high rise, zero roll-down.",
+    description: "Built for the barbell, the spin studio, and everything strength-based. Same fabric science as The Friday Legging, cut shorter for heat and freedom.",
+    fabric: "78% Nylon 6,6 \u00b7 22% Elastane \u00b7 220gsm",
+    features: ["Mid-thigh cut", "High rise, stays put", "Flat seams", "Squat-proof", "Inner leg pocket"],
+    care: "Cold wash, hang dry.",
+    gallery: [CV.bikerObsidian, CV.bikerTerracotta, CV.bikerSage]
   },
-
   {
+    id: "fnd-tank",
     slug: "foundation-tank",
-    title: "Foundation Tank",
-    line: "The Foundation",
-    price: 75,
-    currency: "AED",
-    colors: ["obsidian", "sand", "sage"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Warm Sand", hex: "#d4b896" },
-      { name: "Sage", hex: "#8a9a7b" }
-    ],
-    sizes: ["XS","S","M","L","XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png",
-    colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png",
-      sand:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_152629_195d7300-027e-4291-bda7-11caadbb798d.png",
-      sage:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_152312_17bffc32-08cf-4afc-9db1-71c1e5bdeb45.png"
-    },
-    description: "Relaxed-fit tank with dropped armholes. Lightweight fabric moves with you through every rep."
-  },
-
-  /* ──────────── THE CRANK ──────────── */
-
-  {
-    slug: "crank-bib-short",
-    title: "Crank Bib Short",
-    line: "The Crank",
+    name: "The Foundation Tank",
+    line: "The Foundation Line",
+    category: "top",
+    discipline: ["gym", "run"],
     price: 180,
-    currency: "AED",
-    colors: ["obsidian", "terracotta"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Terracotta", hex: "#c2704e" }
-    ],
-    sizes: ["XS","S","M","L","XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_153315_181b31af-4843-4fcf-80f9-5afed1af1e97.png",
+    colorKey: "sand",
+    colors: ["obsidian", "sand", "sage"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: AI.foundSand,
+    imgHover: CV.tankObsidian,
     colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_153315_181b31af-4843-4fcf-80f9-5afed1af1e97.png",
-      terracotta:  "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_153119_3143025c-092a-4194-9145-31f03b599502.png"
+      obsidian: CV.tankObsidian,
+      sand: AI.foundSand,
+      sage: CV.tankSage
     },
-    description: "Race-fit bib short with Italian chamois pad. Laser-cut leg grippers and flatlock seams."
+    excerpt: "A soft, weightless tank for training and running in the heat. Cropped hem, relaxed fit.",
+    description: "A tank designed for UAE summer. Loose through the body, cropped at the hip so it doesn\u2019t trap heat. Technical fabric that feels like a favourite T-shirt.",
+    fabric: "Technical knit \u00b7 88% Modal / 12% Elastane \u00b7 Featherweight",
+    features: ["Cropped hem", "Relaxed through the body", "Raw-edge neckline", "Featherweight \u2014 under 90g"],
+    care: "Cold wash, flat dry.",
+    gallery: [AI.foundSand, CV.tankObsidian, CV.tankSage]
   },
-
   {
+    id: "crk-bib",
+    slug: "crank-bib-short",
+    name: "The Crank Bib Short",
+    line: "The Crank Line",
+    category: "cycle",
+    discipline: ["cycle"],
+    price: 449,
+    badge: "S2 DROP",
+    colorKey: "obsidian",
+    colors: ["obsidian", "terracotta"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: ["XL"],
+    img: AI.crankObsidian,
+    imgHover: AI.crankSage,
+    colorImages: {
+      obsidian: AI.crankObsidian,
+      terracotta: CV.crankTerracotta
+    },
+    excerpt: "Women\u2019s cycling bib with a chamois built for Crank Abu Dhabi\u2019s Friday rides.",
+    description: "Designed with Chloe\u2019s cycling studio colleagues, tested through hundreds of kilometres on Yas Island. A bib short that respects women\u2019s anatomy \u2014 a rare enough thing in cycling that it\u2019s worth saying.",
+    fabric: "Italian performance knit \u00b7 68% Nylon / 32% Elastane \u00b7 Pro-level chamois",
+    features: ["Multi-density chamois insert", "Wide leg grippers \u2014 no dig", "Mesh upper for ventilation", "Designed by and for women"],
+    care: "Cold hand wash. Do not tumble.",
+    gallery: [AI.crankObsidian, CV.crankTerracotta, AI.crankSage]
+  },
+  {
+    id: "crk-jersey",
     slug: "crank-summer-jersey",
-    title: "Crank Summer Jersey",
-    line: "The Crank",
-    price: 160,
-    currency: "AED",
+    name: "The Crank Summer Jersey",
+    line: "The Crank Line",
+    category: "cycle",
+    discipline: ["cycle"],
+    price: 389,
+    colorKey: "terracotta",
     colors: ["terracotta", "obsidian", "sand"],
-    colorMeta: [
-      { name: "Terracotta", hex: "#c2704e" },
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Warm Sand", hex: "#d4b896" }
-    ],
-    sizes: ["XS","S","M","L","XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_153119_3143025c-092a-4194-9145-31f03b599502.png",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: CV.crankTerracotta,
+    imgHover: AI.crankObsidian,
     colorImages: {
-      terracotta:  "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_153119_3143025c-092a-4194-9145-31f03b599502.png",
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_153315_181b31af-4843-4fcf-80f9-5afed1af1e97.png",
-      sand:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_153522_49a43f8f-f3b5-4689-a48c-e5a885d3cebd.png"
+      terracotta: CV.crankTerracotta,
+      obsidian: AI.crankObsidian,
+      sand: CV.crankSand
     },
-    description: "Lightweight summer jersey with full zip and three rear pockets. UPF 40+ sun protection for desert rides."
+    excerpt: "A women\u2019s cycling jersey cut for UAE summer. Featherweight, full-zip, three rear pockets.",
+    description: "The cycling jersey we couldn\u2019t find in the UAE market \u2014 so we made it. Women\u2019s cut, heat-appropriate weight, fits actual ride needs.",
+    fabric: "Ultralight Italian weave \u00b7 Laser-cut hem",
+    features: ["Full-length YKK zip", "3 rear cargo pockets + zip pocket", "Silicone hem gripper", "Reflective trim"],
+    care: "Cold wash. Flat dry.",
+    gallery: [CV.crankTerracotta, AI.crankObsidian, CV.crankSand]
   },
-
-  /* ──────────── ACCESSORIES ──────────── */
-
   {
+    id: "fl-windrunner",
     slug: "friday-wind-runner",
-    title: "Friday Wind Runner",
+    name: "The Friday Windrunner",
     line: "The Friday Line",
-    price: 140,
-    currency: "AED",
+    category: "top",
+    discipline: ["run", "cycle"],
+    price: 245,
+    badge: "PREMIUM",
+    colorKey: "obsidian",
     colors: ["obsidian", "terracotta"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Terracotta", hex: "#c2704e" }
-    ],
-    sizes: ["XS","S","M","L","XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: CV.windrunnerObsidian,
+    imgHover: CV.windrunnerTerracotta,
     colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png",
-      terracotta:  "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150515_cc2243ce-97cd-4ac6-8068-fa7937572606.png"
+      obsidian: CV.windrunnerObsidian,
+      terracotta: CV.windrunnerTerracotta
     },
-    description: "Packable wind shell with reflective details. Quarter-zip design for ventilation control."
+    excerpt: "An ultralight breathable running top for Gulf mornings. Under 90g. Packs into its own pocket.",
+    description: "One piece. Wear it for the pre-dawn Corniche starts in December, run with it around your waist by sunrise. Airy weave, UPF 40 woven in, no insulation \u2014 built for the desert, not a European autumn.",
+    fabric: "Ultralight perforated ripstop \u00b7 UPF 40 \u00b7 Zero insulation",
+    features: ["Under 90g", "Packs into own chest pocket", "Reflective back panel", "UPF 40 sun-blocking weave", "Drop-tail hem"],
+    care: "Cold wash. Hang dry.",
+    gallery: [CV.windrunnerObsidian, CV.windrunnerTerracotta]
   },
-
   {
+    id: "fnd-legging-sage",
     slug: "foundation-legging-sage",
-    title: "Foundation Legging",
-    line: "The Foundation",
-    price: 110,
-    currency: "AED",
+    name: "The Foundation Legging",
+    line: "The Foundation Line",
+    category: "legging",
+    discipline: ["gym", "run"],
+    price: 325,
+    colorKey: "sage",
     colors: ["obsidian", "sage", "rose"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Sage", hex: "#8a9a7b" },
-      { name: "Dusty Rose", hex: "#c4918a" }
-    ],
-    sizes: ["XS","S","M","L","XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_152312_17bffc32-08cf-4afc-9db1-71c1e5bdeb45.png",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: AI.fridaySage,
+    imgHover: CV.leggingObsidian,
     colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png",
-      sage:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_152312_17bffc32-08cf-4afc-9db1-71c1e5bdeb45.png",
-      rose:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_152822_91bec3e1-63c5-488e-be0d-31286fb307b7.png"
+      obsidian: CV.leggingObsidian,
+      sage: AI.fridaySage,
+      rose: CV.leggingRose
     },
-    description: "Full-length legging with crossover waistband. Buttery-soft fabric with four-way stretch."
+    excerpt: "The gym-cut version of our hero legging. Same fabric, seamless side panel, zero distraction.",
+    description: "For the days where the workout is strength, not distance. Side seam removed, waistband reinforced, fit adjusted for squat mechanics.",
+    fabric: "78% Nylon 6,6 \u00b7 22% Elastane \u00b7 200gsm (lighter than Friday, heat-optimised)",
+    features: ["Seamless side panel", "Reinforced waistband", "Gusset \u2014 increased mobility"],
+    care: "Cold wash, flat dry.",
+    gallery: [AI.fridaySage, CV.leggingObsidian, CV.leggingRose]
   },
-
   {
+    id: "fnd-sunsleeve",
     slug: "foundation-sun-sleeve",
-    title: "Foundation Sun Sleeve",
-    line: "The Foundation",
-    price: 45,
-    currency: "AED",
+    name: "The Foundation UPF Sun-Sleeve",
+    line: "The Foundation Line",
+    category: "top",
+    discipline: ["gym", "run"],
+    price: 215,
+    colorKey: "rose",
     colors: ["obsidian", "rose", "sand"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Dusty Rose", hex: "#c4918a" },
-      { name: "Warm Sand", hex: "#d4b896" }
-    ],
-    sizes: ["S/M","L/XL"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: AI.foundRose,
+    imgHover: CV.sunSleeveSand,
     colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png",
-      rose:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_152822_91bec3e1-63c5-488e-be0d-31286fb307b7.png",
-      sand:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_152629_195d7300-027e-4291-bda7-11caadbb798d.png"
+      obsidian: CV.sunSleeveObsidian,
+      rose: AI.foundRose,
+      sand: CV.sunSleeveSand
     },
-    description: "UPF 50+ compression arm sleeves. Moisture-wicking fabric for outdoor training."
+    excerpt: "A featherweight UPF 50+ long-sleeve for Corniche sunrise runs and modesty-conscious training.",
+    description: "Designed for the women who want shoulder and arm coverage in 40\u00b0C \u2014 whether for the Gulf sun or for modesty. Perforated weave keeps air moving, UPF 50+ blocks the burn, thumb holes keep sleeves down on the run.",
+    fabric: "Technical perforated knit \u00b7 UPF 50+ \u00b7 Moisture-wick \u00b7 Featherweight (sub-110g)",
+    features: ["UPF 50+ sun protection", "Perforated ventilation panels", "Thumb holes", "Relaxed, modest fit", "Flat seams"],
+    care: "Cold wash. Hang dry.",
+    gallery: [AI.foundRose, CV.sunSleeveObsidian, CV.sunSleeveSand]
   },
-
   {
+    id: "fl-cap",
     slug: "friday-run-cap",
-    title: "Friday Run Cap",
+    name: "The Friday Cap",
     line: "The Friday Line",
-    price: 55,
-    currency: "AED",
+    category: "accessory",
+    discipline: ["run"],
+    price: 95,
+    colorKey: "obsidian",
     colors: ["obsidian", "terracotta", "sand"],
-    colorMeta: [
-      { name: "Obsidian", hex: "#1a1a1a" },
-      { name: "Terracotta", hex: "#c2704e" },
-      { name: "Warm Sand", hex: "#d4b896" }
-    ],
     sizes: ["One Size"],
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png",
+    oos: [],
+    img: CV.capObsidian,
+    imgHover: CV.capTerracotta,
     colorImages: {
-      obsidian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png",
-      terracotta:  "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150515_cc2243ce-97cd-4ac6-8068-fa7937572606.png",
-      sand:        "https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/hf_20260421_150801_8744d554-6f6f-4736-a2bf-20c0989a803c.png"
+      obsidian: CV.capObsidian,
+      terracotta: CV.capTerracotta,
+      sand: CV.capSand
     },
-    description: "Lightweight running cap with laser-cut ventilation and adjustable back closure."
+    excerpt: "A lightweight, packable running cap. Unstructured crown, mesh back, sweat band.",
+    description: "Keeps the sun off at 6am on the Corniche. Packs flat in a pocket. Embroidered with a quiet ST on the back panel.",
+    fabric: "Ripstop crown \u00b7 Mesh rear panels",
+    features: ["Packable, unstructured", "Mesh ventilation", "Adjustable rear strap", "Embroidered ST"],
+    care: "Hand wash cold.",
+    gallery: [CV.capObsidian, CV.capTerracotta, CV.capSand]
   }
 ];
+
+window.ST_PRODUCT_BY_SLUG = Object.fromEntries(window.ST_PRODUCTS.map(p => [p.slug, p]));
