@@ -72,7 +72,7 @@ window.ST_PRODUCTS = [
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
     img: AI.fridayObsidian,
-    imgHover: AI.fridaySage,
+    imgHover: CV.fridayTerracotta,
     colorImages: {
       obsidian: AI.fridayObsidian,
       terracotta: CV.fridayTerracotta,
@@ -90,7 +90,7 @@ window.ST_PRODUCTS = [
       "Co-ord capable with The Friday Bra"
     ],
     care: "Cold wash with like colours. Do not tumble dry. Do not iron. Designed to outlast the club.",
-    gallery: [AI.fridayObsidian, CV.fridayTerracotta, CV.fridaySand, AI.fridaySage]
+    gallery: [AI.fridayObsidian, CV.fridayTerracotta, CV.fridaySand]
   },
   {
     id: "fl-bra-obsidian",
@@ -106,7 +106,7 @@ window.ST_PRODUCTS = [
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
     img: AI.fridayObsidian,
-    imgHover: AI.foundSand,
+    imgHover: CV.fridaySand,
     colorImages: {
       obsidian: AI.fridayObsidian,
       terracotta: CV.fridayTerracotta,
@@ -124,7 +124,7 @@ window.ST_PRODUCTS = [
       "Heat-comfort design, tested in UAE climate"
     ],
     care: "Cold wash. Flat dry. Replace pads as needed.",
-    gallery: [AI.fridayObsidian, CV.fridayTerracotta, CV.fridaySand, AI.foundSand]
+    gallery: [AI.fridayObsidian, CV.fridayTerracotta, CV.fridaySand]
   },
   {
     id: "fl-legging-terracotta",
@@ -171,7 +171,7 @@ window.ST_PRODUCTS = [
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
     img: CV.fridaySand,
-    imgHover: AI.fridaySage,
+    imgHover: CV.fridayTerracotta,
     colorImages: {
       obsidian: AI.fridayObsidian,
       terracotta: CV.fridayTerracotta,
