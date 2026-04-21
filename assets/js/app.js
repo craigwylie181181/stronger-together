@@ -67,7 +67,7 @@
         price: product.price,
         size,
         color,
-        img: product.img,
+        img: (product.colorImages && product.colorImages[color]) || product.img,
         qty: 1
       });
     }
