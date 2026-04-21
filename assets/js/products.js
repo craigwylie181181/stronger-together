@@ -34,24 +34,27 @@ const AI = {
 // ── 16 colour-variant images ────────────────────────────────
 const CV = {
   // Friday Line colour variants
-  fridayTerracotta:     HF("hf_20260421_094538_b88365d6-f9d3-4a79-9fda-d245d60f610a.png"),
-  fridaySand:           HF("hf_20260421_094618_150db2ee-a3c2-46b2-9373-13e0642a8a2a.png"),
-  windrunnerObsidian:   HF("hf_20260421_094617_0b8a861e-c52d-4442-ac0c-f648de794ca5.png"),
-  windrunnerTerracotta: HF("hf_20260421_094618_3976922a-4541-4769-940e-bf08078ed605.png"),
-  capObsidian:          HF("hf_20260421_094618_e19ff374-028c-4ed3-b550-828b7597c556.png"),
-  capTerracotta:        HF("hf_20260421_094618_f50c8988-e522-44bb-8182-5fba6496e4dc.png"),
-  capSand:              HF("hf_20260421_094618_5c235280-e9a4-4c67-ad3a-c546813ed464.png"),
+  fridayTerracotta:     HF("hf_20260421_094538_b88365d6-f9d3-4a79-9fda-d245d60f610a.png"),  // Terracotta leggings + bra, running
+  fridaySand:           HF("hf_20260421_094618_150db2ee-a3c2-46b2-9373-13e0642a8a2a.png"),  // Sand leggings + bra, running
+  windrunnerObsidian:   HF("hf_20260421_094617_0b8a861e-c52d-4442-ac0c-f648de794ca5.png"),  // Obsidian windrunner, outdoor
+  windrunnerTerracotta: HF("hf_20260421_094618_3976922a-4541-4769-940e-bf08078ed605.png"),  // Terracotta windrunner, outdoor
+  capObsidian:          HF("hf_20260421_094618_e19ff374-028c-4ed3-b550-828b7597c556.png"),  // Obsidian cap + outfit, track
+  capTerracotta:        HF("hf_20260421_094618_f50c8988-e522-44bb-8182-5fba6496e4dc.png"),  // Terracotta cap + outfit, track
+  capSand:              HF("hf_20260421_094618_5c235280-e9a4-4c67-ad3a-c546813ed464.png"),  // Sand cap + outfit, track
   // Foundation colour variants
-  bikerObsidian:        HF("hf_20260421_094618_b7ebf33d-36e8-4dad-b3f3-a2e18e45fd51.png"),
-  bikerTerracotta:      HF("hf_20260421_094619_76c722f4-9e2e-46a9-aef7-c878e2560fea.png"),
-  bikerSage:            HF("hf_20260421_094619_0f703231-0980-48b1-8ac4-8399b1c6b711.png"),
-  tankObsidian:         HF("hf_20260421_095214_e5053097-1843-4b01-bc46-3e32f2fad48b.png"),
-  leggingObsidian:      HF("hf_20260421_095329_8defdfcf-3413-470e-8b7b-ba45efc5b137.png"),
-  leggingRose:          HF("hf_20260421_095419_3e4a6fd2-74b1-4339-bd31-e8dfcb26a981.png"),
-  sunSleeveObsidian:    HF("hf_20260421_095513_cbe85eae-c01e-476c-9c06-ca967e2625dd.png"),
-  sunSleeveSand:        HF("hf_20260421_095606_7ae06042-771e-447f-bddd-cdb5e11bcffd.png"),
-  // Crank colour variant
-  crankTerracotta:      HF("hf_20260421_095706_c55775ea-acf5-4209-a16a-541348eade03.png"),
+  bikerObsidian:        HF("hf_20260421_094618_b7ebf33d-36e8-4dad-b3f3-a2e18e45fd51.png"),  // Obsidian biker shorts + bra, gym
+  bikerTerracotta:      HF("hf_20260421_094619_76c722f4-9e2e-46a9-aef7-c878e2560fea.png"),  // Terracotta biker shorts + bra, gym
+  bikerSage:            HF("hf_20260421_094619_0f703231-0980-48b1-8ac4-8399b1c6b711.png"),  // Sage biker shorts + tank, gym
+  tankObsidian:         HF("hf_20260421_095214_e5053097-1843-4b01-bc46-3e32f2fad48b.png"),  // Obsidian tank, gym
+  leggingObsidian:      HF("hf_20260421_095329_8defdfcf-3413-470e-8b7b-ba45efc5b137.png"),  // Obsidian legging, gym
+  leggingRose:          HF("hf_20260421_095419_3e4a6fd2-74b1-4339-bd31-e8dfcb26a981.png"),  // Rose legging, gym
+  sunSleeveObsidian:    HF("hf_20260421_095513_cbe85eae-c01e-476c-9c06-ca967e2625dd.png"),  // Obsidian sun-sleeve, outdoor
+  sunSleeveSand:        HF("hf_20260421_095606_7ae06042-771e-447f-bddd-cdb5e11bcffd.png"),  // Sand sun-sleeve, outdoor
+  // Additional Foundation variants
+  tankSage:             HF("hf_20260421_111533_7a2100d5-ed02-4544-9012-2bc5cb549488.png"),  // Sage tank + leggings, gym
+  // Crank colour variants
+  crankTerracotta:      HF("hf_20260421_095706_c55775ea-acf5-4209-a16a-541348eade03.png"),  // Terracotta cycling kit, desert
+  crankSand:            HF("hf_20260421_111748_a8d248b4-e232-4093-b39c-a62c0026e62b.png"),  // Sand cycling jersey, desert road
 };
 
 window.ST_PRODUCTS = [
@@ -238,14 +241,14 @@ window.ST_PRODUCTS = [
     colorImages: {
       obsidian: CV.tankObsidian,
       sand: AI.foundSand,
-      sage: CV.bikerSage
+      sage: CV.tankSage
     },
     excerpt: "A soft, weightless tank for training and running in the heat. Cropped hem, relaxed fit.",
     description: "A tank designed for UAE summer. Loose through the body, cropped at the hip so it doesn't trap heat. Technical fabric that feels like a favourite T-shirt.",
     fabric: "Technical knit · 88% Modal / 12% Elastane · Featherweight",
     features: ["Cropped hem", "Relaxed through the body", "Raw-edge neckline", "Featherweight — under 90g"],
     care: "Cold wash, flat dry.",
-    gallery: [AI.foundSand, CV.tankObsidian, CV.bikerSage]
+    gallery: [AI.foundSand, CV.tankObsidian, CV.tankSage]
   },
   {
     id: "crk-bib",
@@ -290,14 +293,14 @@ window.ST_PRODUCTS = [
     colorImages: {
       terracotta: CV.crankTerracotta,
       obsidian: AI.crankObsidian,
-      sand: AI.crankSage
+      sand: CV.crankSand
     },
     excerpt: "A women's cycling jersey cut for UAE summer. Featherweight, full-zip, three rear pockets.",
     description: "The cycling jersey we couldn't find in the UAE market — so we made it. Women's cut, heat-appropriate weight, fits actual ride needs.",
     fabric: "Ultralight Italian weave · Laser-cut hem",
     features: ["Full-length YKK zip", "3 rear cargo pockets + zip pocket", "Silicone hem gripper", "Reflective trim"],
     care: "Cold wash. Flat dry.",
-    gallery: [CV.crankTerracotta, AI.crankObsidian, AI.crankSage]
+    gallery: [CV.crankTerracotta, AI.crankObsidian, CV.crankSand]
   },
   {
     id: "fl-windrunner",
