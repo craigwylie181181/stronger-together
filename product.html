@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title id="page-title">Product · Stronger Together</title>
-<meta name="description" content="Stronger Together — women's activewear, born in Abu Dhabi. Built inside the 6,000-woman run club.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="page-title">Product Â· Stronger Together</title>
+  <meta name="description" content="Stronger Together â women's activewear, born in Abu Dhabi. Built inside the 6,000-woman run club.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* Enhanced PDP Gallery â hero + thumbnail strip (Lululemon style) */
+    .pdp-gallery{display:flex;flex-direction:row;gap:8px}
+    .pdp-gallery .gallery-thumbs{display:flex;flex-direction:column;gap:6px;width:72px;flex-shrink:0;overflow-y:auto;max-height:620px}
+    .pdp-gallery .gallery-thumbs .thumb{width:72px;height:90px;border-radius:4px;overflow:hidden;cursor:pointer;border:2px solid transparent;opacity:.55;transition:opacity .25s ease,border-color .25s ease}
+    .pdp-gallery .gallery-thumbs .thumb.active{border-color:var(--obsidian);opacity:1}
+    .pdp-gallery .gallery-thumbs .thumb:hover{opacity:1}
+    .pdp-gallery .gallery-thumbs .thumb img{width:100%;height:100%;object-fit:cover}
+    .pdp-gallery .gallery-hero{flex:1;aspect-ratio:4/5;background:var(--warm-sand-deep);overflow:hidden;border-radius:6px;position:relative}
+    .pdp-gallery .gallery-hero img{width:100%;height:100%;object-fit:cover;transition:opacity .3s ease}
+    /* Override old grid-based gallery */
+    .pdp-gallery .g-item{display:none}
+    @media(max-width:760px){
+      .pdp-gallery{flex-direction:column-reverse}
+      .pdp-gallery .gallery-thumbs{flex-direction:row;width:100%;max-height:none;overflow-x:auto;overflow-y:hidden;gap:8px}
+      .pdp-gallery .gallery-thumbs .thumb{width:60px;height:75px;flex-shrink:0}
+    }
+    @media(max-width:960px){
+      .pdp{gap:32px}
+    }
+  </style>
 </head>
 <body>
-
 <div id="st-announce"></div>
 <div id="st-header"></div>
 
@@ -54,7 +74,6 @@
 
 <div id="st-cart"></div>
 <div id="st-footer"></div>
-
 <script src="assets/js/products.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/partials.js"></script>
@@ -71,467 +90,227 @@ if (!P) {
       <a href="shop.html" class="btn btn-primary">Back to shop</a>
     </div>`;
 } else {
-  document.getElementById("page-title").textContent = `${P.name} \u00b7 Stronger Together`;
 
-  // Breadcrumb
-  const bc = document.getElementById("pdp-breadcrumb");
-  bc.innerHTML = `
-    <a href="index.html">Home</a><span class="sep">/</span>
-    <a href="shop.html">Shop</a><span class="sep">/</span>
-    <a href="shop.html?line=${P.line.includes('Friday') ? 'friday' : P.line.includes('Foundation') ? 'foundation' : 'crank'}">${P.line}</a>
-    <span class="sep">/</span>
-    <span class="current">${P.name}</span>
-  `;
+document.getElementById("page-title").textContent = `${P.name} \u00b7 Stronger Together`;
 
-  // State
-  const pdpState = {
-    color: P.colorKey,
-    size: null
-  };
+// Breadcrumb
+const bc = document.getElementById("pdp-breadcrumb");
+bc.innerHTML = `
+  <a href="index.html">Home</a><span class="sep">/</span>
+  <a href="shop.html">Shop</a><span class="sep">/</span>
+  <a href="shop.html?line=${P.line.includes('Friday') ? 'friday' : P.line.includes('Foundation') ? 'foundation' : 'crank'}">${P.line}</a>
+  <span class="sep">/</span>
+  <span class="current">${P.name}</span>
+`;
 
-  function colorOptionsHTML() {
-    return (P.colors || []).map(k => {
-      const c = window.ST_COLORS[k] || { hex: "#999", name: k };
-      const border = c.border ? `border:1px solid ${c.border};` : "";
-      const selected = k === pdpState.color ? "selected" : "";
-      return `<button class="colour-chip ${selected}" style="background:${c.hex};${border}"
-                aria-label="${c.name}" onclick="pickColor('${k}')"></button>`;
-    }).join("");
+// State
+const pdpState = { color: P.colorKey, size: null };
+
+function getGalleryImages() {
+  const currentImg = (P.colorImages && P.colorImages[pdpState.color]) || P.img;
+  let imgs = [currentImg];
+  if (P.colorImages) {
+    Object.keys(P.colorImages).forEach(k => {
+      if (k !== pdpState.color && !imgs.includes(P.colorImages[k])) imgs.push(P.colorImages[k]);
+    });
   }
-
-  function sizeOptionsHTML() {
-    return (P.sizes || []).map(s => {
-      const oos = (P.oos || []).includes(s);
-      const selected = s === pdpState.size ? "selected" : "";
-      return `<button class="size-btn ${oos ? "oos" : ""} ${selected}"
-                ${oos ? "disabled" : `onclick="pickSize('${s}')"`}>${s}</button>`;
-    }).join("");
+  if (P.gallery) {
+    P.gallery.forEach(src => { if (!imgs.includes(src)) imgs.push(src); });
   }
+  return imgs;
+}
 
-  function galleryHTML() {
-    // Build gallery: current colour hero first, then other colour variants, then remaining gallery
-    const currentImg = (P.colorImages && P.colorImages[pdpState.color]) || P.img;
-    let imgs = [currentImg];
-    if (P.colorImages) {
-      Object.keys(P.colorImages).forEach(k => {
-        if (k !== pdpState.color && !imgs.includes(P.colorImages[k])) imgs.push(P.colorImages[k]);
-      });
-    }
-    if (P.gallery) {
-      P.gallery.forEach(src => { if (!imgs.includes(src)) imgs.push(src); });
-    }
-    return imgs.map((src, i) => {
-      const cls = i === 0 ? "g-item full" : "g-item";
-      return `<div class="${cls}"><img src="${src}" alt="${P.name} view ${i+1}" style="transition:opacity .3s ease;"></div>`;
-    }).join("");
-  }
+function colorOptionsHTML() {
+  return (P.colors || []).map(k => {
+    const c = window.ST_COLORS[k] || { hex: "#999", name: k };
+    const border = c.border ? `border:1px solid ${c.border};` : "";
+    const selected = k === pdpState.color ? "selected" : "";
+    return `<button class="colour-chip ${selected}" style="background:${c.hex};${border}" aria-label="${c.name}" onclick="pickColor('${k}')"></button>`;
+  }).join("");
+}
 
-  function featureList() {
-    return (P.features || []).map(f => `<li>${f}</li>`).join("");
-  }
+function sizeOptionsHTML() {
+  return (P.sizes || []).map(s => {
+    const oos = (P.oos || []).includes(s);
+    const selected = s === pdpState.size ? "selected" : "";
+    return `<button class="size-btn ${oos ? "oos" : ""} ${selected}" ${oos ? "disabled" : `onclick="pickSize('${s}')"`}>${s}</button>`;
+  }).join("");
+}
 
-  function renderPDP() {
-    const colorName = (window.ST_COLORS[pdpState.color] || {}).name || pdpState.color;
-    const wished = ST.state.wish.includes(P.id);
+function galleryHTML() {
+  const imgs = getGalleryImages();
+  const thumbs = imgs.map((src, i) =>
+    `<div class="thumb ${i === 0 ? 'active' : ''}" onclick="selectGalleryImage(${i})" data-idx="${i}"><img src="${src}" alt="${P.name} view ${i+1}" loading="lazy"></div>`
+  ).join('');
+  const hero = `<div class="gallery-hero"><img id="gallery-hero-img" src="${imgs[0]}" alt="${P.name}"></div>`;
+  return `<div class="gallery-thumbs">${thumbs}</div>${hero}`;
+}
 
-    document.getElementById("pdp-root").innerHTML = `
-      <div class="pdp-gallery">${galleryHTML()}</div>
+function featureList() {
+  return (P.features || []).map(f => `<li>${f}</li>`).join("");
+}
 
-      <div class="pdp-info">
-        <span class="eyebrow">${P.line} ${P.badge ? '\u00b7 <span style="color:var(--terracotta);">' + P.badge + '</span>' : ''}</span>
-        <h1>${P.name}</h1>
-        <div class="pdp-price">AED ${P.price.toLocaleString('en-AE')}</div>
-        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;color:var(--ink-muted);text-transform:uppercase;">or 4 \u00d7 AED ${(P.price/4).toFixed(0)} with Tabby</div>
+function renderPDP() {
+  const colorName = (window.ST_COLORS[pdpState.color] || {}).name || pdpState.color;
+  const wished = ST.state.wish.includes(P.id);
 
-        <p class="pdp-excerpt">${P.excerpt}</p>
+  document.getElementById("pdp-root").innerHTML = `
+    <div class="pdp-gallery">${galleryHTML()}</div>
+    <div class="pdp-info">
+      <span class="eyebrow">${P.line} ${P.badge ? '\u00b7 <span style="color:var(--terracotta);">' + P.badge + '</span>' : ''}</span>
+      <h1>${P.name}</h1>
+      <div class="pdp-price">AED ${P.price.toLocaleString('en-AE')}</div>
+      <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;color:var(--ink-muted);text-transform:uppercase;">or 4 \u00d7 AED ${(P.price/4).toFixed(0)} with Tabby</div>
 
-        <div class="opt-label">Colour <span class="opt-val">${colorName}</span></div>
-        <div class="colour-row">${colorOptionsHTML()}</div>
+      <p class="pdp-excerpt">${P.excerpt}</p>
 
-        <div class="opt-label">
-          <span>Size</span>
-          <a href="#" class="opt-val" onclick="event.preventDefault();alert('XS fits UAE size 4\u20136, S = 6\u20138, M = 8\u201310, L = 10\u201312, XL = 12\u201314.');" style="text-decoration:underline;cursor:pointer;">Size guide</a>
+      <div class="opt-label">Colour <span class="opt-val">${colorName}</span></div>
+      <div class="colour-row">${colorOptionsHTML()}</div>
+
+      <div class="opt-label">
+        <span>Size</span>
+        <a href="size-guide.html" class="opt-val" style="text-decoration:underline;cursor:pointer;">Size guide</a>
+      </div>
+      <div class="size-row">${sizeOptionsHTML()}</div>
+
+      <div class="pdp-actions">
+        <button class="btn btn-terracotta btn-lg" id="add-btn" onclick="addToBag()">Add to bag</button>
+        <button class="btn-wish ${wished ? 'on' : ''}" id="wish-btn" onclick="ST.wishToggle('${P.id}'); renderPDP();" aria-label="Save to wishlist">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="pdp-trust">
+        <div class="pdp-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18l-2 13H5L3 7z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+          <span>Free UAE<br>shipping 200+</span>
         </div>
-        <div class="size-row">${sizeOptionsHTML()}</div>
-
-        <div class="pdp-actions">
-          <button class="btn btn-terracotta btn-lg" id="add-btn" onclick="addToBag()">Add to bag</button>
-          <button class="btn-wish ${wished ? 'on' : ''}" id="wish-btn" onclick="ST.wishToggle('${P.id}'); renderPDP();" aria-label="Save to wishlist">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-          </button>
+        <div class="pdp-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg>
+          <span>14-day<br>returns</span>
         </div>
+        <div class="pdp-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+          <span>Tabby<br>&amp; Tamara</span>
+        </div>
+      </div>
 
-        <div class="pdp-trust">
-          <div class="pdp-trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18l-2 13H5L3 7z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
-            <span>Free UAE<br>shipping 200+</span>
-          </div>
-          <div class="pdp-trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg>
-            <span>30-day<br>returns</span>
-          </div>
-          <div class="pdp-trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
-            <span>Tabby<br>&amp; Tamara</span>
+      <div class="accordion" style="margin-top:14px;">
+        <div class="accordion-item open">
+          <button class="accordion-head"><span>Description</span><span class="plus">+</span></button>
+          <div class="accordion-body">
+            <p style="margin-bottom:14px;">${P.description}</p>
           </div>
         </div>
-
-        <div class="accordion" style="margin-top:14px;">
-          <div class="accordion-item open">
-            <button class="accordion-head"><span>Description</span><span class="plus">+</span></button>
-            <div class="accordion-body">
-              <p style="margin-bottom:14px;">${P.description}</p>
-            </div>
+        <div class="accordion-item">
+          <button class="accordion-head"><span>Features</span><span class="plus">+</span></button>
+          <div class="accordion-body"><ul>${featureList()}</ul></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-head"><span>Fabric &amp; fit</span><span class="plus">+</span></button>
+          <div class="accordion-body">
+            <p style="margin-bottom:14px;">${P.fabric}</p>
+            <dl>
+              <dt>Weight</dt><dd>Mid-weight performance</dd>
+              <dt>Opacity</dt><dd>Fully opaque, squat-proof</dd>
+              <dt>Stretch</dt><dd>4-way</dd>
+              <dt>Made in</dt><dd>Portugal, ethically audited factory</dd>
+            </dl>
           </div>
-          <div class="accordion-item">
-            <button class="accordion-head"><span>Features</span><span class="plus">+</span></button>
-            <div class="accordion-body"><ul>${featureList()}</ul></div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-head"><span>Fabric &amp; fit</span><span class="plus">+</span></button>
-            <div class="accordion-body">
-              <p style="margin-bottom:14px;">${P.fabric}</p>
-              <dl>
-                <dt>Weight</dt><dd>Mid-weight performance</dd>
-                <dt>Opacity</dt><dd>Fully opaque, squat-proof</dd>
-                <dt>Stretch</dt><dd>4-way</dd>
-                <dt>Made in</dt><dd>Portugal, ethically audited factory</dd>
-              </dl>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-head"><span>Care</span><span class="plus">+</span></button>
-            <div class="accordion-body"><p>${P.care}</p></div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-head"><span>Shipping &amp; returns</span><span class="plus">+</span></button>
-            <div class="accordion-body">
-              <p>Free UAE shipping on orders over AED 200 \u2014 2\u20133 days via Aramex. Delivery across GCC (Saudi, Qatar, Bahrain, Oman, Kuwait) in 4\u20137 days. Free returns within 30 days on unworn items with tags attached.</p>
-            </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-head"><span>Care</span><span class="plus">+</span></button>
+          <div class="accordion-body"><p>${P.care}</p></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-head"><span>Shipping &amp; returns</span><span class="plus">+</span></button>
+          <div class="accordion-body">
+            <p>Free UAE shipping on orders over AED 200 \u2014 1\u20133 business days via Aramex. Delivery across GCC (Saudi, Qatar, Bahrain, Oman, Kuwait) in 3\u20136 business days. 14-day returns on unworn items with tags attached. <a href="shipping-returns.html" style="text-decoration:underline;">Full policy</a></p>
           </div>
         </div>
       </div>
-    `;
+    </div>
+  `;
 
-    // Rebind accordion
-    document.querySelectorAll(".accordion-head").forEach(h => {
-      h.addEventListener("click", () => h.parentElement.classList.toggle("open"));
-    });
+  // Rebind accordion
+  document.querySelectorAll(".accordion-head").forEach(h => {
+    h.addEventListener("click", () => h.parentElement.classList.toggle("open"));
+  });
+}
+
+// Gallery thumbnail click handler
+window.selectGalleryImage = function(idx) {
+  const imgs = getGalleryImages();
+  const heroImg = document.getElementById('gallery-hero-img');
+  if (heroImg && imgs[idx]) {
+    heroImg.style.opacity = '0';
+    setTimeout(() => {
+      heroImg.src = imgs[idx];
+      heroImg.style.opacity = '1';
+    }, 200);
+  }
+  document.querySelectorAll('.gallery-thumbs .thumb').forEach((t, i) => {
+    t.classList.toggle('active', i === idx);
+  });
+};
+
+// Colour swatch â smooth in-page swap
+window.pickColor = function (k) {
+  pdpState.color = k;
+
+  // Rebuild gallery with new colour as hero
+  const gallery = document.querySelector('.pdp-gallery');
+  if (gallery) {
+    gallery.innerHTML = galleryHTML();
   }
 
-  // Exposed actions — in-page colour swatch swapping
-  window.pickColor = function (k) {
-    pdpState.color = k;
-    // Smooth in-page image swap using colorImages
-    if (P.colorImages && P.colorImages[k]) {
-      const heroImg = document.querySelector('.pdp-gallery .g-item.full img');
-      if (heroImg) {
-        heroImg.style.opacity = '0';
-        setTimeout(() => {
-          heroImg.src = P.colorImages[k];
-          heroImg.style.opacity = '1';
-          // Rebuild full gallery after hero swap
-          const gallery = document.querySelector('.pdp-gallery');
-          if (gallery) gallery.innerHTML = galleryHTML();
-        }, 250);
-      } else {
-        const gallery = document.querySelector('.pdp-gallery');
-        if (gallery) gallery.innerHTML = galleryHTML();
-      }
-    }
-    // Update swatch selection highlight
-    document.querySelectorAll('.colour-chip').forEach(c => c.classList.remove('selected'));
-    const chips = document.querySelectorAll('.colour-chip');
-    const idx = (P.colors || []).indexOf(k);
-    if (idx >= 0 && chips[idx]) chips[idx].classList.add('selected');
-    // Update colour name label
-    const colorName = (window.ST_COLORS[k] || {}).name || k;
-    const optVal = document.querySelector('.opt-label .opt-val');
-    if (optVal) optVal.textContent = colorName;
-  };
-  window.pickSize = function (s) {
-    pdpState.size = s;
-    renderPDP();
-  };
-  window.addToBag = function () {
-    if (!pdpState.size) {
-      ST.toast ? ST.toast("Pick a size first") : alert("Please select a size.");
-      const btn = document.getElementById("add-btn");
-      btn.style.background = "var(--obsidian)";
-      setTimeout(() => btn.style.background = "", 600);
-      const sizeEls = document.querySelectorAll(".size-btn");
-      sizeEls.forEach(el => el.style.borderColor = "var(--terracotta)");
-      setTimeout(() => sizeEls.forEach(el => el.style.borderColor = ""), 800);
-      return;
-    }
-    ST.cartAdd(P, pdpState.size, pdpState.color);
-  };
+  // Update swatch selection highlight
+  document.querySelectorAll('.colour-chip').forEach(c => c.classList.remove('selected'));
+  const chips = document.querySelectorAll('.colour-chip');
+  const idx = (P.colors || []).indexOf(k);
+  if (idx >= 0 && chips[idx]) chips[idx].classList.add('selected');
 
+  // Update colour name label
+  const colorName = (window.ST_COLORS[k] || {}).name || k;
+  const optVal = document.querySelector('.opt-label .opt-val');
+  if (optVal) optVal.textContent = colorName;
+};
+
+window.pickSize = function (s) {
+  pdpState.size = s;
   renderPDP();
+};
 
-  // Related products — other items in same line or complementary
-  const related = window.ST_PRODUCTS
-    .filter(p => p.id !== P.id && (p.line === P.line || p.category === P.category))
-    .slice(0, 4);
-  if (related.length < 4) {
-    const fill = window.ST_PRODUCTS.filter(p => p.id !== P.id && !related.includes(p)).slice(0, 4 - related.length);
-    related.push(...fill);
+window.addToBag = function () {
+  if (!pdpState.size) {
+    ST.toast ? ST.toast("Pick a size first") : alert("Please select a size.");
+    const btn = document.getElementById("add-btn");
+    btn.style.background = "var(--obsidian)";
+    setTimeout(() => btn.style.background = "", 600);
+    const sizeEls = document.querySelectorAll(".size-btn");
+    sizeEls.forEach(el => el.style.borderColor = "var(--terracotta)");
+    setTimeout(() => sizeEls.forEach(el => el.style.borderColor = ""), 800);
+    return;
   }
-  ST.renderProductGrid("#related-grid", related);
+  ST.cartAdd(P, pdpState.size, pdpState.color);
+};
+
+renderPDP();
+
+// Related products
+const related = window.ST_PRODUCTS
+  .filter(p => p.id !== P.id && (p.line === P.line || p.category === P.category))
+  .slice(0, 4);
+if (related.length < 4) {
+  const fill = window.ST_PRODUCTS.filter(p => p.id !== P.id && !related.includes(p)).slice(0, 4 - related.length);
+  related.push(...fill);
+}
+ST.renderProductGrid("#related-grid", related);
+
 }
 </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title id="page-title">Product · Stronger Together</title>
-<meta name="description" content="Stronger Together — women's activewear, born in Abu Dhabi. Built inside the 6,000-woman run club.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
 
-<div id="st-announce"></div>
-<div id="st-header"></div>
-
-<main class="container" style="padding-top:24px;">
-  <nav class="breadcrumb" aria-label="Breadcrumb" id="pdp-breadcrumb"></nav>
-</main>
-
-<section class="pdp-wrap section-tight" style="padding-top:12px;">
-  <div class="container">
-    <div class="pdp" id="pdp-root">
-      <!-- Injected by JS -->
-    </div>
-  </div>
-</section>
-
-<!-- RELATED -->
-<section class="section" style="background:var(--warm-sand);">
-  <div class="container">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">Pair with</span>
-        <h2>The <span class="italic">co-ord</span> cases.</h2>
-      </div>
-      <div class="sec-head-actions">
-        <a href="shop.html" class="link-underline">Shop all &#8594;</a>
-      </div>
-    </div>
-    <div class="product-grid" id="related-grid"></div>
-  </div>
-</section>
-
-<!-- COMMUNITY BAND -->
-<section class="quote-band">
-  <div class="container">
-    <span class="eyebrow">Designed inside the run</span>
-    <h2>Tested on <span class="italic">real</span> Friday mornings.</h2>
-    <p>Every piece goes through 4&#8211;6 sample rounds before a single unit hits production. Women from the run club wear the samples. If it fails at 6am, it fails. Simple rule.</p>
-  </div>
-</section>
-
-<div id="st-cart"></div>
-<div id="st-footer"></div>
-
-<script src="assets/js/products.js"></script>
-<script src="assets/js/app.js"></script>
-<script src="assets/js/partials.js"></script>
-<script>
-// ----- Load product from URL slug -----
-const slug = new URLSearchParams(location.search).get("slug") || "friday-legging-obsidian";
-const P = window.ST_PRODUCT_BY_SLUG[slug];
-
-if (!P) {
-  document.getElementById("pdp-root").innerHTML = `
-    <div style="grid-column:1/-1;text-align:center;padding:80px 20px;">
-      <h2 style="font-family:var(--ff-display);font-size:36px;">Product not found.</h2>
-      <p style="color:var(--ink-muted);margin:18px 0;">That piece may have sold out or moved.</p>
-      <a href="shop.html" class="btn btn-primary">Back to shop</a>
-    </div>`;
-} else {
-  document.getElementById("page-title").textContent = `${P.name} \u00b7 Stronger Together`;
-
-  // Breadcrumb
-  const bc = document.getElementById("pdp-breadcrumb");
-  bc.innerHTML = `
-    <a href="index.html">Home</a><span class="sep">/</span>
-    <a href="shop.html">Shop</a><span class="sep">/</span>
-    <a href="shop.html?line=${P.line.includes('Friday') ? 'friday' : P.line.includes('Foundation') ? 'foundation' : 'crank'}">${P.line}</a>
-    <span class="sep">/</span>
-    <span class="current">${P.name}</span>
-  `;
-
-  // State
-  const pdpState = {
-    color: P.colorKey,
-    size: null
-  };
-
-  function colorOptionsHTML() {
-    return (P.colors || []).map(k => {
-      const c = window.ST_COLORS[k] || { hex: "#999", name: k };
-      const border = c.border ? `border:1px solid ${c.border};` : "";
-      const selected = k === pdpState.color ? "selected" : "";
-      return `<button class="colour-chip ${selected}" style="background:${c.hex};${border}"
-                aria-label="${c.name}" onclick="pickColor('${k}')"></button>`;
-    }).join("");
-  }
-
-  function sizeOptionsHTML() {
-    return (P.sizes || []).map(s => {
-      const oos = (P.oos || []).includes(s);
-      const selected = s === pdpState.size ? "selected" : "";
-      return `<button class="size-btn ${oos ? "oos" : ""} ${selected}"
-                ${oos ? "disabled" : `onclick="pickSize('${s}')"`}>${s}</button>`;
-    }).join("");
-  }
-
-  function galleryHTML() {
-    // Build gallery: current colour hero first, then other colour variants, then remaining gallery
-    const currentImg = (P.colorImages && P.colorImages[pdpState.color]) || P.img;
-    let imgs = [currentImg];
-    if (P.colorImages) {
-      Object.keys(P.colorImages).forEach(k => {
-        if (k !== pdpState.color && !imgs.includes(P.colorImages[k])) imgs.push(P.colorImages[k]);
-      });
-    }
-    if (P.gallery) {
-      P.gallery.forEach(src => { if (!imgs.includes(src)) imgs.push(src); });
-    }
-    return imgs.map((src, i) => {
-      const cls = i === 0 ? "g-item full" : "g-item";
-      return `<div class="${cls}"><img src="${src}" alt="${P.name} view ${i+1}" style="transition:opacity .3s ease;"></div>`;
-    }).join("");
-  }
-
-  function featureList() {
-    return (P.features || []).map(f => `<li>${f}</li>`).join("");
-  }
-
-  function renderPDP() {
-    const colorName = (window.ST_COLORS[pdpState.color] || {}).name || pdpState.color;
-    const wished = ST.state.wish.includes(P.id);
-
-    document.getElementById("pdp-root").innerHTML = `
-      <div class="pdp-gallery">${galleryHTML()}</div>
-
-      <div class="pdp-info">
-        <span class="eyebrow">${P.line} ${P.badge ? '\u00b7 <span style="color:var(--terracotta);">' + P.badge + '</span>' : ''}</span>
-        <h1>${P.name}</h1>
-        <div class="pdp-price">AED ${P.price.toLocaleString('en-AE')}</div>
-        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;color:var(--ink-muted);text-transform:uppercase;">or 4 \u00d7 AED ${(P.price/4).toFixed(0)} with Tabby</div>
-
-        <p class="pdp-excerpt">${P.excerpt}</p>
-
-        <div class="opt-label">Colour <span class="opt-val">${colorName}</span></div>
-        <div class="colour-row">${colorOptionsHTML()}</div>
-
-        <div class="opt-label">
-          <span>Size</span>
-          <a href="#" class="opt-val" onclick="event.preventDefault();alert('XS fits UAE size 4\u20136, S = 6\u20138, M = 8\u201310, L = 10\u201312, XL = 12\u201314.');" style="text-decoration:underline;cursor:pointer;">Size guide</a>
-        </div>
-        <div class="size-row">${sizeOptionsHTML()}</div>
-
-        <div class="pdp-actions">
-          <button class="btn btn-terracotta btn-lg" id="add-btn" onclick="addToBag()">Add to bag</button>
-          <button class="btn-wish ${wished ? 'on' : ''}" id="wish-btn" onclick="ST.wishToggle('${P.id}'); renderPDP();" aria-label="Save to wishlist">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-          </button>
-        </div>
-
-        <div class="pdp-trust">
-          <div class="pdp-trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18l-2 13H5L3 7z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
-            <span>Free UAE<br>shipping 200+</span>
-          </div>
-          <div class="pdp-trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg>
-            <span>30-day<br>returns</span>
-          </div>
-          <div class="pdp-trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
-            <span>Tabby<br>&amp; Tamara</span>
-          </div>
-        </div>
-
-        <div class="accordion" style="margin-top:14px;">
-          <div class="accordion-item open">
-            <button class="accordion-head"><span>Description</span><span class="plus">+</span></button>
-            <div class="accordion-body">
-              <p style="margin-bottom:14px;">${P.description}</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-head"><span>Features</span><span class="plus">+</span></button>
-            <div class="accordion-body"><ul>${featureList()}</ul></div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-head"><span>Fabric &amp; fit</span><span class="plus">+</span></button>
-            <div class="accordion-body">
-              <p style="margin-bottom:14px;">${P.fabric}</p>
-              <dl>
-                <dt>Weight</dt><dd>Mid-weight performance</dd>
-                <dt>Opacity</dt><dd>Fully opaque, squat-proof</dd>
-                <dt>Stretch</dt><dd>4-way</dd>
-                <dt>Made in</dt><dd>Portugal, ethically audited factory</dd>
-              </dl>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-head"><span>Care</span><span class="plus">+</span></button>
-            <div class="accordion-body"><p>${P.care}</p></div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-head"><span>Shipping &amp; returns</span><span class="plus">+</span></button>
-            <div class="accordion-body">
-              <p>Free UAE shipping on orders over AED 200 \u2014 2\u20133 days via Aramex. Delivery across GCC (Saudi, Qatar, Bahrain, Oman, Kuwait) in 4\u20137 days. Free returns within 30 days on unworn items with tags attached.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    // Rebind accordion
-    document.querySelectorAll(".accordion-head").forEach(h => {
-      h.addEventListener("click", () => h.parentElement.classList.toggle("open"));
-    });
-  }
-
-  // Exposed actions — in-page colour swatch swapping
-  window.pickColor = function (k) {
-    pdpState.color = k;
-    // Smooth in-page image swap using colorImages
-    if (P.colorImages && P.colorImages[k]) {
-      const heroImg = document.querySelector('.pdp-gallery .g-item.full img');
-      if (heroImg) {
-        heroImg.style.opacity = '0';
-        setTimeout(() => {
-          heroImg.src = P.colorImages[k];
-          heroImg.style.opacity = '1';
-          // Rebuild full gallery after hero swap
-          const gallery = document.querySelector('.pdp-gallery');
-          if (gallery) gallery.innerHTML = galleryHTML();
-        }, 250);
-      } else {
-        const gallery = document.querySelector('.pdp-gallery');
-        if (gallery) gallery.innerHTML = galleryHTML();
-      }
-    }
-    // Update swatch selection highlight
-    document.querySelectorAll('.colour-chip').forEach(c => c.classList.remove('selected'));
-    const chips = document.querySelectorAll('.colour-chip');
-    const idx = (P.colors || []).indexOf(k);
-    if (idx >= 0 && chips[idx]) chips[idx].classList.add('selected');
-    // Update colour name label
-    const colorName = (window.ST_COLORS[k] || {}).name || k;
-    const optVal = document.querySelector('.opt-label .opt-val');
