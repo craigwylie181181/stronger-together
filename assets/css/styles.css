@@ -819,3 +819,75 @@ h1, h2, h3, h4, .pcard-title, .schedule-item h4, .timeline-item h4 {
   .cat-tile-inner { padding: 22px 20px; }
   .cat-tile h3 { font-size: 26px; max-width: none; }
 }
+
+
+/* =============================================
+   HOVER ZOOM & BRAND OVERLAY
+   ============================================= */
+
+/* PDP gallery hover zoom */
+.pdp-gallery .g-item {
+     overflow: hidden;
+     cursor: zoom-in;
+     border-radius: 6px;
+     position: relative;
+}
+.pdp-gallery .g-item img {
+     transition: transform 0.45s ease, opacity 0.3s ease;
+     will-change: transform;
+}
+.pdp-gallery .g-item:hover img {
+     transform: scale(1.6);
+}
+
+/* ST brand badge on gallery images */
+.pdp-gallery .g-item::after {
+     content: 'ST';
+     position: absolute;
+     bottom: 16px;
+     right: 16px;
+     font-family: var(--ff-display);
+     font-size: 14px;
+     font-weight: 500;
+     letter-spacing: 0.15em;
+     color: rgba(255,255,255,0.7);
+     background: rgba(0,0,0,0.25);
+     padding: 4px 10px;
+     border-radius: 2px;
+     pointer-events: none;
+     z-index: 2;
+     transition: opacity 0.3s;
+}
+.pdp-gallery .g-item:hover::after {
+     opacity: 0;
+}
+
+/* Shop grid card hover zoom */
+.product-card .pc-img {
+     overflow: hidden;
+     position: relative;
+}
+.product-card .pc-img img {
+     transition: transform 0.4s ease;
+}
+.product-card .pc-img:hover img {
+     transform: scale(1.15);
+}
+
+/* ST brand badge on shop grid */
+.product-card .pc-img::after {
+     content: 'ST';
+     position: absolute;
+     bottom: 8px;
+     right: 8px;
+     font-family: var(--ff-display);
+     font-size: 11px;
+     font-weight: 500;
+     letter-spacing: 0.15em;
+     color: rgba(255,255,255,0.65);
+     background: rgba(0,0,0,0.2);
+     padding: 3px 8px;
+     border-radius: 2px;
+     pointer-events: none;
+     z-index: 2;
+}
