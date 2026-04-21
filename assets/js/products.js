@@ -1,7 +1,7 @@
 // ============================================================
 // STRONGER TOGETHER — Product catalogue
 // Updated with Higgsfield Soul 2.0 AI model photography
-// CloudFront URLs from April 2026 generation session
+// Full colour-variant image support — April 2026
 // ============================================================
 
 window.ST_COLORS = {
@@ -16,7 +16,7 @@ window.ST_COLORS = {
 // Higgsfield Soul 2.0 AI model images — CloudFront CDN
 const HF = (filename) => `https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/${filename}`;
 
-// AI Model Images (8 total across 3 lines)
+// ── ORIGINAL 8 hero images ──────────────────────────────────
 const AI = {
   // THE FRIDAY LINE (Run)
   fridayObsidian:  HF("hf_20260421_074233_f98db3b7-8736-4f3f-bc4c-b5dc1eadebbe.png"),
@@ -31,8 +31,28 @@ const AI = {
   crankSage:       HF("hf_20260421_080538_54829556-942c-446d-9fe6-644d0ed1204b.png"),
 };
 
-// Unsplash fallback for product images without a direct AI match
-const IMG = (id, w = 900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+// ── 16 colour-variant images ────────────────────────────────
+const CV = {
+  // Friday Line colour variants
+  fridayTerracotta:     HF("hf_20260421_094538_b88365d6-f9d3-4a79-9fda-d245d60f610a.png"),
+  fridaySand:           HF("hf_20260421_094618_150db2ee-a3c2-46b2-9373-13e0642a8a2a.png"),
+  windrunnerObsidian:   HF("hf_20260421_094617_0b8a861e-c52d-4442-ac0c-f648de794ca5.png"),
+  windrunnerTerracotta: HF("hf_20260421_094618_3976922a-4541-4769-940e-bf08078ed605.png"),
+  capObsidian:          HF("hf_20260421_094618_e19ff374-028c-4ed3-b550-828b7597c556.png"),
+  capTerracotta:        HF("hf_20260421_094618_f50c8988-e522-44bb-8182-5fba6496e4dc.png"),
+  capSand:              HF("hf_20260421_094618_5c235280-e9a4-4c67-ad3a-c546813ed464.png"),
+  // Foundation colour variants
+  bikerObsidian:        HF("hf_20260421_094618_b7ebf33d-36e8-4dad-b3f3-a2e18e45fd51.png"),
+  bikerTerracotta:      HF("hf_20260421_094619_76c722f4-9e2e-46a9-aef7-c878e2560fea.png"),
+  bikerSage:            HF("hf_20260421_094619_0f703231-0980-48b1-8ac4-8399b1c6b711.png"),
+  tankObsidian:         HF("hf_20260421_095214_e5053097-1843-4b01-bc46-3e32f2fad48b.png"),
+  leggingObsidian:      HF("hf_20260421_095329_8defdfcf-3413-470e-8b7b-ba45efc5b137.png"),
+  leggingRose:          HF("hf_20260421_095419_3e4a6fd2-74b1-4339-bd31-e8dfcb26a981.png"),
+  sunSleeveObsidian:    HF("hf_20260421_095513_cbe85eae-c01e-476c-9c06-ca967e2625dd.png"),
+  sunSleeveSand:        HF("hf_20260421_095606_7ae06042-771e-447f-bddd-cdb5e11bcffd.png"),
+  // Crank colour variant
+  crankTerracotta:      HF("hf_20260421_095706_c55775ea-acf5-4209-a16a-541348eade03.png"),
+};
 
 window.ST_PRODUCTS = [
   {
@@ -50,6 +70,11 @@ window.ST_PRODUCTS = [
     oos: [],
     img: AI.fridayObsidian,
     imgHover: AI.fridaySage,
+    colorImages: {
+      obsidian: AI.fridayObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand
+    },
     excerpt: "Our hero high-waist legging. 78% Nylon 6,6 / 22% Elastane. Built for the Friday 6am run and everything after.",
     description: "The Friday Legging is the first product Stronger Together ever made and it had to be exceptional. Squat-proof, sweat-tested in UAE heat across months of community runs, and finished to the standard the women who built this brand demanded. Nothing on the Corniche is held back. Neither is this.",
     fabric: "78% Nylon 6,6 · 22% Elastane · 220gsm · 4-way stretch · OEKO-TEX Standard 100",
@@ -62,7 +87,12 @@ window.ST_PRODUCTS = [
       "Co-ord capable with The Friday Bra"
     ],
     care: "Cold wash with like colours. Do not tumble dry. Do not iron. Designed to outlast the club.",
-    gallery: [AI.fridayObsidian, AI.fridaySage, AI.foundObsGold, AI.fridayRose]
+    gallery: [
+      AI.fridayObsidian,
+      CV.fridayTerracotta,
+      CV.fridaySand,
+      AI.fridaySage
+    ]
   },
   {
     id: "fl-bra-obsidian",
@@ -79,8 +109,13 @@ window.ST_PRODUCTS = [
     oos: [],
     img: AI.fridayObsidian,
     imgHover: AI.foundSand,
+    colorImages: {
+      obsidian: AI.fridayObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand
+    },
     excerpt: "Medium-support racerback bra. Wide straps, clean front, lined with removable pads. Matches The Friday Legging.",
-    description: "A sports bra that works every day of the week. Medium support carries the run club on Fridays and pilates on Mondays. The silhouette is clean enough to wear on its own — and that\'s the point. We made it so you don\'t have to think about it.",
+    description: "A sports bra that works every day of the week. Medium support carries the run club on Fridays and pilates on Mondays. The silhouette is clean enough to wear on its own — and that's the point. We made it so you don't have to think about it.",
     fabric: "78% Nylon 6,6 · 22% Elastane · Matching Friday Legging fabric",
     features: [
       "Racerback construction for shoulder mobility",
@@ -91,7 +126,12 @@ window.ST_PRODUCTS = [
       "Heat-comfort design, tested in UAE climate"
     ],
     care: "Cold wash. Flat dry. Replace pads as needed.",
-    gallery: [AI.fridayObsidian, AI.foundSand, AI.fridaySage, AI.foundObsGold]
+    gallery: [
+      AI.fridayObsidian,
+      CV.fridayTerracotta,
+      CV.fridaySand,
+      AI.foundSand
+    ]
   },
   {
     id: "fl-legging-terracotta",
@@ -106,9 +146,14 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: ["XS"],
-    img: AI.foundObsGold,
+    img: CV.fridayTerracotta,
     imgHover: AI.fridayObsidian,
-    excerpt: "The Friday Legging in our signature terracotta. A nod to the warm Gulf clay and the brand accent you\'ll recognise from a distance.",
+    colorImages: {
+      obsidian: AI.fridayObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand
+    },
+    excerpt: "The Friday Legging in our signature terracotta. A nod to the warm Gulf clay and the brand accent you'll recognise from a distance.",
     description: "Same legging, different feeling. Terracotta is the colour of the brand — the warm Gulf clay you see at sunrise on the Corniche. A subtle marker across the Friday runs.",
     fabric: "78% Nylon 6,6 · 22% Elastane · 220gsm · 4-way stretch",
     features: [
@@ -118,7 +163,11 @@ window.ST_PRODUCTS = [
       "Squat-proof, moisture-wick"
     ],
     care: "Cold wash. Colours stay true for 100+ washes.",
-    gallery: [AI.foundObsGold, AI.fridayObsidian, AI.fridayRose]
+    gallery: [
+      CV.fridayTerracotta,
+      AI.fridayObsidian,
+      CV.fridaySand
+    ]
   },
   {
     id: "fl-bra-sand",
@@ -132,14 +181,19 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: AI.foundSand,
+    img: CV.fridaySand,
     imgHover: AI.fridaySage,
+    colorImages: {
+      obsidian: AI.fridayObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand
+    },
     excerpt: "The Friday Bra in warm sand. Almost white, never cold white.",
     description: "Designed against the desert palette, not a European minimal one. This is the colour of Saadiyat beach at sunrise — warmer than white, softer than cream.",
     fabric: "78% Nylon 6,6 · 22% Elastane",
     features: ["Matching Friday Legging fabric", "Clean, co-ord ready", "Medium support"],
     care: "Cold wash, flat dry.",
-    gallery: [AI.foundSand, AI.fridaySage]
+    gallery: [CV.fridaySand, AI.fridayObsidian, CV.fridayTerracotta]
   },
   {
     id: "fnd-shorts",
@@ -153,14 +207,19 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sage"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: AI.foundRose,
-    imgHover: AI.foundSand,
+    img: CV.bikerObsidian,
+    imgHover: CV.bikerSage,
+    colorImages: {
+      obsidian: CV.bikerObsidian,
+      terracotta: CV.bikerTerracotta,
+      sage: CV.bikerSage
+    },
     excerpt: "Mid-thigh biker short for the gym and the ride. Flat seams, high rise, zero roll-down.",
     description: "Built for the barbell, the spin studio, and everything strength-based. Same fabric science as The Friday Legging, cut shorter for heat and freedom.",
     fabric: "78% Nylon 6,6 · 22% Elastane · 220gsm",
     features: ["Mid-thigh cut", "High rise, stays put", "Flat seams", "Squat-proof", "Inner leg pocket"],
     care: "Cold wash, hang dry.",
-    gallery: [AI.foundRose, AI.foundSand, AI.fridaySage]
+    gallery: [CV.bikerObsidian, CV.bikerTerracotta, CV.bikerSage]
   },
   {
     id: "fnd-tank",
@@ -175,13 +234,18 @@ window.ST_PRODUCTS = [
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
     img: AI.foundSand,
-    imgHover: AI.foundObsGold,
+    imgHover: CV.tankObsidian,
+    colorImages: {
+      obsidian: CV.tankObsidian,
+      sand: AI.foundSand,
+      sage: CV.bikerSage
+    },
     excerpt: "A soft, weightless tank for training and running in the heat. Cropped hem, relaxed fit.",
-    description: "A tank designed for UAE summer. Loose through the body, cropped at the hip so it doesn\'t trap heat. Technical fabric that feels like a favourite T-shirt.",
+    description: "A tank designed for UAE summer. Loose through the body, cropped at the hip so it doesn't trap heat. Technical fabric that feels like a favourite T-shirt.",
     fabric: "Technical knit · 88% Modal / 12% Elastane · Featherweight",
     features: ["Cropped hem", "Relaxed through the body", "Raw-edge neckline", "Featherweight — under 90g"],
     care: "Cold wash, flat dry.",
-    gallery: [AI.foundSand, AI.foundObsGold]
+    gallery: [AI.foundSand, CV.tankObsidian, CV.bikerSage]
   },
   {
     id: "crk-bib",
@@ -198,12 +262,16 @@ window.ST_PRODUCTS = [
     oos: ["XL"],
     img: AI.crankObsidian,
     imgHover: AI.crankSage,
-    excerpt: "Women\'s cycling bib with a chamois built for Crank Abu Dhabi\'s Friday rides.",
-    description: "Designed with Chloe\'s cycling studio colleagues, tested through hundreds of kilometres on Yas Island. A bib short that respects women\'s anatomy — a rare enough thing in cycling that it\'s worth saying.",
+    colorImages: {
+      obsidian: AI.crankObsidian,
+      terracotta: CV.crankTerracotta
+    },
+    excerpt: "Women's cycling bib with a chamois built for Crank Abu Dhabi's Friday rides.",
+    description: "Designed with Chloe's cycling studio colleagues, tested through hundreds of kilometres on Yas Island. A bib short that respects women's anatomy — a rare enough thing in cycling that it's worth saying.",
     fabric: "Italian performance knit · 68% Nylon / 32% Elastane · Pro-level chamois",
     features: ["Multi-density chamois insert", "Wide leg grippers — no dig", "Mesh upper for ventilation", "Designed by and for women"],
     care: "Cold hand wash. Do not tumble.",
-    gallery: [AI.crankObsidian, AI.crankSage]
+    gallery: [AI.crankObsidian, CV.crankTerracotta, AI.crankSage]
   },
   {
     id: "crk-jersey",
@@ -217,14 +285,19 @@ window.ST_PRODUCTS = [
     colors: ["terracotta", "obsidian", "sand"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: AI.crankObsidian,
-    imgHover: AI.crankSage,
-    excerpt: "A women\'s cycling jersey cut for UAE summer. Featherweight, full-zip, three rear pockets.",
-    description: "The cycling jersey we couldn\'t find in the UAE market — so we made it. Women\'s cut, heat-appropriate weight, fits actual ride needs.",
+    img: CV.crankTerracotta,
+    imgHover: AI.crankObsidian,
+    colorImages: {
+      terracotta: CV.crankTerracotta,
+      obsidian: AI.crankObsidian,
+      sand: AI.crankSage
+    },
+    excerpt: "A women's cycling jersey cut for UAE summer. Featherweight, full-zip, three rear pockets.",
+    description: "The cycling jersey we couldn't find in the UAE market — so we made it. Women's cut, heat-appropriate weight, fits actual ride needs.",
     fabric: "Ultralight Italian weave · Laser-cut hem",
     features: ["Full-length YKK zip", "3 rear cargo pockets + zip pocket", "Silicone hem gripper", "Reflective trim"],
     care: "Cold wash. Flat dry.",
-    gallery: [AI.crankObsidian, AI.crankSage]
+    gallery: [CV.crankTerracotta, AI.crankObsidian, AI.crankSage]
   },
   {
     id: "fl-windrunner",
@@ -239,14 +312,18 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: AI.crankSage,
-    imgHover: AI.fridayObsidian,
+    img: CV.windrunnerObsidian,
+    imgHover: CV.windrunnerTerracotta,
+    colorImages: {
+      obsidian: CV.windrunnerObsidian,
+      terracotta: CV.windrunnerTerracotta
+    },
     excerpt: "An ultralight breathable running top for Gulf mornings. Under 90g. Packs into its own pocket.",
     description: "One piece. Wear it for the pre-dawn Corniche starts in December, run with it around your waist by sunrise. Airy weave, UPF 40 woven in, no insulation — built for the desert, not a European autumn.",
     fabric: "Ultralight perforated ripstop · UPF 40 · Zero insulation",
     features: ["Under 90g", "Packs into own chest pocket", "Reflective back panel", "UPF 40 sun-blocking weave", "Drop-tail hem"],
     care: "Cold wash. Hang dry.",
-    gallery: [AI.crankSage, AI.fridayObsidian]
+    gallery: [CV.windrunnerObsidian, CV.windrunnerTerracotta]
   },
   {
     id: "fnd-legging-sage",
@@ -261,13 +338,18 @@ window.ST_PRODUCTS = [
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
     img: AI.fridaySage,
-    imgHover: AI.foundObsGold,
+    imgHover: CV.leggingObsidian,
+    colorImages: {
+      obsidian: CV.leggingObsidian,
+      sage: AI.fridaySage,
+      rose: CV.leggingRose
+    },
     excerpt: "The gym-cut version of our hero legging. Same fabric, seamless side panel, zero distraction.",
     description: "For the days where the workout is strength, not distance. Side seam removed, waistband reinforced, fit adjusted for squat mechanics.",
     fabric: "78% Nylon 6,6 · 22% Elastane · 200gsm (lighter than Friday, heat-optimised)",
     features: ["Seamless side panel", "Reinforced waistband", "Gusset — increased mobility"],
     care: "Cold wash, flat dry.",
-    gallery: [AI.fridaySage, AI.foundObsGold]
+    gallery: [AI.fridaySage, CV.leggingObsidian, CV.leggingRose]
   },
   {
     id: "fnd-sunsleeve",
@@ -282,13 +364,18 @@ window.ST_PRODUCTS = [
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
     img: AI.foundRose,
-    imgHover: AI.foundSand,
+    imgHover: CV.sunSleeveSand,
+    colorImages: {
+      obsidian: CV.sunSleeveObsidian,
+      rose: AI.foundRose,
+      sand: CV.sunSleeveSand
+    },
     excerpt: "A featherweight UPF 50+ long-sleeve for Corniche sunrise runs and modesty-conscious training.",
     description: "Designed for the women who want shoulder and arm coverage in 40°C — whether for the Gulf sun or for modesty. Perforated weave keeps air moving, UPF 50+ blocks the burn, thumb holes keep sleeves down on the run.",
     fabric: "Technical perforated knit · UPF 50+ · Moisture-wick · Featherweight (sub-110g)",
     features: ["UPF 50+ sun protection", "Perforated ventilation panels", "Thumb holes", "Relaxed, modest fit", "Flat seams"],
     care: "Cold wash. Hang dry.",
-    gallery: [AI.foundRose, AI.foundSand]
+    gallery: [AI.foundRose, CV.sunSleeveObsidian, CV.sunSleeveSand]
   },
   {
     id: "fl-cap",
@@ -302,14 +389,19 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand"],
     sizes: ["One Size"],
     oos: [],
-    img: AI.fridayRose,
-    imgHover: AI.fridayObsidian,
+    img: CV.capObsidian,
+    imgHover: CV.capTerracotta,
+    colorImages: {
+      obsidian: CV.capObsidian,
+      terracotta: CV.capTerracotta,
+      sand: CV.capSand
+    },
     excerpt: "A lightweight, packable running cap. Unstructured crown, mesh back, sweat band.",
     description: "Keeps the sun off at 6am on the Corniche. Packs flat in a pocket. Embroidered with a quiet ST on the back panel.",
     fabric: "Ripstop crown · Mesh rear panels",
     features: ["Packable, unstructured", "Mesh ventilation", "Adjustable rear strap", "Embroidered ST"],
     care: "Hand wash cold.",
-    gallery: [AI.fridayRose, AI.fridayObsidian]
+    gallery: [CV.capObsidian, CV.capTerracotta, CV.capSand]
   }
 ];
 
