@@ -38,9 +38,10 @@ const CV = {
   fridaySand:           HF("hf_20260421_150801_8744d554-6f6f-4736-a2bf-20c0989a803c.png"),
   windrunnerObsidian:   HF("hf_20260421_094617_0b8a861e-c52d-4442-ac0c-f648de794ca5.png"),
   windrunnerTerracotta: HF("hf_20260421_094618_3976922a-4541-4769-940e-bf08078ed605.png"),
-  capObsidian:          HF("hf_20260421_094618_e19ff374-028c-4ed3-b550-828b7597c556.png"),
-  capTerracotta:        HF("hf_20260421_094618_f50c8988-e522-44bb-8182-5fba6496e4dc.png"),
-  capSand:              HF("hf_20260421_094618_5c235280-e9a4-4c67-ad3a-c546813ed464.png"),
+  capObsidian:          HF("hf_20260422_034427_fc639ddb-f57e-4a5a-be61-f3c08a4d870e.png"),
+  capObsidianAlt:       HF("hf_20260422_033822_e7b6a269-1c0a-41a9-a33f-b6cb88cf90de.png"),
+  capTerracotta:        HF("hf_20260422_034633_b1b919d9-6968-4976-b4e8-b53c54962d40.png"),
+  capSand:              HF("hf_20260422_034757_e09f6b55-f8f5-43c9-80dd-6dcebaa928dc.png"),
   // Foundation colour variants
   bikerObsidian:        HF("hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png"),
   bikerTerracotta:      HF("hf_20260421_151917_ddeb0c53-64d3-4624-ae87-0de355f3f5cb.png"),
@@ -408,7 +409,7 @@ window.ST_PRODUCTS = [
     fabric: "Ripstop crown Â· Mesh rear panels",
     features: ["Packable, unstructured", "Mesh ventilation", "Adjustable rear strap", "Embroidered ST"],
     care: "Hand wash cold.",
-    gallery: [CV.capObsidian, CV.capTerracotta, CV.capSand]
+    gallery: [CV.capObsidian, CV.capObsidianAlt, CV.capTerracotta, CV.capSand]
   }
 ];
 
