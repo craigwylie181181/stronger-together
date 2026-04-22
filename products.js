@@ -3,6 +3,7 @@
 // Updated with Higgsfield Soul 2.0 AI model photography
 // Full colour-variant image support â April 2026
 // Merged: original OK images kept, audit ISSUE images replaced
+// Audit V2: 10 additional replacements from unused folder photos (Apr 22)
 // ============================================================
 
 window.ST_COLORS = {
@@ -101,6 +102,28 @@ const NEW_IMG = {
   jsySan:  HF("hf_20260422_100053_3415d14d-8395-4ef2-8f58-effc2193a58c.png"),
   jsyRos:  HF("hf_20260422_100504_7690a6a9-2244-4c30-88f5-9c8e3fc298fb.png"),
 
+  // ââ AUDIT V2 REPLACEMENTS (Apr 22 â from unused folder photos) ââ
+  // Windrunner Obsidian â proper windrunner jacket shot
+  wndObs:  HF("hf_20260422_084120_e61d16f9-ae1c-4060-aa3a-f29d15ed6039.png"),
+  // Crank Bib Obsidian â correct female cycling bib
+  bibObs:  HF("hf_20260422_094129_5bb85a4d-34e8-4e48-a0c0-5a910297812e.png"),
+  // Crank Jersey Obsidian â correct female cycling jersey
+  jsyObs:  HF("hf_20260421_193107_52f66299-0714-4cc0-9125-78bc6eef5d6d.png"),
+  // Friday Bra Obsidian â dedicated bra shot (not legging)
+  braObs:  HF("hf_20260421_193410_de51842a-0ef1-417c-8af5-1c438180abd9.png"),
+  // Crank Bib Sage â female cycling bib in sage
+  bibSag:  HF("hf_20260422_095133_65b383ec-0b8b-4431-a04f-7a359ded55bf.png"),
+  // Crank Jersey Sage â female cycling jersey in sage
+  jsySag:  HF("hf_20260422_100248_77521d5e-64ed-4a3c-a6d7-b29f7e6c403d.png"),
+  // Biker Short Obsidian â dedicated biker short (not generic foundation)
+  bkrObs:  HF("hf_20260422_085734_93a6ce90-8617-4c9d-8e70-4b6fa5e5cc73.png"),
+  // Biker Short Terracotta â dedicated biker short
+  bkrTer:  HF("hf_20260422_090707_32e41798-595d-4fc1-930e-83a9c069140d.png"),
+  // Biker Short Sand â dedicated biker short
+  bkrSan:  HF("hf_20260422_090922_49c0140f-23f3-41a8-bb04-0e025cf9499c.png"),
+  // Biker Short Sage â dedicated biker short
+  bkrSag:  HF("hf_20260422_091251_58cccbad-8467-4343-b3c6-ca438e8094e8.png"),
+
   // NEW PRODUCT â Foundation Loose Tank (5 colours)
   ltkObs:  HF("hf_20260422_100720_0a0c4e6d-28eb-4c66-a589-31e35c5d6034.png"),
   ltkTer:  HF("hf_20260422_101005_b825d6cc-0d97-4f72-9b23-b761349e214b.png"),
@@ -108,12 +131,26 @@ const NEW_IMG = {
   ltkSag:  HF("hf_20260422_101451_1e6719bd-1722-4a48-8cc9-4aab747f35fa.png"),
   ltkRos:  HF("hf_20260422_101719_7c55a6e3-e0de-4f09-92b8-60c48b359387.png"),
 
-  // NEW PRODUCT â Foundation Crop Sun-Sleeve (5 colours)
+  // NEW PRODUCT â Foundation Crop Sun-Sleeve (5 colours â original gym-setting)
   cssObs:  HF("hf_20260422_101946_06918d5e-91e5-45fd-a351-ca48fc2afd8b.png"),
   cssTer:  HF("hf_20260422_102210_fee3abad-3aaa-4fc5-8937-47b5c8329559.png"),
   cssSan:  HF("hf_20260422_102913_a02faa81-20f2-4db5-b33f-2b8d0b62a430.png"),
   cssSag:  HF("hf_20260422_103211_bc5d51cb-6609-4606-99d1-58df2219430e.png"),
   cssRos:  HF("hf_20260422_103422_62a5a346-2bca-48cd-9543-697cf5144245.png"),
+
+  // ââ BATCH 2 â Foundation Tank (5 colours â dedicated gym-setting tank photos) ââ
+  ftObs:  HF("hf_20260422_160813_12edf38c-4656-4c2c-9799-bbb31554d5d2.png"),
+  ftTer:  HF("hf_20260422_162303_34b16436-3a30-4bef-a7db-5624dc5e1b52.png"),
+  ftSan:  HF("hf_20260422_163051_82a8d4cc-06e8-47af-98b0-a387e041fab1.png"),
+  ftSag:  HF("hf_20260422_163408_cc50bc2f-d576-4e9d-8f73-59d41a29ec52.png"),
+  ftRos:  HF("hf_20260422_163855_a6634af4-e3ba-4ab7-84c7-da5e42f9888c.png"),
+
+  // ââ BATCH 2 â Foundation Crop Sun-Sleeve (5 colours â desert-setting photos) ââ
+  cs2Obs: HF("hf_20260422_164220_f73e9c25-439a-426e-8ed2-9392efd39454.png"),
+  cs2Ter: HF("hf_20260422_164601_f3fe1600-eea3-4351-8333-f87516e73d4b.png"),
+  cs2San: HF("hf_20260422_164946_c51ee64b-6656-4edf-b67b-ccfdcb984e6e.png"),
+  cs2Sag: HF("hf_20260422_165225_b23283ef-ddc1-491e-bce1-2e185014cdb4.png"),
+  cs2Ros: HF("hf_20260422_165533_f92796e7-5182-4843-8bf8-b1575c0d5d2d.png"),
 };
 
 window.ST_PRODUCTS = [
@@ -167,10 +204,10 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: AI.fridayObsidian,
+    img: NEW_IMG.braObs,
     imgHover: NEW_IMG.braSan,
     colorImages: {
-      obsidian:    AI.fridayObsidian,
+      obsidian:    NEW_IMG.braObs,
       terracotta:  NEW_IMG.braTer,
       sand:        NEW_IMG.braSan,
       sage:        NEW_IMG.braSag,
@@ -188,7 +225,7 @@ window.ST_PRODUCTS = [
       "Heat-comfort design, tested in UAE climate"
     ],
     care: "Cold wash. Flat dry. Replace pads as needed.",
-    gallery: [AI.fridayObsidian, NEW_IMG.braTer, NEW_IMG.braSan, NEW_IMG.braSag, NEW_IMG.braRos]
+    gallery: [NEW_IMG.braObs, NEW_IMG.braTer, NEW_IMG.braSan, NEW_IMG.braSag, NEW_IMG.braRos]
   },
   {
     id: "fl-windrunner",
@@ -203,10 +240,10 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "sand"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: CV.windrunnerObsidian,
+    img: NEW_IMG.wndObs,
     imgHover: NEW_IMG.wndSan,
     colorImages: {
-      obsidian:  CV.windrunnerObsidian,
+      obsidian:  NEW_IMG.wndObs,
       sand:      NEW_IMG.wndSan
     },
     excerpt: "An ultralight breathable running top for Gulf mornings. Under 90g. Packs into its own pocket.",
@@ -214,7 +251,7 @@ window.ST_PRODUCTS = [
     fabric: "Ultralight perforated ripstop Â· UPF 40 Â· Zero insulation",
     features: ["Under 90g", "Packs into own chest pocket", "Reflective back panel", "UPF 40 sun-blocking weave", "Drop-tail hem"],
     care: "Cold wash. Hang dry.",
-    gallery: [CV.windrunnerObsidian, NEW_IMG.wndSan]
+    gallery: [NEW_IMG.wndObs, NEW_IMG.wndSan]
   },
   {
     id: "fl-cap",
@@ -286,13 +323,13 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: CV.bikerObsidian,
-    imgHover: CV.bikerSage,
+    img: NEW_IMG.bkrObs,
+    imgHover: NEW_IMG.bkrSag,
     colorImages: {
-      obsidian:    CV.bikerObsidian,
-      terracotta:  CV.bikerTerracotta,
-      sand:        AI.foundSand,
-      sage:        CV.bikerSage,
+      obsidian:    NEW_IMG.bkrObs,
+      terracotta:  NEW_IMG.bkrTer,
+      sand:        NEW_IMG.bkrSan,
+      sage:        NEW_IMG.bkrSag,
       rose:        NEW_IMG.bkrRos
     },
     excerpt: "Mid-thigh biker short for the gym and the ride. Flat seams, high rise, zero roll-down.",
@@ -300,7 +337,7 @@ window.ST_PRODUCTS = [
     fabric: "78% Nylon 6,6 Â· 22% Elastane Â· 220gsm",
     features: ["Mid-thigh cut", "High rise, stays put", "Flat seams", "Squat-proof", "Inner leg pocket"],
     care: "Cold wash, hang dry.",
-    gallery: [CV.bikerObsidian, CV.bikerTerracotta, CV.bikerSage, AI.foundSand, NEW_IMG.bkrRos]
+    gallery: [NEW_IMG.bkrObs, NEW_IMG.bkrTer, NEW_IMG.bkrSan, NEW_IMG.bkrSag, NEW_IMG.bkrRos]
   },
   {
     id: "fnd-tank",
@@ -314,21 +351,21 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: AI.foundSand,
-    imgHover: CV.tankObsidian,
+    img: NEW_IMG.ftSan,
+    imgHover: NEW_IMG.ftObs,
     colorImages: {
-      obsidian:    CV.tankObsidian,
-      terracotta:  NEW_IMG.tnkTer,
-      sand:        AI.foundSand,
-      sage:        CV.tankSage,
-      rose:        NEW_IMG.tnkRos
+      obsidian:    NEW_IMG.ftObs,
+      terracotta:  NEW_IMG.ftTer,
+      sand:        NEW_IMG.ftSan,
+      sage:        NEW_IMG.ftSag,
+      rose:        NEW_IMG.ftRos
     },
     excerpt: "A soft, weightless tank for training and running in the heat. Cropped hem, relaxed fit.",
     description: "A tank designed for UAE summer. Loose through the body, cropped at the hip so it doesn't trap heat. Technical fabric that feels like a favourite T-shirt.",
     fabric: "Technical knit Â· 88% Modal / 12% Elastane Â· Featherweight",
     features: ["Cropped hem", "Relaxed through the body", "Raw-edge neckline", "Featherweight â under 90g"],
     care: "Cold wash, flat dry.",
-    gallery: [AI.foundSand, CV.tankObsidian, CV.tankSage, NEW_IMG.tnkTer, NEW_IMG.tnkRos]
+    gallery: [NEW_IMG.ftObs, NEW_IMG.ftTer, NEW_IMG.ftSan, NEW_IMG.ftSag, NEW_IMG.ftRos]
   },
   {
     id: "fnd-sunsleeve",
@@ -342,10 +379,10 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: CV.sunSleeveObsidian,
+    img: NEW_IMG.cssObs,
     imgHover: CV.sunSleeveSand,
     colorImages: {
-      obsidian:    CV.sunSleeveObsidian,
+      obsidian:    NEW_IMG.cssObs,
       terracotta:  NEW_IMG.slsTer,
       sand:        CV.sunSleeveSand,
       sage:        NEW_IMG.slsSag,
@@ -356,7 +393,7 @@ window.ST_PRODUCTS = [
     fabric: "Technical perforated knit Â· UPF 50+ Â· Moisture-wick Â· Featherweight (sub-110g)",
     features: ["UPF 50+ sun protection", "Perforated ventilation panels", "Thumb holes", "Relaxed, modest fit", "Flat seams"],
     care: "Cold wash. Hang dry.",
-    gallery: [CV.sunSleeveObsidian, CV.sunSleeveSand, NEW_IMG.slsTer, NEW_IMG.slsSag, NEW_IMG.slsRos]
+    gallery: [NEW_IMG.cssObs, CV.sunSleeveSand, NEW_IMG.slsTer, NEW_IMG.slsSag, NEW_IMG.slsRos]
   },
   {
     id: "fnd-loose-tank",
@@ -377,7 +414,7 @@ window.ST_PRODUCTS = [
       obsidian:    NEW_IMG.ltkObs,
       terracotta:  NEW_IMG.ltkTer,
       sand:        NEW_IMG.ltkSan,
-      sage:        NEW_IMG.ltkSag,
+      sage:        CV.tankSage,
       rose:        NEW_IMG.ltkRos
     },
     excerpt: "An oversized, breathable tank for lifting and recovery days. Cropped hem, dropped armhole.",
@@ -385,7 +422,7 @@ window.ST_PRODUCTS = [
     fabric: "88% Modal / 12% Elastane Â· Featherweight knit",
     features: ["Oversized, relaxed fit", "Dropped armhole", "Raw-edge hem and neckline", "Cropped at hip", "Under 85g"],
     care: "Cold wash. Flat dry.",
-    gallery: [NEW_IMG.ltkObs, NEW_IMG.ltkTer, NEW_IMG.ltkSan, NEW_IMG.ltkSag, NEW_IMG.ltkRos]
+    gallery: [NEW_IMG.ltkObs, NEW_IMG.ltkTer, NEW_IMG.ltkSan, CV.tankSage, NEW_IMG.ltkRos]
   },
   {
     id: "fnd-crop-sunsleeve",
@@ -400,21 +437,21 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: NEW_IMG.cssObs,
-    imgHover: NEW_IMG.cssSan,
+    img: NEW_IMG.cs2Obs,
+    imgHover: NEW_IMG.cs2San,
     colorImages: {
-      obsidian:    NEW_IMG.cssObs,
-      terracotta:  NEW_IMG.cssTer,
-      sand:        NEW_IMG.cssSan,
-      sage:        NEW_IMG.cssSag,
-      rose:        NEW_IMG.cssRos
+      obsidian:    NEW_IMG.cs2Obs,
+      terracotta:  NEW_IMG.cs2Ter,
+      sand:        NEW_IMG.cs2San,
+      sage:        NEW_IMG.cs2Sag,
+      rose:        NEW_IMG.cs2Ros
     },
     excerpt: "A cropped UPF 50+ long-sleeve for sun protection on desert runs. Thumb holes, slim fit.",
     description: "Full arm and shoulder coverage in a cropped silhouette. UPF 50+ blocks the Gulf sun. Thumb holes keep sleeves in place on the run. Designed for the women who need sun protection without bulk.",
     fabric: "Technical perforated knit Â· UPF 50+ Â· Moisture-wick Â· Sub-100g",
     features: ["UPF 50+ sun protection", "Cropped hem above waistband", "Thumb holes", "Slim fit", "Perforated ventilation panels"],
     care: "Cold wash. Hang dry.",
-    gallery: [NEW_IMG.cssObs, NEW_IMG.cssTer, NEW_IMG.cssSan, NEW_IMG.cssSag, NEW_IMG.cssRos]
+    gallery: [NEW_IMG.cs2Obs, NEW_IMG.cs2Ter, NEW_IMG.cs2San, NEW_IMG.cs2Sag, NEW_IMG.cs2Ros]
   },
 
   // âââ THE CRANK LINE âââââââââââââââââââââââââââââââââââââââââ
@@ -431,13 +468,13 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: ["XL"],
-    img: AI.crankObsidian,
-    imgHover: AI.crankSage,
+    img: NEW_IMG.bibObs,
+    imgHover: NEW_IMG.bibSag,
     colorImages: {
-      obsidian:    AI.crankObsidian,
+      obsidian:    NEW_IMG.bibObs,
       terracotta:  NEW_IMG.bibTer,
       sand:        NEW_IMG.bibSan,
-      sage:        AI.crankSage,
+      sage:        NEW_IMG.bibSag,
       rose:        NEW_IMG.bibRos
     },
     excerpt: "Women's cycling bib with a chamois built for Crank Abu Dhabi's Friday rides.",
@@ -445,7 +482,7 @@ window.ST_PRODUCTS = [
     fabric: "Italian performance knit Â· 68% Nylon / 32% Elastane Â· Pro-level chamois",
     features: ["Multi-density chamois insert", "Wide leg grippers â no dig", "Mesh upper for ventilation", "Designed by and for women"],
     care: "Cold hand wash. Do not tumble.",
-    gallery: [AI.crankObsidian, AI.crankSage, NEW_IMG.bibTer, NEW_IMG.bibSan, NEW_IMG.bibRos]
+    gallery: [NEW_IMG.bibObs, NEW_IMG.bibSag, NEW_IMG.bibTer, NEW_IMG.bibSan, NEW_IMG.bibRos]
   },
   {
     id: "crk-jersey",
@@ -459,13 +496,13 @@ window.ST_PRODUCTS = [
     colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
     sizes: ["XS", "S", "M", "L", "XL"],
     oos: [],
-    img: AI.crankObsidian,
-    imgHover: AI.crankSage,
+    img: NEW_IMG.jsyObs,
+    imgHover: NEW_IMG.jsySag,
     colorImages: {
-      obsidian:    AI.crankObsidian,
+      obsidian:    NEW_IMG.jsyObs,
       terracotta:  NEW_IMG.jsyTer,
       sand:        NEW_IMG.jsySan,
-      sage:        AI.crankSage,
+      sage:        NEW_IMG.jsySag,
       rose:        NEW_IMG.jsyRos
     },
     excerpt: "A women's cycling jersey cut for UAE summer. Featherweight, full-zip, three rear pockets.",
@@ -473,7 +510,7 @@ window.ST_PRODUCTS = [
     fabric: "Ultralight Italian weave Â· Laser-cut hem",
     features: ["Full-length YKK zip", "3 rear cargo pockets + zip pocket", "Silicone hem gripper", "Reflective trim"],
     care: "Cold wash. Flat dry.",
-    gallery: [AI.crankObsidian, AI.crankSage, NEW_IMG.jsyTer, NEW_IMG.jsySan, NEW_IMG.jsyRos]
+    gallery: [NEW_IMG.jsyObs, NEW_IMG.jsySag, NEW_IMG.jsyTer, NEW_IMG.jsySan, NEW_IMG.jsyRos]
   }
 ];
 
