@@ -1,7 +1,7 @@
 // ============================================================
-// STRONGER TOGETHER â Product catalogue
+// STRONGER TOGETHER — Product catalogue
 // Updated with Higgsfield Soul 2.0 AI model photography
-// Full colour-variant image support â fixed product images
+// Full colour-variant image support — fixed product images
 // ============================================================
 
 window.ST_COLORS = {
@@ -13,10 +13,10 @@ window.ST_COLORS = {
   gold:       { name: "Desert Gold",  hex: "#B8963E" }
 };
 
-// Higgsfield Soul 2.0 AI model images â CloudFront CDN
+// Higgsfield Soul 2.0 AI model images — CloudFront CDN
 const HF = (filename) => `https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/${filename}`;
 
-// ââ ORIGINAL 8 hero images ââââââââââââââââââââââââââââââââââ
+// ── ORIGINAL 8 hero images ──────────────────────────────────
 const AI = {
   // THE FRIDAY LINE (Run)
   fridayObsidian:  HF("hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png"),
@@ -31,7 +31,7 @@ const AI = {
   crankSage:       HF("hf_20260421_080538_54829556-942c-446d-9fe6-644d0ed1204b.png"),
 };
 
-// ââ 16 colour-variant images ââââââââââââââââââââââââââââââââ
+// ── 16 colour-variant images ────────────────────────────────
 const CV = {
   // Friday Line colour variants
   fridayTerracotta:     HF("hf_20260421_150515_cc2243ce-97cd-4ac6-8068-fa7937572606.png"),
@@ -64,4 +64,378 @@ const CV = {
 };
 
 window.ST_PRODUCTS = [
-  {7G&2Â6ÆVâg&öçBÂÆæVBvF&VÖ÷f&ÆRG2âÖF6W2FRg&FÆVvværâ"À¢FW67&Föã¢$7÷'G2'&FBv÷&·2WfW'FöbFRvVV²âÖVFVÒ7W÷'B6'&W2FR'Vâ6ÇV"öâg&F2æBÆFW2öâÖöæF2âFR6Æ÷VWGFR26ÆVâVæ÷VvFòvV"öâG2÷vâ(	BæBFBw2FRöçBâvRÖFRB6ò÷RFöâwBfRFòFæ²&÷WBBâ"À¢f'&3¢#sRçÆöâbÃb+r#"RVÆ7FæR+rÖF6ærg&FÆVvværf'&2"À¢fVGW&W3¢°¢%&6W&&6²6öç7G'V7Föâf÷"6÷VÆFW"Öö&ÆG"À¢%vFR66Ò²7G&2(	BæòFvvær"À¢%vFRVæFW&&æBf÷"&"7W÷'B"À¢%&VÖ÷f&ÆR7WG2"À¢$6ÆVâg&öçB(	Bæò6V×2ÂæòÆövò7&÷72'W7B"À¢$VBÖ6öÖf÷'BFW6vâÂFW7FVBâTR6ÆÖFR ¢ÒÀ¢6&S¢$6öÆBv6âfÆBG'â&WÆ6RG22æVVFVBâ"À¢vÆÆW'¢´5bæ'&ö'6FâÂ5bæg&FFW'&6÷GFÂ5bæg&F6æBÂæg&F6vRÂæg&F&÷6UÐ¢ÒÀ¢°¢C¢&fÂÖÆVvvær×FW'&6÷GF"À¢6ÇVs¢&g&FÖÆVvvær×FW'&6÷GF"À¢æÖS¢%FRg&FÆVvvær"À¢ÆæS¢%FRg&FÆæR"À¢6FVv÷'¢&ÆVvvær"À¢F66ÆæS¢²''Vâ"Â&wÒ%ÒÀ¢&6S¢33RÀ¢&FvS¢$ÄTä44ôÄõU""À¢6öÆ÷$¶W¢'FW'&6÷GF"À¢6öÆ÷'3¢²&ö'6Fâ"Â'FW'&6÷GF"Â'6æB"Â'6vR"Â'&÷6R%ÒÀ¢6¦W3¢²%2"Â%2"Â$Ò"Â$Â"Â%Â%ÒÀ¢ö÷3¢²%2%ÒÀ¢Ös¢5bæg&FFW'&6÷GFÀ¢Öt÷fW#¢æg&Fö'6FâÀ¢6öÆ÷$ÖvW3¢°¢ö'6Fã¢æg&Fö'6FâÀ¢FW'&6÷GF¢5bæg&FFW'&6÷GFÀ¢6æC¢5bæg&F6æBÀ¢6vS¢æg&F6vRÀ¢&÷6S¢æg&F&÷6P¢ÒÀ¢W6W'C¢%FRg&FÆVvværâ÷W"6væGW&RFW'&6÷GFâæöBFòFRv&ÒwVÆb6ÆæBFR'&æB66VçB÷RvÆÂ&V6övæ6Rg&öÒF7Fæ6Râ"À¢FW67&Föã¢%6ÖRÆVvværÂFffW&VçBfVVÆærâFW'&6÷GF2FR6öÆ÷W"öbFR'&æB(	BFRv&ÒwVÆb6Æ÷R6VRB7Vç&6RöâFR6÷&æ6Râ7V'FÆRÖ&¶W"7&÷72FRg&F'Vç2â"À¢f'&3¢#sRçÆöâbÃb+r#"RVÆ7FæR+r##w6Ò+rB×v7G&WF6"À¢fVGW&W3¢°¢%6væGW&RFW'&6÷GFGR(	B6öÆ÷W&f7BFW7FVBf÷"TR7Vâ"À¢$v×v7BÂföÆBÖ÷fW"v7F&æB"À¢$FFVâöæRö6¶WB"À¢%7VB×&ööbÂÖö7GW&R×v6² ¢ÒÀ¢6&S¢$6öÆBv6â6öÆ÷W'27FG'VRf÷"²v6W2â"À¢vÆÆW'¢°¢5bæg&FFW'&6÷GFÀ¢æg&Fö'6FâÀ¢5bæg&F6æBÀ¢æg&F6vRÀ¢æg&F&÷6P¢Ð¢ÒÀ¢°¢C¢&fÂÖ'&×6æB"À¢6ÇVs¢&g&FÖ'&×6æB"À¢æÖS¢%FRg&F'&"À¢ÆæS¢%FRg&FÆæR"À¢6FVv÷'¢&'&"À¢F66ÆæS¢²''Vâ"Â&wÒ"Â&76ÆR%ÒÀ¢&6S¢#3RÀ¢6öÆ÷$¶W¢'6æB"À¢6öÆ÷'3¢²&ö'6Fâ"Â'FW'&6÷GF"Â'6æB"Â'6vR"Â'&÷6R%ÒÀ¢6¦W3¢²%2"Â%2"Â$Ò"Â$Â"Â%Â%ÒÀ¢ö÷3¢µÒÀ¢Ös¢5bæg&F6æBÀ¢Öt÷fW#¢5bæ'&ö'6FâÀ¢6öÆ÷$ÖvW3¢°¢ö'6Fã¢5bæ'&ö'6FâÀ¢FW'&6÷GF¢5bæg&FFW'&6÷GFÀ¢6æC¢5bæg&F6æBÀ¢6vS¢æg&F6vRÀ¢&÷6S¢æg&F&÷6P¢ÒÀ¢W6W'C¢%FRg&F'&âv&Ò6æBâÆÖ÷7BvFRÂæWfW"6öÆBvFRâ"À¢FW67&Föã¢$FW6væVBvç7BFRFW6W'BÆWGFRÂæ÷BWW&÷VâÖæÖÂöæRâF22FR6öÆ÷W"öb6FB&V6B7Vç&6R(	Bv&ÖW"FâvFRÂ6ögFW"Fâ7&VÒâ"À¢f'&3¢#sRçÆöâbÃb+r#"RVÆ7FæR"À¢fVGW&W3¢²$ÖF6ærg&FÆVvværf'&2"Â$6ÆVâÂ6òÖ÷&B&VG"Â$ÖVFVÒ7W÷'B%ÒÀ¢6&S¢$6öÆBv6ÂfÆBG'â"À¢vÆÆW'¢´5bæg&F6æBÂ5bæ'&ö'6FâÂ5bæg&FFW'&6÷GFÂæg&F6vRÂæg&F&÷6UÐ¢ÒÀ¢°¢C¢&fæB×6÷'G2"À¢6ÇVs¢&f÷VæFFöâÖ&¶W"×6÷'B"À¢æÖS¢%FRf÷VæFFöâ&¶W"6÷'B"À¢ÆæS¢%FRf÷VæFFöâÆæR"À¢6FVv÷'¢'6÷'B"À¢F66ÆæS¢²&wÒ"Â&76ÆR%ÒÀ¢&6S¢#RÀ¢6öÆ÷$¶W¢&ö'6Fâ"À¢6öÆ÷'3¢²&ö'6Fâ"Â'FW'&6÷GF"Â'6æB"Â'6vR"Â'&÷6R%ÒÀ¢6¦W3¢²%2"Â%2"Â$Ò"Â$Â"Â%Â%ÒÀ¢ö÷3¢µÒÀ¢Ös¢5bæ&¶W$ö'6FâÀ¢Öt÷fW#¢5bæ&¶W%6vRÀ¢6öÆ÷$ÖvW3¢°¢ö'6Fã¢5bæ&¶W$ö'6FâÀ¢FW'&6÷GF¢5bæ&¶W%FW'&6÷GFÀ¢6æC¢æf÷VæE6æBÀ¢6vS¢5bæ&¶W%6vRÀ¢&÷6S¢æf÷VæE&÷6P¢ÒÀ¢W6W'C¢$ÖB×Fv&¶W"6÷'Bf÷"FRwÒæBFR&FRâfÆB6V×2Âv&6RÂ¦W&ò&öÆÂÖF÷vââ"À¢FW67&Föã¢$'VÇBf÷"FR&&&VÆÂÂFR7â7GVFòÂæBWfW'Fær7G&VæwFÖ&6VBâ6ÖRf'&266Væ6R2FRg&FÆVvværÂ7WB6÷'FW"f÷"VBæBg&VVFöÒâ"À¢f'&3¢#sRçÆöâbÃb+r#"RVÆ7FæR+r##w6Ò"À¢fVGW&W3¢²$ÖB×Fv7WB"Â$v&6RÂ7F2WB"Â$fÆB6V×2"Â%7VB×&ööb"Â$ææW"ÆVrö6¶WB%ÒÀ¢6&S¢$6öÆBv6ÂærG'â"À¢vÆÆW'¢´5bæ&¶W$ö'6FâÂ5bæ&¶W%FW'&6÷GFÂæf÷VæE6æBÂ5bæ&¶W%6vRÂæf÷VæE&÷6UÐ¢ÒÀ¢°¢C¢&fæB×Fæ²"À¢6ÇVs¢&f÷VæFFöâ×Fæ²"À¢æÖS¢%FRf÷VæFFöâFæ²"À¢ÆæS¢%FRf÷VæFFöâÆæR"À¢6FVv÷'¢'F÷"À¢F66ÆæS¢²&wÒ"Â''Vâ%ÒÀ¢&6S¢À¢6öÆ÷$¶W¢'6æB"À¢6öÆ÷'3¢²&ö'6Fâ"Â'FW'&6÷GF"Â'6æB"Â'6vR"Â'&÷6R%ÒÀ¢6¦W3¢²%2"Â%2"Â$Ò"Â$Â"Â%Â%ÒÀ¢ö÷3¢µÒÀ¢Ös¢æf÷VæE6æBÀ¢Öt÷fW#¢5bçFæ´ö'6FâÀ¢6öÆ÷$ÖvW3¢°¢ö'6Fã¢5bçFæ´ö'6FâÀ¢FW'&6÷GF¢5bæ&¶W%FW'&6÷GFÀ¢6æC¢æf÷VæE6æBÀ¢6vS¢5bçFæµ6vRÀ¢&÷6S¢æf÷VæE&÷6P¢ÒÀ¢W6W'C¢$6ögBÂvVvFÆW72Fæ²f÷"G&ææræB'VææærâFRVBâ7&÷VBVÒÂ&VÆVBfBâ"À¢FW67&Föã¢$Fæ²FW6væVBf÷"TR7VÖÖW"âÆö÷6RF&÷VvFR&öGÂ7&÷VBBFR6òBFöW6âwBG&VBâFV6æ6Âf'&2FBfVVÇ2Æ¶Rff÷W&FRB×6'Bâ"À¢f'&3¢%FV6æ6Â¶æB+rRÖöFÂò"RVÆ7FæR+rfVFW'vVvB"À¢fVGW&W3¢²$7&÷VBVÒ"Â%&VÆVBF&÷VvFR&öG"Â%&rÖVFvRæV6¶ÆæR"Â$fVFW'vVvB(	BVæFW"r%ÒÀ¢6&S¢$6öÆBv6ÂfÆBG'â"À¢vÆÆW'¢´æf÷VæE6æBÂ5bçFæ´ö'6FâÂ5bæ&¶W%FW'&6÷GFÂ5bçFæµ6vRÂæf÷VæE&÷6UÐ¢ÒÀ¢°¢C¢&7&²Ö&""À¢6ÇVs¢&7&æ²Ö&"×6÷'B"À¢æÖS¢%FR7&æ²&"6÷'B"À¢ÆæS¢%FR7&æ²ÆæR"À¢6FVv÷'¢&76ÆR"À¢F66ÆæS¢²&76ÆR%ÒÀ¢&6S¢CCÀ¢&FvS¢%3"E$õ"À¢6öÆ÷$¶W¢&ö'6Fâ"À¢6öÆ÷'3¢²&ö'6Fâ"Â'FW'&6÷GF"Â'6æB"Â'6vR"Â'&÷6R%ÒÀ¢6¦W3¢²%2"Â%2"Â$Ò"Â$Â"Â%Â%ÒÀ¢ö÷3¢²%Â%ÒÀ¢Ös¢5bæ7&æ´fVÖÆTö'6FâÀ¢Öt÷fW#¢æ7&æµ6vRÀ¢6öÆ÷$ÖvW3¢°¢ö'6Fã¢5bæ7&æ´fVÖÆTö'6FâÀ¢FW'&6÷GF¢5bæ7&æµFW'&6÷GFÀ¢6æC¢5bæ7&æµ6æBÀ¢6vS¢æ7&æµ6vRÀ¢&÷6S¢æf÷VæE&÷6P¢ÒÀ¢W6W'C¢%vöÖVâw276Æær&"vF6Öö2'VÇBf÷"7&æ²'RF&w2g&F&FW2â"À¢FW67&Föã¢$FW6væVBvF6ÆöRw276Æær7GVFò6öÆÆVwVW2ÂFW7FVBF&÷VvVæG&VG2öb¶ÆöÖWG&W2öâ26ÆæBâ&"6÷'BFB&W7V7G2vöÖVâw2æFö×(	B&&RVæ÷VvFærâ76ÆærFBBw2v÷'F6ærâ"À¢f'&3¢$FÆâW&f÷&Öæ6R¶æB+rcRçÆöâò3"RVÆ7FæR+r&òÖÆWfVÂ6Öö2"À¢fVGW&W3¢²$×VÇFÖFVç6G6Öö2ç6W'B"Â%vFRÆVrw&W'2(	BæòFr"Â$ÖW6WW"f÷"fVçFÆFöâ"Â$FW6væVB'æBf÷"vöÖVâ%ÒÀ¢6&S¢$6öÆBæBv6âFòæ÷BGVÖ&ÆRâ"À¢vÆÆW'¢´5bæ7&æ´fVÖÆTö'6FâÂ5bæ7&æµFW'&6÷GFÂ5bæ7&æµ6æBÂæ7&æµ6vRÂæf÷VæE&÷6UÐ¢ÒÀ¢°¢C¢&7&²Ö¦W'6W"À¢6ÇVs¢&7&æ²×7VÖÖW"Ö¦W'6W"À¢æÖS¢%FR7&æ²7VÖÖW"¦W'6W"À¢ÆæS¢%FR7&æ²ÆæR"À¢6FVv÷'¢&76ÆR"À¢F66ÆæS¢²&76ÆR%ÒÀ¢&6S¢3À¢6öÆ÷$¶W¢'FW'&6÷GF"À¢6öÆ÷'3¢²&ö'6Fâ"Â'FW'&6÷GF"Â'6æB"Â'6vR"Â'&÷6R%ÒÀ¢6¦W3¢²%2"Â%2"Â$Ò"Â$Â"Â%Â%ÒÀ¢ö÷3¢µÒÀ¢Ös¢5bæ7&æµFW'&6÷GFÀ¢Öt÷fW#¢5bæ7&æ´fVÖÆTö'6FâÀ¢6öÆ÷$ÖvW3¢°¢ö'6Fã¢5bæ7&æ´fVÖÆTö'6FâÀ¢FW'&6÷GF¢5bæ7&æµFW'&6÷GFÀ¢6æC¢5bæ7&æµ6æBÀ¢6vS¢æ7&æµ6vRÀ¢&÷6S¢æf÷VæE&÷6P¢ÒÀ¢W6W'C¢$vöÖVâw276Æær¦W'6W7WBf÷"TR7VÖÖW"âfVFW'vVvBÂgVÆÂ×¦ÂF&VR&V"ö6¶WG2â"À¢FW67&Föã¢%FR76Æær¦W'6WvR6÷VÆFâwBfæBâFRTRÖ&¶WB(	B6òvRÖFRBâvöÖVâw27WBÂVBÖ&÷&FRvVvBÂfG27GVÂ&FRæVVG2â"À¢f'&3¢%VÇG&ÆvBFÆâvVfR+rÆ6W"Ö7WBVÒ"À¢fVGW&W3¢²$gVÆÂÖÆVæwF´²¦"Â#2&V"6&vòö6¶WG2²¦ö6¶WB"Â%6Æ6öæRVÒw&W""Â%&VfÆV7FfRG&Ò%ÒÀ¢6&S¢$6öÆBv6âfÆBG'â"À¢vÆÆW'¢´5bæ7&æ´fVÖÆTö'6FâÂ5bæ7&æµFW'&6÷GFÂ5bæ7&æµ6æBÂæ7&æµ6vRÂæf÷VæE&÷6UÐ¢ÒÀ¢°¢C¢&fÂ×væG'VææW""À¢6ÇVs¢&g&F×væB×'VææW""À¢æÖS¢%FRg&FvæG'VææW""À¢ÆæS¢%FRg&FÆæR"À¢6FVv÷'¢'F÷"À¢F66ÆæS¢²''Vâ"Â&76ÆR%ÒÀ¢&6S¢#CRÀ¢&FvS¢%$TÔTÒ"À¢6öÆ÷$¶W¢&ö'6Fâ"À¢6öÆ÷'3¢²&ö'6Fâ"Â'FW'&6÷GF"Â'6æB"Â'6vR"Â'&÷6R%ÒÀ¢6¦W3¢²%2"Â%2"Â$Ò"Â$Â"Â%Â%ÒÀ¢ö÷3¢µÒÀ¢Ös¢5bçvæG'VææW$¦6¶WBÀ¢Öt÷fW#¢5bçvæG'VææW%FW'&6÷GFÀ¢6öÆ÷$ÖvW3¢°¢ö'6Fã¢5bçvæG'VææW$¦6¶WBÀ¢FW'&6÷GF¢5bçvæG'VææW%FW'&6÷GFÀ¢6æC¢5bæg&F6æBÀ¢6vS¢æg&F6vRÀ¢&÷6S¢æg&F&÷6P¢ÒÀ¢W6W'C¢$âVÇG&ÆvB'&VF&ÆR'VææærF÷f÷"wVÆbÖ÷&ææw2âVæFW"râ6·2çFòG2÷vâö6¶WBâ"À¢FW67&Föã¢$öæRV6RâvV"Bf÷"FR&RÖFvâ6÷&æ6R7F'G2âFV6VÖ&W"Â'VâvFB&÷VæB÷W"v7B'7Vç&6Râ'vVfRÂUbCv÷fVââÂæòç7VÆFöâ(	B'VÇBf÷"FRFW6W'BÂæ÷BWW&÷VâWGVÖââ"À¢f'&3¢%VÇG&ÆvBW&f÷&FVB&7F÷+rUbC+r¦W&òç7VÆFöâ"À¢fVGW&W3¢²%VæFW"r"Â%6·2çFò÷vâ6W7Bö6¶WB"Â%&VfÆV7FfR&6²æVÂ"Â%UbC7VâÖ&Æö6¶ærvVfR"Â$G&÷×FÂVÒ%ÒÀ¢6&S¢$6öÆBv6âærG'â"À¢vÆÆW'¢´5bçvæG'VææW$¦6¶WBÂ5bçvæG'VææW%FW'&6÷GFÂ5bæg&F6æBÂæg&F6vRÂæg&F&÷6UÐ¢ÒÀ¢°¢C¢&fæBÖÆVvvær×6vR"À¢6ÇVs¢&f÷VæFFöâÖÆVvvær×6vR"À¢æÖS¢%FRf÷VæFFöâÆVvvær"À¢ÆæS¢%FRf÷VæFFöâÆæR"À¢6FVv÷'¢&ÆVvvær"À¢F66ÆæS¢²&wÒ"Â''Vâ%ÒÀ¢&6S¢3#RÀ¢6öÆ÷$¶W¢'6vR"À¢6öÆ÷'3¢²&ö'6Fâ"Â'FW'&6÷GF"Â'6æB"Â'6vR"Â'&÷6R%ÒÀ¢6¦W3¢²%2"Â%2"Â$Ò"Â$Â"Â%Â%ÒÀ¢ö÷3¢µÒÀ¢Ös¢æg&F6vRÀ¢Öt÷fW#¢5bæÆVvvætö'6FâÀ¢6öÆ÷$ÖvW3¢°¢ö'6Fã¢5bæÆVvvætö'6FâÀ¢FW'&6÷GF¢5bæg&FFW'&6÷GFÀ¢6æC¢5bæg&F6æBÀ¢6vS¢æg&F6vRÀ¢&÷6S¢5bæÆVvvæu&÷6P¢ÒÀ¢W6W'C¢%FRwÒÖ7WBfW'6öâöb÷W"W&òÆVvværâ6ÖRf'&2Â6VÖÆW726FRæVÂÂ¦W&òF7G&7Föââ"À¢FW67&Föã¢$f÷"FRF2vW&RFRv÷&¶÷WB27G&VæwFÂæ÷BF7Fæ6Râ6FR6VÒ&VÖ÷fVBÂv7F&æB&Væf÷&6VBÂfBF§W7FVBf÷"7VBÖV6æ72â"À¢f'&3¢#sRçÆöâbÃb+r#"RVÆ7FæR+r#w6ÒÆvFW"Fâg&FÂVBÖ÷FÖ6VB"À¢fVGW&W3¢²%6VÖÆW726FRæVÂ"Â%&Væf÷&6VBv7F&æB"Â$wW76WB(	Bæ7&V6VBÖö&ÆG%ÒÀ¢6&S¢$6öÆBv6ÂfÆBG'â"À¢vÆÆW'¢´æg&F6vRÂ5bæÆVvvætö'6FâÂ5bæg&FFW'&6÷GFÂ5bæg&F6æBÂ5bæÆVvvæu&÷6UÐ¢ÒÀ¢°¢C¢&fæB×7Vç6ÆVWfR"À¢6ÇVs¢&f÷VæFFöâ×7Vâ×6ÆVWfR"À¢æÖS¢%FRf÷VæFFöâUb7VâÕ6ÆVWfR"À¢ÆæS¢%FRf÷VæFFöâÆæR"À¢6FVv÷'¢'F÷"À¢F66ÆæS¢²&wÒ"Â''Vâ%ÒÀ¢&6S¢#RÀ¢6öÆ÷$¶W¢'&÷6R"À¢6öÆ÷'3¢²&ö'6Fâ"Â'FW'&6÷GF"Â'6æB"Â'6vR"Â'&÷6R%ÒÀ¢6¦W3¢²%2"Â%2"Â$Ò"Â$Â"Â%Â%ÒÀ¢ö÷3¢µÒÀ¢Ös¢æf÷VæE&÷6RÀ¢Öt÷fW#¢5bç7Vå6ÆVWfU6æBÀ¢6öÆ÷$ÖvW3¢°¢ö'6Fã¢5bç7Vå6ÆVWfTö'6FâÀ¢FW'&6÷GF¢5bæ&¶W%FW'&6÷GFÀ¢6æC¢5bç7Vå6ÆVWfU6æBÀ¢6vS¢5bçFæµ6vRÀ¢&÷6S¢æf÷VæE&÷6P¢ÒÀ¢W6W'C¢$fVFW'vVvBUbS²Æöær×6ÆVWfRf÷"6÷&æ6R7Vç&6R'Vç2æBÖöFW7GÖ6öç66÷W2G&æærâ"À¢FW67&Föã¢$FW6væVBf÷"FRvöÖVâvòvçB6÷VÆFW"æB&Ò6÷fW&vRâC+2(	BvWFW"f÷"FRwVÆb7Vâ÷"f÷"ÖöFW7GâW&f÷&FVBvVfR¶VW2"Ö÷færÂUbS²&Æö6·2FR'W&âÂFVÖ"öÆW2¶VW6ÆVWfW2F÷vâöâFR'Vââ"À¢f'&3¢%FV6æ6ÂW&f÷&FVB¶æB+rUbS²+rÖö7GW&R×v6²+rfVFW'vVvB7V"Ór"À¢fVGW&W3¢²%UbS²7Vâ&÷FV7Föâ"Â%W&f÷&FVBfVçFÆFöâæVÇ2"Â%FVÖ"öÆW2"Â%&VÆVBÂÖöFW7BfB"Â$fÆB6V×2%ÒÀ¢6&S¢$6öÆBv6âærG'â"À¢vÆÆW'¢´æf÷VæE&÷6RÂ5bç7Vå6ÆVWfTö'6FâÂ5bæ&¶W%FW'&6÷GFÂ5bç7Vå6ÆVWfU6æBÂ5bçFæµ6vUÐ¢ÒÀ¢°¢C¢&fÂÖ6"À¢6ÇVs¢&g&F×'VâÖ6"À¢æÖS¢%FRg&F6"À¢ÆæS¢%FRg&FÆæR"À¢6FVv÷'¢&66W76÷'"À¢F66ÆæS¢²''Vâ%ÒÀ¢&6S¢RÀ¢6öÆ÷$¶W¢&ö'6Fâ"À¢6öÆ÷'3¢²&ö'6Fâ"Â'FW'&6÷GF"Â'6æB"Â'6vR"Â'&÷6R%ÒÀ¢6¦W3¢²$öæR6¦R%ÒÀ¢ö÷3¢µÒÀ¢Ös¢5bæ6ö'6FâÀ¢Öt÷fW#¢5bæ6FW'&6÷GFÀ¢6öÆ÷$ÖvW3¢°¢ö'6Fã¢5bæ6ö'6FâÀ¢FW'&6÷GF¢5bæ6FW'&6÷GFÀ¢6æC¢5bæ66æBÀ¢6vS¢5bæ6ö'6FâÀ¢&÷6S¢5bæ6FW'&6÷GF¢ÒÀ¢W6W'C¢$ÆvGvVvBÂ6¶&ÆR'Vææær6âVç7G'V7GW&VB7&÷vâÂÖW6&6²Â7vVB&æBâ"À¢FW67&Föã¢$¶VW2FR7VâöfbBfÒöâFR6÷&æ6Râ6·2fÆBâö6¶WBâVÖ'&öFW&VBvFVWB5BöâFR&6²æVÂâ"À¢f'&3¢%&7F÷7&÷vâ+rÖW6&V"æVÇ2"À¢fVGW&W3¢²%6¶&ÆRÂVç7G'V7GW&VB"Â$ÖW6fVçFÆFöâ"Â$F§W7F&ÆR&V"7G&"Â$VÖ'&öFW&VB5B%ÒÀ¢6&S¢$æBv66öÆBâ"À¢vÆÆW'¢´5bæ6ö'6FâÂ5bæ6ö'6FäÇBÂ5bæ6FW'&6÷GFÂ5bæ66æEÐ¢Ð¥Ó° §væF÷rå5Eõ$ôET5Eô%õ4ÅTrÒö&¦V7Bæg&öÔVçG&W2væF÷rå5Eõ$ôET5E2æÖÓâ·ç6ÇVrÂÒ°
+  {
+    id: "fl-legging-obsidian",
+    slug: "friday-legging-obsidian",
+    name: "The Friday Legging",
+    line: "The Friday Line",
+    category: "legging",
+    discipline: ["run", "gym", "cycle"],
+    price: 335,
+    badge: "NEW",
+    colorKey: "obsidian",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: AI.fridayObsidian,
+    imgHover: AI.fridaySage,
+    colorImages: {
+      obsidian: AI.fridayObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand,
+      sage: AI.fridaySage,
+      rose: AI.fridayRose
+    },
+    excerpt: "Our hero high-waist legging. 78% Nylon 6,6 / 22% Elastane. Built for the Friday 6am run and everything after.",
+    description: "The Friday Legging is the first product Stronger Together ever made and it had to be exceptional. Squat-proof, sweat-tested in UAE heat across months of community runs, and finished to the standard the women who built this brand demanded. Nothing on the Corniche is held back. Neither is this.",
+    fabric: "78% Nylon 6,6 · 22% Elastane · 220gsm · 4-way stretch · OEKO-TEX Standard 100",
+    features: [
+      "High-waist, 4–7cm fold-over waistband",
+      "7/8 length cut for Gulf climate",
+      "Hidden side phone pocket",
+      "Flat seams — no chafe on long runs",
+      "Squat-proof, opaque, moisture-wick",
+      "Co-ord capable with The Friday Bra"
+    ],
+    care: "Cold wash with like colours. Do not tumble dry. Do not iron. Designed to outlast the club.",
+    gallery: [
+      AI.fridayObsidian,
+      CV.fridayTerracotta,
+      CV.fridaySand,
+      AI.fridaySage,
+      AI.fridayRose
+    ]
+  },
+  {
+    id: "fl-bra-obsidian",
+    slug: "friday-bra-obsidian",
+    name: "The Friday Bra",
+    line: "The Friday Line",
+    category: "bra",
+    discipline: ["run", "gym", "cycle"],
+    price: 235,
+    badge: "NEW",
+    colorKey: "obsidian",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: CV.braObsidian,
+    imgHover: CV.fridayTerracotta,
+    colorImages: {
+      obsidian: CV.braObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand,
+      sage: AI.fridaySage,
+      rose: AI.fridayRose
+    },
+    excerpt: "Medium-support racerback bra. Wide straps, clean front, lined with removable pads. Matches The Friday Legging.",
+    description: "A sports bra that works every day of the week. Medium support carries the run club on Fridays and pilates on Mondays. The silhouette is clean enough to wear on its own — and that's the point. We made it so you don't have to think about it.",
+    fabric: "78% Nylon 6,6 · 22% Elastane · Matching Friday Legging fabric",
+    features: [
+      "Racerback construction for shoulder mobility",
+      "Wide 3cm+ straps — no digging",
+      "Wide underband for rib support",
+      "Removable cup pads",
+      "Clean front — no seams, no logo across bust",
+      "Heat-comfort design, tested in UAE climate"
+    ],
+    care: "Cold wash. Flat dry. Replace pads as needed.",
+    gallery: [CV.braObsidian, CV.fridayTerracotta, CV.fridaySand, AI.fridaySage, AI.fridayRose]
+  },
+  {
+    id: "fl-legging-terracotta",
+    slug: "friday-legging-terracotta",
+    name: "The Friday Legging",
+    line: "The Friday Line",
+    category: "legging",
+    discipline: ["run", "gym"],
+    price: 335,
+    badge: "LAUNCH COLOUR",
+    colorKey: "terracotta",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: ["XS"],
+    img: CV.fridayTerracotta,
+    imgHover: AI.fridayObsidian,
+    colorImages: {
+      obsidian: AI.fridayObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand,
+      sage: AI.fridaySage,
+      rose: AI.fridayRose
+    },
+    excerpt: "The Friday Legging in our signature terracotta. A nod to the warm Gulf clay and the brand accent you'll recognise from a distance.",
+    description: "Same legging, different feeling. Terracotta is the colour of the brand — the warm Gulf clay you see at sunrise on the Corniche. A subtle marker across the Friday runs.",
+    fabric: "78% Nylon 6,6 · 22% Elastane · 220gsm · 4-way stretch",
+    features: [
+      "Signature terracotta dye — colourfast tested for UAE sun",
+      "High-waist, fold-over waistband",
+      "Hidden phone pocket",
+      "Squat-proof, moisture-wick"
+    ],
+    care: "Cold wash. Colours stay true for 100+ washes.",
+    gallery: [
+      CV.fridayTerracotta,
+      AI.fridayObsidian,
+      CV.fridaySand,
+      AI.fridaySage,
+      AI.fridayRose
+    ]
+  },
+  {
+    id: "fl-bra-sand",
+    slug: "friday-bra-sand",
+    name: "The Friday Bra",
+    line: "The Friday Line",
+    category: "bra",
+    discipline: ["run", "gym", "cycle"],
+    price: 235,
+    colorKey: "sand",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: CV.fridaySand,
+    imgHover: CV.braObsidian,
+    colorImages: {
+      obsidian: CV.braObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand,
+      sage: AI.fridaySage,
+      rose: AI.fridayRose
+    },
+    excerpt: "The Friday Bra in warm sand. Almost white, never cold white.",
+    description: "Designed against the desert palette, not a European minimal one. This is the colour of Saadiyat beach at sunrise — warmer than white, softer than cream.",
+    fabric: "78% Nylon 6,6 · 22% Elastane",
+    features: ["Matching Friday Legging fabric", "Clean, co-ord ready", "Medium support"],
+    care: "Cold wash, flat dry.",
+    gallery: [CV.fridaySand, CV.braObsidian, CV.fridayTerracotta, AI.fridaySage, AI.fridayRose]
+  },
+  {
+    id: "fnd-shorts",
+    slug: "foundation-biker-short",
+    name: "The Foundation Biker Short",
+    line: "The Foundation Line",
+    category: "short",
+    discipline: ["gym", "cycle"],
+    price: 215,
+    colorKey: "obsidian",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: CV.bikerObsidian,
+    imgHover: CV.bikerSage,
+    colorImages: {
+      obsidian: CV.bikerObsidian,
+      terracotta: CV.bikerTerracotta,
+      sand: AI.foundSand,
+      sage: CV.bikerSage,
+      rose: AI.foundRose
+    },
+    excerpt: "Mid-thigh biker short for the gym and the ride. Flat seams, high rise, zero roll-down.",
+    description: "Built for the barbell, the spin studio, and everything strength-based. Same fabric science as The Friday Legging, cut shorter for heat and freedom.",
+    fabric: "78% Nylon 6,6 · 22% Elastane · 220gsm",
+    features: ["Mid-thigh cut", "High rise, stays put", "Flat seams", "Squat-proof", "Inner leg pocket"],
+    care: "Cold wash, hang dry.",
+    gallery: [CV.bikerObsidian, CV.bikerTerracotta, AI.foundSand, CV.bikerSage, AI.foundRose]
+  },
+  {
+    id: "fnd-tank",
+    slug: "foundation-tank",
+    name: "The Foundation Tank",
+    line: "The Foundation Line",
+    category: "top",
+    discipline: ["gym", "run"],
+    price: 180,
+    colorKey: "sand",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: AI.foundSand,
+    imgHover: CV.tankObsidian,
+    colorImages: {
+      obsidian: CV.tankObsidian,
+      terracotta: CV.bikerTerracotta,
+      sand: AI.foundSand,
+      sage: CV.tankSage,
+      rose: AI.foundRose
+    },
+    excerpt: "A soft, weightless tank for training and running in the heat. Cropped hem, relaxed fit.",
+    description: "A tank designed for UAE summer. Loose through the body, cropped at the hip so it doesn't trap heat. Technical fabric that feels like a favourite T-shirt.",
+    fabric: "Technical knit · 88% Modal / 12% Elastane · Featherweight",
+    features: ["Cropped hem", "Relaxed through the body", "Raw-edge neckline", "Featherweight — under 90g"],
+    care: "Cold wash, flat dry.",
+    gallery: [AI.foundSand, CV.tankObsidian, CV.bikerTerracotta, CV.tankSage, AI.foundRose]
+  },
+  {
+    id: "crk-bib",
+    slug: "crank-bib-short",
+    name: "The Crank Bib Short",
+    line: "The Crank Line",
+    category: "cycle",
+    discipline: ["cycle"],
+    price: 449,
+    badge: "S2 DROP",
+    colorKey: "obsidian",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: ["XL"],
+    img: CV.crankFemaleObsidian,
+    imgHover: AI.crankSage,
+    colorImages: {
+      obsidian: CV.crankFemaleObsidian,
+      terracotta: CV.crankTerracotta,
+      sand: CV.crankSand,
+      sage: AI.crankSage,
+      rose: AI.foundRose
+    },
+    excerpt: "Women's cycling bib with a chamois built for Crank Abu Dhabi's Friday rides.",
+    description: "Designed with Chloe's cycling studio colleagues, tested through hundreds of kilometres on Yas Island. A bib short that respects women's anatomy — a rare enough thing in cycling that it's worth saying.",
+    fabric: "Italian performance knit · 68% Nylon / 32% Elastane · Pro-level chamois",
+    features: ["Multi-density chamois insert", "Wide leg grippers — no dig", "Mesh upper for ventilation", "Designed by and for women"],
+    care: "Cold hand wash. Do not tumble.",
+    gallery: [CV.crankFemaleObsidian, CV.crankTerracotta, CV.crankSand, AI.crankSage, AI.foundRose]
+  },
+  {
+    id: "crk-jersey",
+    slug: "crank-summer-jersey",
+    name: "The Crank Summer Jersey",
+    line: "The Crank Line",
+    category: "cycle",
+    discipline: ["cycle"],
+    price: 389,
+    colorKey: "terracotta",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: CV.crankTerracotta,
+    imgHover: CV.crankFemaleObsidian,
+    colorImages: {
+      obsidian: CV.crankFemaleObsidian,
+      terracotta: CV.crankTerracotta,
+      sand: CV.crankSand,
+      sage: AI.crankSage,
+      rose: AI.foundRose
+    },
+    excerpt: "A women's cycling jersey cut for UAE summer. Featherweight, full-zip, three rear pockets.",
+    description: "The cycling jersey we couldn't find in the UAE market — so we made it. Women's cut, heat-appropriate weight, fits actual ride needs.",
+    fabric: "Ultralight Italian weave · Laser-cut hem",
+    features: ["Full-length YKK zip", "3 rear cargo pockets + zip pocket", "Silicone hem gripper", "Reflective trim"],
+    care: "Cold wash. Flat dry.",
+    gallery: [CV.crankFemaleObsidian, CV.crankTerracotta, CV.crankSand, AI.crankSage, AI.foundRose]
+  },
+  {
+    id: "fl-windrunner",
+    slug: "friday-wind-runner",
+    name: "The Friday Windrunner",
+    line: "The Friday Line",
+    category: "top",
+    discipline: ["run", "cycle"],
+    price: 245,
+    badge: "PREMIUM",
+    colorKey: "obsidian",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: CV.windrunnerJacket,
+    imgHover: CV.windrunnerTerracotta,
+    colorImages: {
+      obsidian: CV.windrunnerJacket,
+      terracotta: CV.windrunnerTerracotta,
+      sand: CV.fridaySand,
+      sage: AI.fridaySage,
+      rose: AI.fridayRose
+    },
+    excerpt: "An ultralight breathable running top for Gulf mornings. Under 90g. Packs into its own pocket.",
+    description: "One piece. Wear it for the pre-dawn Corniche starts in December, run with it around your waist by sunrise. Airy weave, UPF 40 woven in, no insulation — built for the desert, not a European autumn.",
+    fabric: "Ultralight perforated ripstop · UPF 40 · Zero insulation",
+    features: ["Under 90g", "Packs into own chest pocket", "Reflective back panel", "UPF 40 sun-blocking weave", "Drop-tail hem"],
+    care: "Cold wash. Hang dry.",
+    gallery: [CV.windrunnerJacket, CV.windrunnerTerracotta, CV.fridaySand, AI.fridaySage, AI.fridayRose]
+  },
+  {
+    id: "fnd-legging-sage",
+    slug: "foundation-legging-sage",
+    name: "The Foundation Legging",
+    line: "The Foundation Line",
+    category: "legging",
+    discipline: ["gym", "run"],
+    price: 325,
+    colorKey: "sage",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: AI.fridaySage,
+    imgHover: CV.leggingObsidian,
+    colorImages: {
+      obsidian: CV.leggingObsidian,
+      terracotta: CV.fridayTerracotta,
+      sand: CV.fridaySand,
+      sage: AI.fridaySage,
+      rose: CV.leggingRose
+    },
+    excerpt: "The gym-cut version of our hero legging. Same fabric, seamless side panel, zero distraction.",
+    description: "For the days where the workout is strength, not distance. Side seam removed, waistband reinforced, fit adjusted for squat mechanics.",
+    fabric: "78% Nylon 6,6 · 22% Elastane · 200gsm (lighter than Friday, heat-optimised)",
+    features: ["Seamless side panel", "Reinforced waistband", "Gusset — increased mobility"],
+    care: "Cold wash, flat dry.",
+    gallery: [AI.fridaySage, CV.leggingObsidian, CV.fridayTerracotta, CV.fridaySand, CV.leggingRose]
+  },
+  {
+    id: "fnd-sunsleeve",
+    slug: "foundation-sun-sleeve",
+    name: "The Foundation UPF Sun-Sleeve",
+    line: "The Foundation Line",
+    category: "top",
+    discipline: ["gym", "run"],
+    price: 215,
+    colorKey: "rose",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    oos: [],
+    img: AI.foundRose,
+    imgHover: CV.sunSleeveSand,
+    colorImages: {
+      obsidian: CV.sunSleeveObsidian,
+      terracotta: CV.bikerTerracotta,
+      sand: CV.sunSleeveSand,
+      sage: CV.tankSage,
+      rose: AI.foundRose
+    },
+    excerpt: "A featherweight UPF 50+ long-sleeve for Corniche sunrise runs and modesty-conscious training.",
+    description: "Designed for the women who want shoulder and arm coverage in 40°C — whether for the Gulf sun or for modesty. Perforated weave keeps air moving, UPF 50+ blocks the burn, thumb holes keep sleeves down on the run.",
+    fabric: "Technical perforated knit · UPF 50+ · Moisture-wick · Featherweight (sub-110g)",
+    features: ["UPF 50+ sun protection", "Perforated ventilation panels", "Thumb holes", "Relaxed, modest fit", "Flat seams"],
+    care: "Cold wash. Hang dry.",
+    gallery: [AI.foundRose, CV.sunSleeveObsidian, CV.bikerTerracotta, CV.sunSleeveSand, CV.tankSage]
+  },
+  {
+    id: "fl-cap",
+    slug: "friday-run-cap",
+    name: "The Friday Cap",
+    line: "The Friday Line",
+    category: "accessory",
+    discipline: ["run"],
+    price: 95,
+    colorKey: "obsidian",
+    colors: ["obsidian", "terracotta", "sand", "sage", "rose"],
+    sizes: ["One Size"],
+    oos: [],
+    img: CV.capObsidian,
+    imgHover: CV.capTerracotta,
+    colorImages: {
+      obsidian: CV.capObsidian,
+      terracotta: CV.capTerracotta,
+      sand: CV.capSand,
+      sage: CV.capObsidian,
+      rose: CV.capTerracotta
+    },
+    excerpt: "A lightweight, packable running cap. Unstructured crown, mesh back, sweat band.",
+    description: "Keeps the sun off at 6am on the Corniche. Packs flat in a pocket. Embroidered with a quiet ST on the back panel.",
+    fabric: "Ripstop crown · Mesh rear panels",
+    features: ["Packable, unstructured", "Mesh ventilation", "Adjustable rear strap", "Embroidered ST"],
+    care: "Hand wash cold.",
+    gallery: [CV.capObsidian, CV.capObsidianAlt, CV.capTerracotta, CV.capSand]
+  }
+];
+
+window.ST_PRODUCT_BY_SLUG = Object.fromEntries(window.ST_PRODUCTS.map(p => [p.slug, p]));
