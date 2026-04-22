@@ -19,6 +19,9 @@
     .pdp-gallery .gallery-thumbs .thumb img{width:100%;height:100%;object-fit:cover}
     .pdp-gallery .gallery-hero{flex:1;aspect-ratio:4/5;background:var(--warm-sand-deep);overflow:hidden;border-radius:6px;position:relative}
     .pdp-gallery .gallery-hero img{width:100%;height:100%;object-fit:cover;transition:opacity .3s ease}
+    /* Accessory products (caps) â crop to show product only, hide model portion */
+    .pdp-gallery.cat-accessory .gallery-hero img{object-position:25% center}
+    .pdp-gallery.cat-accessory .gallery-thumbs .thumb img{object-position:25% center}
     /* Override old grid-based gallery */
     .pdp-gallery .g-item{display:none}
     @media(max-width:760px){
@@ -155,7 +158,7 @@ function renderPDP() {
   const wished = ST.state.wish.includes(P.id);
 
   document.getElementById("pdp-root").innerHTML = `
-    <div class="pdp-gallery">${galleryHTML()}</div>
+    <div class="pdp-gallery ${P.category ? 'cat-' + P.category : ''}">${galleryHTML()}</div>
     <div class="pdp-info">
       <span class="eyebrow">${P.line} ${P.badge ? '\u00b7 <span style="color:var(--terracotta);">' + P.badge + '</span>' : ''}</span>
       <h1>${P.name}</h1>
@@ -313,4 +316,3 @@ ST.renderProductGrid("#related-grid", related);
 </script>
 </body>
 </html>
-
