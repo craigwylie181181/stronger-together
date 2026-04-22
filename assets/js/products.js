@@ -1,7 +1,7 @@
 // ============================================================
-// STRONGER TOGETHER — Product catalogue
+// STRONGER TOGETHER â Product catalogue
 // Updated with Higgsfield Soul 2.0 AI model photography
-// Full colour-variant image support — April 2026
+// Full colour-variant image support â fixed product images
 // ============================================================
 
 window.ST_COLORS = {
@@ -13,10 +13,10 @@ window.ST_COLORS = {
   gold:       { name: "Desert Gold",  hex: "#B8963E" }
 };
 
-// Higgsfield Soul 2.0 AI model images — CloudFront CDN
+// Higgsfield Soul 2.0 AI model images â CloudFront CDN
 const HF = (filename) => `https://d8j0ntlcm91z4.cloudfront.net/user_3AujfoSOHSPwaMEsdxPXZgPgl8h/${filename}`;
 
-// —— ORIGINAL 8 hero images ——————————————————————————————
+// ââ ORIGINAL 8 hero images ââââââââââââââââââââââââââââââââââ
 const AI = {
   // THE FRIDAY LINE (Run)
   fridayObsidian:  HF("hf_20260421_151237_cdc521c6-af1d-4aa5-a880-868598676cde.png"),
@@ -31,367 +31,194 @@ const AI = {
   crankSage:       HF("hf_20260421_080538_54829556-942c-446d-9fe6-644d0ed1204b.png"),
 };
 
-// —— 16 colour-variant images ————————————————————————————
+// ââ 16 colour-variant images ââââââââââââââââââââââââââââââââ
 const CV = {
-  // Friday Line colour variants
-  fridayTerracotta:     HF("hf_20260421_150515_cc2243ce-97cd-4ac6-8068-fa7937572606.png"),
-  fridaySand:           HF("hf_20260421_150801_8744d554-6f6f-4736-a2bf-20c0989a803c.png"),
-  windrunnerObsidian:   HF("hf_20260421_094617_0b8a861e-c52d-4442-ac0c-f648de794ca5.png"),
-  windrunnerTerracotta: HF("hf_20260421_094618_3976922a-4541-4769-940e-bf08078ed605.png"),
-  capObsidian:          HF("hf_20260421_094618_e19ff374-028c-4ed3-b550-828b7597c556.png"),
-  capTerracotta:        HF("hf_20260421_094618_f50c8988-e522-44bb-8182-5fba6496e4dc.png"),
-  capSand:              HF("hf_20260421_094618_5c235280-e9a4-4c67-ad3a-c546813ed464.png"),
-  // Foundation colour variants
-  bikerObsidian:        HF("hf_20260421_151735_1e7d680c-4398-42b7-a332-6f8e4add1de3.png"),
-  bikerTerracotta:      HF("hf_20260421_151917_ddeb0c53-64d3-4624-ae87-0de355f3f5cb.png"),
-  bikerSage:            HF("hf_20260421_152312_17bffc32-08cf-4afc-9db1-71c1e5bdeb45.png"),
-  tankObsidian:         HF("hf_20260421_095214_e5053097-1843-4b01-bc46-3e32f2fad48b.png"),
-  leggingObsidian:      HF("hf_20260421_171430_e239ec7b-a611-4022-945a-0a2ddb950c70.png"),
-  leggingRose:          HF("hf_20260421_171632_1fdbc700-9e41-4f64-9db0-867219a46343.png"),
-  sunSleeveObsidian:    HF("hf_20260421_095513_cbe85eae-c01e-476c-9c06-ca967e2625dd.png"),
-  sunSleeveSand:        HF("hf_20260421_095606_7ae06042-771e-447f-bddd-cdb5e11bcffd.png"),
-  // Additional Foundation variants
-  tankSage:             HF("hf_20260421_111533_7a2100d5-ed02-4544-9012-2bc5cb549488.png"),
-  // Crank colour variants
-  crankTerracotta:      HF("hf_20260421_153119_3143025c-092a-4194-9145-31f03b599502.png"),
-  crankSand:            HF("hf_20260421_153522_49a43f8f-f3b5-4689-a48c-e5a885d3cebd.png"),
-};
+  // Friday Line colour variantsY^U\XÛÝNÌ
+WÌML
+LMWØØÌØÙKNMØÙMXÍN
+YMÎLÍÍMÌ
+ÈKY^TØ[Ì
+WÌMLWÎ
+Í
+
+MMMM
+ÌÍXLLÌNXNØËÈKÚ[[\ØÚYX[Ì
+WÌM
+M×ÌN
+YKXÍLM
 
-window.ST_PRODUCTS = [
-  {
-    id: "fl-legging-obsidian",
-    slug: "friday-legging-obsidian",
-    name: "The Friday Legging",
-    line: "The Friday Line",
-    category: "legging",
-    discipline: ["run", "gym", "cycle"],
-    price: 335,
-    badge: "NEW",
-    colorKey: "obsidian",
-    colors: ["obsidian", "terracotta", "sand"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: [],
-    img: AI.fridayObsidian,
-    imgHover: CV.fridayTerracotta,
-    colorImages: {
-      obsidian: AI.fridayObsidian,
-      terracotta: CV.fridayTerracotta,
-      sand: CV.fridaySand
-    },
-    excerpt: "Our hero high-waist legging. 78% Nylon 6,6 / 22% Elastane. Built for the Friday 6am run and everything after.",
-    description: "The Friday Legging is the first product Stronger Together ever made and it had to be exceptional. Squat-proof, sweat-tested in UAE heat across months of community runs, and finished to the standard the women who built this brand demanded. Nothing on the Corniche is held back. Neither is this.",
-    fabric: "78% Nylon 6,6 \u00b7 22% Elastane \u00b7 220gsm \u00b7 4-way stretch \u00b7 OEKO-TEX Standard 100",
-    features: [
-      "High-waist, 4\u20137cm fold-over waistband",
-      "7/8 length cut for Gulf climate",
-      "Hidden side phone pocket",
-      "Flat seams \u2014 no chafe on long runs",
-      "Squat-proof, opaque, moisture-wick",
-      "Co-ord capable with The Friday Bra"
-    ],
-    care: "Cold wash with like colours. Do not tumble dry. Do not iron. Designed to outlast the club.",
-    gallery: [AI.fridayObsidian, CV.fridayTerracotta, CV.fridaySand]
-  },
-  {
-    id: "fl-bra-obsidian",
-    slug: "friday-bra-obsidian",
-    name: "The Friday Bra",
-    line: "The Friday Line",
-    category: "bra",
-    discipline: ["run", "gym", "cycle"],
-    price: 235,
-    badge: "NEW",
-    colorKey: "obsidian",
-    colors: ["obsidian", "terracotta", "sand"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: [],
-    img: AI.fridayObsidian,
-    imgHover: CV.fridaySand,
-    colorImages: {
-      obsidian: AI.fridayObsidian,
-      terracotta: CV.fridayTerracotta,
-      sand: CV.fridaySand
-    },
-    excerpt: "Medium-support racerback bra. Wide straps, clean front, lined with removable pads. Matches The Friday Legging.",
-    description: "A sports bra that works every day of the week. Medium support carries the run club on Fridays and pilates on Mondays. The silhouette is clean enough to wear on its own \u2014 and that\u2019s the point. We made it so you don\u2019t have to think about it.",
-    fabric: "78% Nylon 6,6 \u00b7 22% Elastane \u00b7 Matching Friday Legging fabric",
-    features: [
-      "Racerback construction for shoulder mobility",
-      "Wide 3cm+ straps \u2014 no digging",
-      "Wide underband for rib support",
-      "Removable cup pads",
-      "Clean front \u2014 no seams, no logo across bust",
-      "Heat-comfort design, tested in UAE climate"
-    ],
-    care: "Cold wash. Flat dry. Replace pads as needed.",
-    gallery: [AI.fridayObsidian, CV.fridayTerracotta, CV.fridaySand]
-  },
-  {
-    id: "fl-legging-terracotta",
-    slug: "friday-legging-terracotta",
-    name: "The Friday Legging",
-    line: "The Friday Line",
-    category: "legging",
-    discipline: ["run", "gym"],
-    price: 335,
-    badge: "LAUNCH COLOUR",
-    colorKey: "terracotta",
-    colors: ["obsidian", "terracotta", "sand"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: ["XS"],
-    img: CV.fridayTerracotta,
-    imgHover: AI.fridayObsidian,
-    colorImages: {
-      obsidian: AI.fridayObsidian,
-      terracotta: CV.fridayTerracotta,
-      sand: CV.fridaySand
-    },
-    excerpt: "The Friday Legging in our signature terracotta. A nod to the warm Gulf clay and the brand accent you\u2019ll recognise from a distance.",
-    description: "Same legging, different feeling. Terracotta is the colour of the brand \u2014 the warm Gulf clay you see at sunrise on the Corniche. A subtle marker across the Friday runs.",
-    fabric: "78% Nylon 6,6 \u00b7 22% Elastane \u00b7 220gsm \u00b7 4-way stretch",
-    features: [
-      "Signature terracotta dye \u2014 colourfast tested for UAE sun",
-      "High-waist, fold-over waistband",
-      "Hidden phone pocket",
-      "Squat-proof, moisture-wick"
-    ],
-    care: "Cold wash. Colours stay true for 100+ washes.",
-    gallery: [CV.fridayTerracotta, AI.fridayObsidian, CV.fridaySand]
-  },
-  {
-    id: "fl-bra-sand",
-    slug: "friday-bra-sand",
-    name: "The Friday Bra",
-    line: "The Friday Line",
-    category: "bra",
-    discipline: ["run", "gym", "cycle"],
-    price: 235,
-    colorKey: "sand",
-    colors: ["obsidian", "terracotta", "sand"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: [],
-    img: CV.fridaySand,
-    imgHover: CV.fridayTerracotta,
-    colorImages: {
-      obsidian: AI.fridayObsidian,
-      terracotta: CV.fridayTerracotta,
-      sand: CV.fridaySand
-    },
-    excerpt: "The Friday Bra in warm sand. Almost white, never cold white.",
-    description: "Designed against the desert palette, not a European minimal one. This is the colour of Saadiyat beach at sunrise \u2014 warmer than white, softer than cream.",
-    fabric: "78% Nylon 6,6 \u00b7 22% Elastane",
-    features: ["Matching Friday Legging fabric", "Clean, co-ord ready", "Medium support"],
-    care: "Cold wash, flat dry.",
-    gallery: [CV.fridaySand, AI.fridayObsidian, CV.fridayTerracotta]
-  },
-  {
-    id: "fnd-shorts",
-    slug: "foundation-biker-short",
-    name: "The Foundation Biker Short",
-    line: "The Foundation Line",
-    category: "short",
-    discipline: ["gym", "cycle"],
-    price: 215,
-    colorKey: "obsidian",
-    colors: ["obsidian", "terracotta", "sage"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: [],
-    img: CV.bikerObsidian,
-    imgHover: CV.bikerSage,
-    colorImages: {
-      obsidian: CV.bikerObsidian,
-      terracotta: CV.bikerTerracotta,
-      sage: CV.bikerSage
-    },
-    excerpt: "Mid-thigh biker short for the gym and the ride. Flat seams, high rise, zero roll-down.",
-    description: "Built for the barbell, the spin studio, and everything strength-based. Same fabric science as The Friday Legging, cut shorter for heat and freedom.",
-    fabric: "78% Nylon 6,6 \u00b7 22% Elastane \u00b7 220gsm",
-    features: ["Mid-thigh cut", "High rise, stays put", "Flat seams", "Squat-proof", "Inner leg pocket"],
-    care: "Cold wash, hang dry.",
-    gallery: [CV.bikerObsidian, CV.bikerTerracotta, CV.bikerSage]
-  },
-  {
-    id: "fnd-tank",
-    slug: "foundation-tank",
-    name: "The Foundation Tank",
-    line: "The Foundation Line",
-    category: "top",
-    discipline: ["gym", "run"],
-    price: 180,
-    colorKey: "sand",
-    colors: ["obsidian", "sand", "sage"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: [],
-    img: AI.foundSand,
-    imgHover: CV.tankObsidian,
-    colorImages: {
-      obsidian: CV.tankObsidian,
-      sand: AI.foundSand,
-      sage: CV.tankSage
-    },
-    excerpt: "A soft, weightless tank for training and running in the heat. Cropped hem, relaxed fit.",
-    description: "A tank designed for UAE summer. Loose through the body, cropped at the hip so it doesn\u2019t trap heat. Technical fabric that feels like a favourite T-shirt.",
-    fabric: "Technical knit \u00b7 88% Modal / 12% Elastane \u00b7 Featherweight",
-    features: ["Cropped hem", "Relaxed through the body", "Raw-edge neckline", "Featherweight \u2014 under 90g"],
-    care: "Cold wash, flat dry.",
-    gallery: [AI.foundSand, CV.tankObsidian, CV.tankSage]
-  },
-  {
-    id: "crk-bib",
-    slug: "crank-bib-short",
-    name: "The Crank Bib Short",
-    line: "The Crank Line",
-    category: "cycle",
-    discipline: ["cycle"],
-    price: 449,
-    badge: "S2 DROP",
-    colorKey: "obsidian",
-    colors: ["obsidian", "terracotta"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: ["XL"],
-    img: AI.crankObsidian,
-    imgHover: AI.crankSage,
-    colorImages: {
-      obsidian: AI.crankObsidian,
-      terracotta: CV.crankTerracotta
-    },
-    excerpt: "Women\u2019s cycling bib with a chamois built for Crank Abu Dhabi\u2019s Friday rides.",
-    description: "Designed with Chloe\u2019s cycling studio colleagues, tested through hundreds of kilometres on Yas Island. A bib short that respects women\u2019s anatomy \u2014 a rare enough thing in cycling that it\u2019s worth saying.",
-    fabric: "Italian performance knit \u00b7 68% Nylon / 32% Elastane \u00b7 Pro-level chamois",
-    features: ["Multi-density chamois insert", "Wide leg grippers \u2014 no dig", "Mesh upper for ventilation", "Designed by and for women"],
-    care: "Cold hand wash. Do not tumble.",
-    gallery: [AI.crankObsidian, CV.crankTerracotta, AI.crankSage]
-  },
-  {
-    id: "crk-jersey",
-    slug: "crank-summer-jersey",
-    name: "The Crank Summer Jersey",
-    line: "The Crank Line",
-    category: "cycle",
-    discipline: ["cycle"],
-    price: 389,
-    colorKey: "terracotta",
-    colors: ["terracotta", "obsidian", "sand"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: [],
-    img: CV.crankTerracotta,
-    imgHover: AI.crankObsidian,
-    colorImages: {
-      terracotta: CV.crankTerracotta,
-      obsidian: AI.crankObsidian,
-      sand: CV.crankSand
-    },
-    excerpt: "A women\u2019s cycling jersey cut for UAE summer. Featherweight, full-zip, three rear pockets.",
-    description: "The cycling jersey we couldn\u2019t find in the UAE market \u2014 so we made it. Women\u2019s cut, heat-appropriate weight, fits actual ride needs.",
-    fabric: "Ultralight Italian weave \u00b7 Laser-cut hem",
-    features: ["Full-length YKK zip", "3 rear cargo pockets + zip pocket", "Silicone hem gripper", "Reflective trim"],
-    care: "Cold wash. Flat dry.",
-    gallery: [CV.crankTerracotta, AI.crankObsidian, CV.crankSand]
-  },
-  {
-    id: "fl-windrunner",
-    slug: "friday-wind-runner",
-    name: "The Friday Windrunner",
-    line: "The Friday Line",
-    category: "top",
-    discipline: ["run", "cycle"],
-    price: 245,
-    badge: "PREMIUM",
-    colorKey: "obsidian",
-    colors: ["obsidian", "terracotta"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: [],
-    img: CV.windrunnerObsidian,
-    imgHover: CV.windrunnerTerracotta,
-    colorImages: {
-      obsidian: CV.windrunnerObsidian,
-      terracotta: CV.windrunnerTerracotta
-    },
-    excerpt: "An ultralight breathable running top for Gulf mornings. Under 90g. Packs into its own pocket.",
-    description: "One piece. Wear it for the pre-dawn Corniche starts in December, run with it around your waist by sunrise. Airy weave, UPF 40 woven in, no insulation \u2014 built for the desert, not a European autumn.",
-    fabric: "Ultralight perforated ripstop \u00b7 UPF 40 \u00b7 Zero insulation",
-    features: ["Under 90g", "Packs into own chest pocket", "Reflective back panel", "UPF 40 sun-blocking weave", "Drop-tail hem"],
-    care: "Cold wash. Hang dry.",
-    gallery: [CV.windrunnerObsidian, CV.windrunnerTerracotta]
-  },
-  {
-    id: "fnd-legging-sage",
-    slug: "foundation-legging-sage",
-    name: "The Foundation Legging",
-    line: "The Foundation Line",
-    category: "legging",
-    discipline: ["gym", "run"],
-    price: 325,
-    colorKey: "sage",
-    colors: ["obsidian", "sage", "rose"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: [],
-    img: AI.fridaySage,
-    imgHover: CV.leggingObsidian,
-    colorImages: {
-      obsidian: CV.leggingObsidian,
-      sage: AI.fridaySage,
-      rose: CV.leggingRose
-    },
-    excerpt: "The gym-cut version of our hero legging. Same fabric, seamless side panel, zero distraction.",
-    description: "For the days where the workout is strength, not distance. Side seam removed, waistband reinforced, fit adjusted for squat mechanics.",
-    fabric: "78% Nylon 6,6 \u00b7 22% Elastane \u00b7 200gsm (lighter than Friday, heat-optimised)",
-    features: ["Seamless side panel", "Reinforced waistband", "Gusset \u2014 increased mobility"],
-    care: "Cold wash, flat dry.",
-    gallery: [AI.fridaySage, CV.leggingObsidian, CV.leggingRose]
-  },
-  {
-    id: "fnd-sunsleeve",
-    slug: "foundation-sun-sleeve",
-    name: "The Foundation UPF Sun-Sleeve",
-    line: "The Foundation Line",
-    category: "top",
-    discipline: ["gym", "run"],
-    price: 215,
-    colorKey: "rose",
-    colors: ["obsidian", "rose", "sand"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    oos: [],
-    img: AI.foundRose,
-    imgHover: CV.sunSleeveSand,
-    colorImages: {
-      obsidian: CV.sunSleeveObsidian,
-      rose: AI.foundRose,
-      sand: CV.sunSleeveSand
-    },
-    excerpt: "A featherweight UPF 50+ long-sleeve for Corniche sunrise runs and modesty-conscious training.",
-    description: "Designed for the women who want shoulder and arm coverage in 40\u00b0C \u2014 whether for the Gulf sun or for modesty. Perforated weave keeps air moving, UPF 50+ blocks the burn, thumb holes keep sleeves down on the run.",
-    fabric: "Technical perforated knit \u00b7 UPF 50+ \u00b7 Moisture-wick \u00b7 Featherweight (sub-110g)",
-    features: ["UPF 50+ sun protection", "Perforated ventilation panels", "Thumb holes", "Relaxed, modest fit", "Flat seams"],
-    care: "Cold wash. Hang dry.",
-    gallery: [AI.foundRose, CV.sunSleeveObsidian, CV.sunSleeveSand]
-  },
-  {
-    id: "fl-cap",
-    slug: "friday-run-cap",
-    name: "The Friday Cap",
-    line: "The Friday Line",
-    category: "accessory",
-    discipline: ["run"],
-    price: 95,
-    colorKey: "obsidian",
-    colors: ["obsidian", "terracotta", "sand"],
-    sizes: ["One Size"],
-    oos: [],
-    img: CV.capObsidian,
-    imgHover: CV.capTerracotta,
-    colorImages: {
-      obsidian: CV.capObsidian,
-      terracotta: CV.capTerracotta,
-      sand: CV.capSand
-    },
-    excerpt: "A lightweight, packable running cap. Unstructured crown, mesh back, sweat band.",
-    description: "Keeps the sun off at 6am on the Corniche. Packs flat in a pocket. Embroidered with a quiet ST on the back panel.",
-    fabric: "Ripstop crown \u00b7 Mesh rear panels",
-    features: ["Packable, unstructured", "Mesh ventilation", "Adjustable rear strap", "Embroidered ST"],
-    care: "Hand wash cold.",
-    gallery: [CV.capObsidian, CV.capTerracotta, CV.capSand]
-  }
-];
+XXÌËYMÎMØMKÈKÚ[[\\XÛÝNÌ
+WÌM
+NÌÎMÍLKM
+MKM
+ÍKNMKX
+ÎY
+
+KÈKØ\ØÚYX[Ì
+WÌM
+NÙLNYÍÍLËMYËXMLNÍNMØÍMMÈKØ\\XÛÝNÌ
+WÌM
+NÙLÎNYMLM
+NNMYMMMËÈKØ\Ø[Ì
+WÌM
+NÍXÌÍLYNXMMÍËXYØKXÍM
+LÙY
 
-window.ST_PRODUCT_BY_SLUG = Object.fromEntries(window.ST_PRODUCTS.map(p => [p.slug, p]));
+ÈKËÈÝ[][ÛÛÛÝ\\X[ÂZÙ\ØÚYX[Ì
+WÌMLMÌÍWÌYMÙ
+ËMÎNMËXLÌÌMMYYLËÈKZÙ\\XÛÝNÌ
+WÌMLNLM×ÙXÍLËMËM
+XYN
+ËLLÍMYÙXØÈKZÙ\ØYÙNÌ
+WÌMLÌLÌMØÌÌLÙMYËNYKMÌXÌYMXX
+KÈK[ÓØÚYX[Ì
+WÌMLMÙML
+LÌMËLN
+ËMKXÍ
+LÙLÌY
+ÈKYÙÚ[ÓØÚYX[Ì
+WÌMÌMÌÙLÎYXÍØXMLKMNM
+XKLLMLÍÌÈKYÙÚ[ÔÜÙNÌ
+WÌMÌMÌÌYÍÌNYMKMNYN
+ÌNXM
+ÍËÈKÝ[ÛY]SØÚYX[Ì
+WÌMMLL×ØØN
+YXYKXÌYKM
+ÍËNXÌ
+XØNMÙLYÈKÝ[ÛY]TØ[Ì
+WÌMM
+ÍØYL
+
+MÍÌYKM
+
+ÙXXÙYLLXÙÈKËÈY][Û[Ý[][Û\X[Â[ÔØYÙNÌ
+WÌLLMLÌ×ÍØLL
+KYYM
+M
+NLLLÍXØMMÈKËÈÜ[ÈÛÛÝ\\X[ÂÜ[Õ\XÛÝNÌ
+WÌMLÌLNWÌÌMÌXËLLKMNMNLM
+KLÌYØNNMLÈKÜ[ÔØ[Ì
+WÌMLÍLÍXMÙYØKM
+KXMËYMXN
+YØÙXÈKËÈUÎ^YÙXÝ[XYÙ\ÂSØÚYX[Ì
+WÌNLÍLÙMLN
+KLYKMMØËNYKLXÍÎNXKÈKÜ[Ñ[X[SØÚYX[Ì
+WÌNLÌL
+×ÍLNKL
+ÌMMØÌNLLKMÎÍYYY
+ÈKÚ[[\XÚÙ]Ì
+WÌN
+
+L×ÌÍYXÍNXÙMÎMËXXÌÍLLMXÙMMÍÈKÚ[[\XÚÙ][Ì
+WÌN
+
+LÌÍMMÌXØLM
+NLLXØÌMÌÙYËÈKNÂÚ[ÝËÕÔÑPÕÈHÂÂY[YÙÚ[Ë[ØÚYX[ÛYÎY^K[YÙÚ[Ë[ØÚYX[[YNHY^HYÙÚ[È[NHY^H[HØ]YÛÜNYÙÚ[È\ØÚ\[NÈ[Þ[HÞXÛHKXÙNÌÍKYÙNUÈÛÛÜÙ^NØÚYX[ÛÛÜÎÈØÚYX[\XÛÝHØ[KÚ^\ÎÈÈÈHKÛÜÎ×K[YÎRKY^SØÚYX[[YÒÝ\RKY^TØYÙKÛÛÜ[XYÙ\ÎÂØÚYX[RKY^SØÚYX[\XÛÝNÕY^U\XÛÝKØ[ÕY^TØ[K^Ù\Ý\\ÈYÚ]ØZ\ÝYÙÚ[Ë
+Î	H[Û
+
+ÈH[\Ý[KZ[ÜHY^H
+[H[[]\][ÈY\\ØÜ\[ÛHY^HYÙÚ[È\ÈH\ÝÙXÝÝÛÙ\ÙÙ]\]\XYH[]YÈH^Ù\[Û[Ü]X]\ÛÙÝÙX]]\ÝY[PQHX]XÜÜÜÈ[ÛÈÙÛÛ[][]H[Ë[[\ÚYÈHÝ[\HÛÛY[ÚÈZ[\È[[X[YÝ[ÈÛHÛÜXÚH\È[XÚËZ]\\È\ËXXÎÎ	H[Û
+
+0­ÈH[\Ý[H0­ÈÜÛH0­È
+]Ø^HÝ]Ú0­ÈÑRÓËUVÝ[\LX]\\ÎÂYÚ]ØZ\Ý
+8 $ÍØÛHÛ[Ý\ØZ\Ý[ËÎ[ÝÝ]ÜÝ[Û[X]HY[ÚYHÛHØÚÙ]]ÙX[\È8 %ÈÚYHÛÛÈ[ÈÜ]X]\ÛÙÜ\]YK[Ú\Ý\K]ÚXÚÈÛË[ÜØ\XHÚ]HY^HHKØ\NÛÛØ\ÚÚ]ZÙHÛÛÝ\ËÈÝ[XHKÈÝ\Û\ÚYÛYÈÝ]\ÝHÛXØ[\NÂRKY^SØÚYX[ÕY^U\XÛÝKÕY^TØ[RKY^TØYÙBBKÂYXK[ØÚYX[ÛYÎY^KXK[ØÚYX[[YNHY^HH[NHY^H[HØ]YÛÜNH\ØÚ\[NÈ[Þ[HÞXÛHKXÙNÍKYÙNUÈÛÛÜÙ^NØÚYX[ÛÛÜÎÈØÚYX[\XÛÝHØ[KÚ^\ÎÈÈÈHKÛÜÎ×K[YÎÕSØÚYX[[YÒÝ\ÕY^U\XÛÝKÛÛÜ[XYÙ\ÎÂØÚYX[ÕSØÚYX[\XÛÝNÕY^U\XÛÝKØ[ÕY^TØ[K^Ù\YY][K\Ý\ÜXÙ\XÚÈKÚYHÝ\ËÛX[Û[YÚ][[ÝXHYËX]Ú\ÈHY^HYÙÚ[Ë\ØÜ\[ÛHÜÜÈH]ÛÜÜÈ]\H^HÙHÙYZËYY][HÝ\ÜØ\Y\ÈH[ÛXÛY^\È[[]\ÈÛ[Û^\ËHÚ[ÝY]H\ÈÛX[[ÝYÚÈÙX\Û]ÈÝÛ8 %[]	ÜÈHÚ[ÙHXYH]ÛÈ[ÝHÛÝ]HÈ[ÈXÝ]]XXÎÎ	H[Û
+
+0­ÈH[\Ý[H0­ÈX]Ú[ÈY^HYÙÚ[ÈXXÈX]\\ÎÂXÙ\XÚÈÛÛÝXÝ[ÛÜÚÝ[\[Ø[]HÚYHØÛJÈÝ\È8 %ÈYÙÚ[ÈÚYH[\[ÜXÝ\Ü[[ÝXHÝ\YÈÛX[Û8 %ÈÙX[\ËÈÙÛÈXÜÜÜÈ\ÝX]XÛÛYÜ\ÚYÛ\ÝY[PQHÛ[X]HKØ\NÛÛØ\Ú]K\XÙHYÈ\ÈYYYØ[\NÐÕSØÚYX[ÕY^U\XÛÝKÕY^TØ[BKÂY[YÙÚ[Ë]\XÛÝHÛYÎY^K[YÙÚ[Ë]\XÛÝH[YNHY^HYÙÚ[È[NHY^H[HØ]YÛÜNYÙÚ[È\ØÚ\[NÈ[Þ[HKXÙNÌÍKYÙNUSÒÓÓÕTÛÛÜÙ^N\XÛÝHÛÛÜÎÈØÚYX[\XÛÝHØ[KÚ^\ÎÈÈÈHKÛÜÎÈÈK[YÎÕY^U\XÛÝK[YÒÝ\RKY^SØÚYX[ÛÛÜ[XYÙ\ÎÂØÚYX[RKY^SØÚYX[\XÛÝNÕY^U\XÛÝKØ[ÕY^TØ[K^Ù\HY^HYÙÚ[È[Ý\ÚYÛ]\H\XÛÝKHÙÈHØ\HÝ[Û^H[H[XØÙ[[ÝIÛXÛÙÛ\ÙHÛHH\Ý[ÙK\ØÜ\[ÛØ[YHYÙÚ[ËY\[Y[[Ë\XÛÝH\ÈHÛÛÝ\ÙH[8 %HØ\HÝ[Û^H[ÝHÙYH]Ý[\ÙHÛHÛÜXÚKHÝXHX\Ù\XÜÜÜÈHY^H[ËXXÎÎ	H[Û
+
+0­ÈH[\Ý[H0­ÈÜÛH0­È
+]Ø^HÝ]ÚX]\\ÎÂÚYÛ]\H\XÛÝHYH8 %ÛÛÝ\\Ý\ÝYÜPQHÝ[YÚ]ØZ\ÝÛ[Ý\ØZ\Ý[Y[ÛHØÚÙ]Ü]X]\ÛÙ[Ú\Ý\K]ÚXÚÈKØ\NÛÛØ\ÚÛÛÝ\ÈÝ^HYHÜL
+ÈØ\Ú\ËØ[\NÂÕY^U\XÛÝKRKY^SØÚYX[ÕY^TØ[BKÂYXK\Ø[ÛYÎY^KXK\Ø[[YNHY^HH[NHY^H[HØ]YÛÜNH\ØÚ\[NÈ[Þ[HÞXÛHKXÙNÍKÛÛÜÙ^NØ[ÛÛÜÎÈØÚYX[\XÛÝHØ[KÚ^\ÎÈÈÈHKÛÜÎ×K[YÎÕY^TØ[[YÒÝ\RKY^TØYÙKÛÛÜ[XYÙ\ÎÂØÚYX[ÕSØÚYX[\XÛÝNÕY^U\XÛÝKØ[ÕY^TØ[K^Ù\HY^HH[Ø\HØ[[[ÜÝÚ]K]\ÛÛÚ]K\ØÜ\[ÛèÍ¥¹¥¹ÍÐÑ¡ÍÉÐÁ±ÑÑ°¹½ÐÕÉ½Á¸µ¥¹¥µ°½¹¸Q¡¥Ì¥ÌÑ¡½±½ÕÈ½M¥åÐ ÐÍÕ¹É¥ÍPÝÉµÈÑ¡¸Ý¡¥Ñ°Í½ÑÈÑ¡¸É´¸°(É¥èÜà9å±½¸Ø°Ø
+ÜÈÈ±ÍÑ¹°(ÑÕÉÌèl5Ñ¡¥¹É¥ä1¥¹É¥°
+±¸°¼µ½ÉÉä°5¥Õ´ÍÕÁÁ½ÉÐt°(Éè
+½±ÝÍ °±ÐÉä¸°(±±Éäèm
+X¹É¥åM¹°
+X¹É=Í¥¥¸°
+X¹É¥åQÉÉ½ÑÑt(ô°(ì(¥è¹µÍ¡½ÉÑÌ°(Í±Õè½Õ¹Ñ¥½¸µ¥­ÈµÍ¡½ÉÐ°(¹µèQ¡½Õ¹Ñ¥½¸	¥­ÈM¡½ÉÐ°(±¥¹èQ¡½Õ¹Ñ¥½¸1¥¹°(Ñ½ÉäèÍ¡½ÉÐ°(¥Í¥Á±¥¹èlå´°å±t°(ÁÉ¥èÈÄÔ°(½±½É-äè½Í¥¥¸°(½±½ÉÌèl½Í¥¥¸°ÑÉÉ½ÑÑ°Ít°(Í¥éÌèlaL°L°4°0°a0t°(½½Ìèmt°(¥µè
+X¹¥­É=Í¥¥¸°(¥µ!½ÙÈè
+X¹¥­ÉM°(½±½É%µÌèì(½Í¥¥¸è
+X¹¥­É=Í¥¥¸°(ÑÉÉ½ÑÑè
+X¹¥­ÉQÉÉ½ÑÑ°(Íè
+X¹¥­ÉM(ô°(áÉÁÐè5¥µÑ¡¥ ¥­ÈÍ¡½ÉÐ½ÈÑ¡å´¹Ñ¡É¥¸±ÐÍµÌ°¡¥ É¥Í°éÉ¼É½±°µ½Ý¸¸°(ÍÉ¥ÁÑ¥½¸è	Õ¥±Ð½ÈÑ¡É±°°Ñ¡ÍÁ¥¸ÍÑÕ¥¼°¹ÙÉåÑ¡¥¹ÍÑÉ¹Ñ µÍ¸MµÉ¥Í¥¹ÌQ¡É¥ä1¥¹°ÕÐÍ¡½ÉÑÈ½È¡Ð¹É½´¸°(É¥èÜà9å±½¸Ø°Ø
+ÜÈÈ±ÍÑ¹
+ÜÈÈÁÍ´°(ÑÕÉÌèl5¥µÑ¡¥ ÕÐ°!¥ É¥Í°ÍÑåÌÁÕÐ°±ÐÍµÌ°MÅÕÐµÁÉ½½°%¹¹È±Á½­Ðt°(Éè
+½±ÝÍ °¡¹Éä¸°(±±Éäèm
+X¹¥­É=Í¥¥¸°
+X¹¥­ÉQÉÉ½ÑÑ°
+X¹¥­ÉMt(ô°(ì(¥è¹µÑ¹¬°(Í±Õè½Õ¹Ñ¥½¸µÑ¹¬°(¹µèQ¡½Õ¹Ñ¥½¸Q¹¬°(±¥¹èQ¡½Õ¹Ñ¥½¸1¥¹°(Ñ½ÉäèÑ½À°(¥Í¥Á±¥¹èlå´°ÉÕ¸t°(ÁÉ¥èÄàÀ°(½±½É-äèÍ¹°(½±½ÉÌèl½Í¥¥¸°Í¹°Ít°(Í¥éÌèlaL°L°4°0°a0t°(½½Ìèmt°(¥µè$¹½Õ¹M¹°(¥µ!½ÙÈè
+X¹Ñ¹­=Í¥¥¸°(½±½É%µÌèì(½Í¥¥¸è
+X¹Ñ¹­=Í¥¥¸°(Í¹è$¹½Õ¹M¹°(Íè
+X¹Ñ¹­M(ô°(áÉÁÐèÍ½Ð°Ý¥¡Ñ±ÍÌÑ¹¬½ÈÑÉ¥¹¥¹¹ÉÕ¹¹¥¹¥¸Ñ¡¡Ð¸
+É½ÁÁ¡´°É±á¥Ð¸°(ÍÉ¥ÁÑ¥½¸èÑ¹¬Í¥¹½ÈUÍÕµµÈ¸1½½ÍÑ¡É½Õ Ñ¡½ä°É½ÁÁÐÑ¡¡¥ÀÍ¼¥Ð½Í¸ÐÑÉÀ¡Ð¸Q¡¹¥°É¥Ñ¡Ð±Ì±¥­Ù½ÕÉ¥ÑPµÍ¡¥ÉÐ¸°(É¥èQ¡¹¥°­¹¥Ð
+Üàà5½°¼ÄÈ±ÍÑ¹
+ÜÑ¡ÉÝ¥¡Ð°(ÑÕÉÌèl
+É½ÁÁ¡´°I±áÑ¡É½Õ Ñ¡½ä°IÜµ¹­±¥¹°Ñ¡ÉÝ¥¡ÐPÕ¹ÈäÁt°(Éè
+½±ÝÍ °±ÐÉä¸°(±±Éäèm$¹½Õ¹M¹°
+X¹Ñ¹­=Í¥¥¸°
+X¹Ñ¹­Mt(ô°(ì(¥èÉ¬µ¥°(Í±ÕèÉ¹¬µ¥µÍ¡½ÉÐ°(¹µèQ¡
+É¹¬	¥M¡½ÉÐ°(±¥¹èQ¡
+É¹¬1¥¹°(Ñ½Éäèå±°(¥Í¥Á±¥¹èlå±t°(ÁÉ¥èÐÐä°(èLÈI=@°(½±½É-äè½Í¥¥¸°(½±½ÉÌèl½Í¥¥¸°ÑÉÉ½ÑÑt°(Í¥éÌèlaL°L°4°0°a0t°(½½Ìèla0t°(¥µè
+X¹É¹­µ±=Í¥¥¸°(¥µ!½ÙÈè$¹É¹­M°(½±½É%µÌèì(½Í¥¥¸è
+X¹É¹­µ±=Í¥¥¸°(ÑÉÉ½ÑÑè
+X¹É¹­QÉÉ½ÑÑ(ô°(áÉÁÐè]½µ¸Ìå±¥¹¥Ý¥Ñ ¡µ½¥ÌÕ¥±Ð½È
+É¹¬Ô¡¤ÌÉ¥äÉ¥Ì¸°(ÍÉ¥ÁÑ¥½¸èÍ¥¹Ý¥Ñ 
+¡±½Ìå±¥¹ÍÑÕ¥¼½±±ÕÌ°ÑÍÑÑ¡É½Õ ¡Õ¹ÉÌ½­¥±½µÑÉÌ½¸eÌ%Í±¹¸¥Í¡½ÉÐÑ¡ÐÉÍÁÑÌÝ½µ¸Ì¹Ñ½µäPÉÉ¹½Õ Ñ¡¥¹¥¸å±¥¹Ñ¡Ð¥ÐÌÝ½ÉÑ Íå¥¹¸°(É¥è%Ñ±¥¸ÁÉ½Éµ¹­¹¥Ð
+ÜØà9å±½¸¼ÌÈ±ÍÑ¹
+ÜAÉ¼µ±Ù°¡µ½¥Ì°(ÑÕÉÌèl5Õ±Ñ¤µ¹Í¥Ñä¡µ½¥Ì¥¹ÍÉÐ°]¥±É¥ÁÁÉÌP¹¼¥°5Í ÕÁÁÈ½ÈÙ¹Ñ¥±Ñ¥½¸°Í¥¹ä¹½ÈÝ½µ¸t°(Éè
+½±¡¹ÝÍ ¸¼¹½ÐÑÕµ±¸°(±±Éäèm
+X¹É¹­µ±=Í¥¥¸°
+X¹É¹­QÉÉ½ÑÑ°$¹É¹­Mt(ô°(ì(¥èÉ¬µ©ÉÍä°(Í±ÕèÉ¹¬µÍÕµµÈµ©ÉÍä°(¹µèQ¡
+É¹¬MÕµµÈ)ÉÍä°(±¥¹èQ¡
+É¹¬1¥¹°(Ñ½Éäèå±°(¥Í¥Á±¥¹èlå±t°(ÁÉ¥èÌàä°(½±½É-äèÑÉÉ½ÑÑ°(½±½ÉÌèlÑÉÉ½ÑÑ°½Í¥¥¸°Í¹t°(Í¥éÌèlaL°L°4°0°a0t°(½½Ìèmt°(¥µè
+X¹É¹­QÉÉ½ÑÑ°(¥µ!½ÙÈè
+X¹É¹­µ±=Í¥¥¸°(½±½É%µÌèì(ÑÉÉ½ÑÑè
+X¹É¹­QÉÉ½ÑÑ°(½Í¥¥¸è
+X¹É¹­µ±=Í¥¥¸°(Í¹è
+X¹É¹­M¹(ô°(áÉÁÐèÝ½µ¸Ìå±¥¹©ÉÍäÕÐ½ÈUÍÕµµÈ¸Ñ¡ÉÝ¥¡Ð°Õ±°µé¥À°Ñ¡ÉÉÈÁ½­ÑÌ¸°(ÍÉ¥ÁÑ¥½¸èQ¡å±¥¹©ÉÍäÝ½Õ±¸Ð¥¹¥¸Ñ¡UµÉ­ÐPÍ¼Ýµ¥Ð¸]½µ¸ÌÕÐ°¡ÐµÁÁÉ½ÁÉ¥ÑÝ¥¡Ð°¥ÑÌÑÕ°É¥¹Ì¸°(É¥èU±ÑÉ±¥¡Ð%Ñ±¥¸ÝÙ
+Ü1ÍÈµÕÐ¡´°(ÑÕÉÌèlÕ±°µ±¹Ñ e-,é¥À°ÌÉÈÉ¼Á½­ÑÌ¬é¥ÀÁ½­Ð°M¥±¥½¹¡´É¥ÁÁÈ°I±Ñ¥ÙÑÉ¥´t°(Éè
+½±ÝÍ ¸±ÐÉä¸°(±±Éäèm
+X¹É¹­QÉÉ½ÑÑ°
+X¹É¹­µ±=Í¥¥¸°
+X¹É¹­M¹t(ô°(ì(¥è°µÝ¥¹ÉÕ¹¹È°(Í±ÕèÉ¥äµÝ¥¹µÉÕ¹¹È°(¹µèQ¡É¥ä]¥¹ÉÕ¹¹È°(±¥¹èQ¡É¥ä1¥¹°(Ñ½ÉäèÑ½À°(¥Í¥Á±¥¹èlÉÕ¸°å±t°(ÁÉ¥èÈÐÔ°(èAI5%U4°(½±½É-äè½Í¥¥¸°(½±½ÉÌèl½Í¥¥¸°ÑÉÉ½ÑÑt°(Í¥éÌèlaL°L°4°0°a0t°(½½Ìèmt°(¥µè
+X¹Ý¥¹ÉÕ¹¹É)­Ð°(¥µ!½ÙÈè
+X¹Ý¥¹ÉÕ¹¹É)­Ñ±Ð°(½±½É%µÌèì(½Í¥¥¸è
+X¹Ý¥¹ÉÕ¹¹É)­Ð°(ÑÉÉ½ÑÑè
+X¹Ý¥¹ÉÕ¹¹ÉQÉÉ½ÑÑ(ô°(áÉÁÐè¸Õ±ÑÉ±¥¡ÐÉÑ¡±ÉÕ¹¹¥¹Ñ½À½ÈÕ±µ½É¹¥¹Ì¸U¹ÈäÁ¸A­Ì¥¹Ñ¼¥ÑÌ½Ý¸Á½­Ð¸°(ÍÉ¥ÁÑ¥½¸è=¹Á¥¸]È¥Ð½ÈÑ¡ÁÉµÝ¸
+½É¹¥¡ÍÑÉÑÌ¥¸µÈ°ÉÕ¸Ý¥Ñ ¥ÐÉ½Õ¹å½ÕÈÝ¥ÍÐäÍÕ¹É¥Í¸¥ÉäÝÙ°UAÐÀÝ½Ù¸¥¸°¹¼¥¹ÍÕ±Ñ¥½¸PÕ¥±Ð½ÈÑ¡ÍÉÐ°¹½ÐÕÉ½Á¸ÕÑÕµ¸¸°(É¥èU±ÑÉ±¥¡ÐÁÉ½ÉÑÉ¥ÁÍÑ½À
+ÜUAÐÀ
+ÜiÉ¼¥¹ÍÕ±Ñ¥½¸°(ÑÕÉÌèlU¹ÈäÁ°A­Ì¥¹Ñ¼½Ý¸¡ÍÐÁ½­Ð°I±Ñ¥Ù¬Á¹°°UAÐÀÍÕ¸µ±½­¥¹ÝÙ°É½ÀµÑ¥°¡´t°(Éè
+½±ÝÍ ¸!¹Éä¸°(±±Éäèm
+X¹Ý¥¹ÉÕ¹¹É)­Ð°
+X¹Ý¥¹ÉÕ¹¹É)­Ñ±Ð°
+X¹Ý¥¹ÉÕ¹¹ÉQÉÉ½ÑÑt(ô°(ì(¥è¹µ±¥¹µÍ°(Í±Õè½Õ¹Ñ¥½¸µ±¥¹µÍ°(¹µèQ¡½Õ¹Ñ¥½¸1¥¹°(±¥¹èQ¡½Õ¹Ñ¥½¸1¥¹°(Ñ½Éäè±¥¹°(¥Í¥Á±¥¹èlå´°ÉÕ¸t°(ÁÉ¥èÌÈÔ°(½±½É-äèÍ°(½±½ÉÌèl½Í¥¥¸°Í°É½Ít°(Í¥éÌèlaL°L°4°0°a0t°(½½Ìèmt°(¥µè$¹É¥åM°(¥µ!½ÙÈè
+X¹±¥¹=Í¥¥¸°(½±½É%µÌèì(½Í¥¥¸è
+X¹±¥¹=Í¥¥¸°(Íè$¹É¥åM°(É½Íè
+X¹±¥¹I½Í(ô°(áÉÁÐèQ¡å´µÕÐÙÉÍ¥½¸½½ÕÈ¡É¼±¥¹¸MµÉ¥°Íµ±ÍÌÍ¥Á¹°°éÉ¼¥ÍÑÉÑ¥½¸¸°(ÍÉ¥ÁÑ¥½¸è½ÈÑ¡åÌÝ¡ÉÑ¡Ý½É­½ÕÐ¥ÌÍÑÉ¹Ñ °¹½Ð¥ÍÑ¹¸M¥Í´Éµ½Ù°Ý¥ÍÑ¹É¥¹½É°¥Ð©ÕÍÑ½ÈÍÅÕÐµ¡¹¥Ì¸°(É¥èÜà9å±½¸Ø°Ø
+ÜÈÈ±ÍÑ¹
+ÜÈÀÁÍ´¡±¥¡ÑÈÑ¡¸É¥ä°¡Ðµ½ÁÑ¥µ¥Í¤°(ÑÕÉÌèlMµ±ÍÌÍ¥Á¹°°I¥¹½ÉÝ¥ÍÑ¹°ÕÍÍÐP¥¹ÉÍµ½¥±¥Ñät°(Éè
+½±ÝÍ °±ÐÉä¸°(±±Éäèm$¹É¥åM°
+X¹±¥¹=Í¥¥¸°
+X¹±¥¹I½Ít(ô°(ì(¥è¹µÍÕ¹Í±Ù°(Í±Õè½Õ¹Ñ¥½¸µÍÕ¸µÍ±Ù°(¹µèQ¡½Õ¹Ñ¥½¸UAMÕ¸µM±Ù°(±¥¹èQ¡½Õ¹Ñ¥½¸1¥¹°(Ñ½ÉäèÑ½À°(¥Í¥Á±¥¹èlå´°ÉÕ¸t°(ÁÉ¥èÈÄÔ°(½±½É-äèÉ½Í°(½±½ÉÌèl½Í¥¥¸°É½Í°Í¹t°(Í¥éÌèlaL°L°4°0°a0t°(½½Ìèmt°(¥µè$¹½Õ¹I½Í°(¥µ!½ÙÈè
+X¹ÍÕ¹M±ÙM¹°(½±½É%µÌèì(½Í¥¥¸è
+X¹ÍÕ¹M±Ù=Í¥¥¸°(É½Íè$¹½Õ¹I½Í°(Í¹è
+X¹ÍÕ¹M±ÙM¹(ô°(áÉÁÐèÑ¡ÉÝ¥¡ÐUAÔÀ¬±½¹µÍ±Ù½È
+½É¹¥¡ÍÕ¹É¥ÍÉÕ¹Ì¹µ½ÍÑäµ½¹Í¥½ÕÌÑÉ¥¹¥¹¸°(ÍÉ¥ÁÑ¥½¸èÍ¥¹½ÈÑ¡Ý½µ¸Ý¡¼Ý¹ÐÍ¡½Õ±È¹É´½ÙÉ¥¸ÐÃ
+ÁPÝ¡Ñ¡È½ÈÑ¡Õ±ÍÕ¸½È½Èµ½ÍÑä¸AÉ½ÉÑÝÙ­ÁÌ¥Èµ½Ù¥¹°UAÔÀ¬±½­ÌÑ¡ÕÉ¸°Ñ¡Õµ¡½±Ì­ÀÍ±ÙÌ½Ý¸½¸Ñ¡ÉÕ¸¸°(É¥èQ¡¹¥°ÁÉ½ÉÑ­¹¥Ð
+ÜUAÔÀ¬
+Ü5½¥ÍÑÕÉµÝ¥¬
+ÜÑ¡ÉÝ¥¡Ð¡ÍÕ´ÄÄÁ¤°(ÑÕÉÌèlUAÔÀ¬ÍÕ¸ÁÉ½ÑÑ¥½¸°AÉ½ÉÑÙ¹Ñ¥±Ñ¥½¸Á¹±Ì°Q¡Õµ¡½±Ì°I±á°µ½ÍÐ¥Ð°±ÐÍµÌt°(Éè
+½±ÝÍ ¸!¹Éä¸°(±±Éäèm$¹½Õ¹I½Í°
+X¹ÍÕ¹M±Ù=Í¥¥¸°
+X¹ÍÕ¹M±ÙM¹t(ô°(ì(¥è°µÀ°(Í±ÕèÉ¥äµÉÕ¸µÀ°(¹µèQ¡É¥ä
+À°(±¥¹èQ¡É¥ä1¥¹°(Ñ½ÉäèÍÍ½Éä°(¥Í¥Á±¥¹èlÉÕ¸t°(ÁÉ¥èäÔ°(½±½É-äè½Í¥¥¸°(½±½ÉÌèl½Í¥¥¸°ÑÉÉ½ÑÑ°Í¹t°(Í¥éÌèl=¹M¥ét°(½½Ìèmt°(¥µè
+X¹Á=Í¥¥¸°(¥µ!½ÙÈè
+X¹ÁQÉÉ½ÑÑ°(½±½É%µÌèì(½Í¥¥¸è
+X¹Á=Í¥¥¸°(ÑÉÉ½ÑÑè
+X¹ÁQÉÉ½ÑÑ°(Í¹è
+X¹ÁM¹(ô°(áÉÁÐè±¥¡ÑÝ¥¡Ð°Á­±ÉÕ¹¹¥¹À¸U¹ÍÑÉÕÑÕÉÉ½Ý¸°µÍ ¬°ÍÝÐ¹¸°(ÍÉ¥ÁÑ¥½¸è-ÁÌÑ¡ÍÕ¸½ÐÙ´½¸Ñ¡
+½É¹¥¡¸A­Ì±Ð¥¸Á½­Ð¸µÉ½¥ÉÝ¥Ñ ÅÕ¥ÐMP½¸Ñ¡¬Á¹°¸°(É¥èI¥ÁÍÑ½ÀÉ½Ý¸
+Ü5Í ÉÈÁ¹±Ì°(ÑÕÉÌèlA­±°Õ¹ÍÑÉÕÑÕÉ°5Í Ù¹Ñ¥±Ñ¥½¸°©ÕÍÑ±ÉÈÍÑÉÀ°µÉ½¥ÉMPt°(Éè!¹ÝÍ ½±¸°(±±Éäèm
+X¹Á=Í¥¥¸°
+X¹ÁQÉÉ½ÑÑ°
+X¹ÁM¹t(ô)tì()Ý¥¹½Ü¹MQ}AI=U
+Q}	e}M1Uô=©Ð¹É½µ¹ÑÉ¥Ì¡Ý¥¹½Ü¹MQ}AI=U
+QL¹µÀ¡ÀôømÀ¹Í±Õ°Át¤¤ì(
